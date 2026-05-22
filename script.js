@@ -41,7 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (mobileBtn && desktopNav) {
         mobileBtn.addEventListener('click', () => {
-            desktopNav.classList.toggle('active');
+            const isActive = desktopNav.classList.toggle('active');
+            mobileBtn.setAttribute('aria-expanded', isActive);
         });
         
         // Close menu when a link is clicked
@@ -49,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 desktopNav.classList.remove('active');
+                mobileBtn.setAttribute('aria-expanded', 'false');
             });
         });
     }
