@@ -21,6 +21,13 @@
     --transition-slow: 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+
+/* Global focus-visible for accessibility */
+*:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 4px;
+}
+
 /* Reset & Base */
 * {
     margin: 0;
@@ -182,7 +189,8 @@ p {
 .mobile-menu-btn {
     background: transparent;
     border: none;
-    padding: 0;
+    padding: 10px; /* Expand touch target to >44px */
+    margin: -10px;
     display: none;
     flex-direction: column;
     gap: 5px;
@@ -408,7 +416,20 @@ p {
     margin-bottom: var(--spacing-xs);
 }
 
+
+.luxury-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-charcoal);
+    text-align: left;
+    font-weight: 500;
+}
+
 .luxury-form input,
+
 .luxury-form textarea {
     width: 100%;
     padding: 1.2rem;
