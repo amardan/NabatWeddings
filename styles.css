@@ -1,0 +1,597 @@
+/* 
+  Nabat Persian Weddings - Luxury Stylesheet
+*/
+
+:root {
+    --color-ivory: #FCFAF6;
+    --color-cream: #F5EFEB;
+    --color-charcoal: #2A2725;
+    --color-blush: #EEDDDC;
+    --color-gold: #D4AF37;
+    
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    
+    --spacing-xs: 1rem;
+    --spacing-sm: 2rem;
+    --spacing-md: 4rem;
+    --spacing-lg: 8rem;
+    --spacing-xl: 12rem;
+    
+    --transition-slow: 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-ivory);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans);
+    font-weight: 300;
+    line-height: 1.8;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, .logo-text {
+    font-family: var(--font-serif);
+    font-weight: 400;
+}
+
+h1 {
+    font-size: clamp(3rem, 6vw, 6rem);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.1;
+}
+
+h2.section-title {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    display: inline-block;
+}
+
+/* Elegant underline for section titles */
+h2.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 1px;
+    background-color: var(--color-gold);
+}
+
+h3 {
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing-xs);
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.subtitle {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-style: italic;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Layout Utilities */
+.section-padding {
+    padding: var(--spacing-xl) 5%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.narrow {
+    max-width: 800px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.bg-alt {
+    background-color: #fff;
+}
+
+.bg-cream {
+    background-color: var(--color-cream);
+}
+
+/* Header */
+.site-header {
+    position: fixed;
+    top: 1.5rem;
+    left: 5%;
+    width: 90%;
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: all 0.4s ease;
+    
+    /* The wrap to ensure readability over video */
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.site-header.scrolled {
+    background: rgba(252, 250, 246, 0.95);
+    border-color: rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.site-header.scrolled .logo-text,
+.site-header.scrolled .desktop-nav a {
+    color: var(--color-charcoal);
+}
+
+/* In the hero section, header text should be white */
+.logo-text {
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    transition: color 0.4s ease;
+}
+
+.desktop-nav {
+    display: flex;
+    align-items: center;
+}
+
+.desktop-nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.4s ease, opacity 0.4s ease;
+}
+
+.desktop-nav a:hover {
+    opacity: 0.7;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.mobile-menu-btn span {
+    width: 25px;
+    height: 2px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.site-header.scrolled .mobile-menu-btn span {
+    background-color: var(--color-charcoal);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -2;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(42, 39, 37, 0.4); /* Dark scrim */
+    z-index: -1;
+}
+
+.hero-content {
+    color: #fff;
+    max-width: 900px;
+    padding: 0 5%;
+}
+
+/* Buttons */
+.btn-primary, .btn-outline {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+}
+
+.btn-primary {
+    background-color: var(--color-gold);
+    color: #fff !important;
+}
+
+.btn-primary:hover {
+    background-color: #b5952f;
+}
+
+.btn-outline {
+    border: 1px solid #fff;
+    color: #fff;
+    background: transparent;
+    margin-top: var(--spacing-sm);
+}
+
+.btn-outline:hover {
+    background-color: #fff;
+    color: var(--color-charcoal);
+}
+
+.site-header.scrolled .btn-primary {
+    background-color: var(--color-charcoal);
+}
+
+.site-header.scrolled .btn-primary:hover {
+    background-color: var(--color-gold);
+}
+
+/* Split Layout */
+.split-layout {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: var(--spacing-md);
+}
+
+.split-layout.reverse {
+    flex-direction: row-reverse;
+}
+
+.split-image, .split-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.split-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+/* Map Container */
+.abstract-map {
+    width: 100%;
+    padding-bottom: 100%; /* 1:1 Aspect Ratio */
+    background-color: var(--color-cream);
+    position: relative;
+    border: 1px solid rgba(42, 39, 37, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.abstract-map::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    /* Subtle topographic lines or gradient to imply a map in a luxury way */
+    background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+    z-index: 1;
+}
+
+.map-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    width: 80%;
+}
+
+.map-text h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.map-text p.small {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Services List */
+.services-list {
+    list-style: none;
+}
+
+.services-list li {
+    margin-bottom: var(--spacing-sm);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid rgba(42, 39, 37, 0.1);
+}
+
+.services-list li:last-child {
+    border-bottom: none;
+}
+
+/* Testimonial Grid */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.testimonial-card {
+    text-align: center;
+}
+
+.testimonial-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: var(--spacing-xs);
+    border: 3px solid #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.testimonial-card p {
+    font-size: 1rem;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* Form */
+.luxury-form {
+    max-width: 600px;
+    margin: var(--spacing-md) auto 0;
+}
+
+.form-group {
+    margin-bottom: var(--spacing-xs);
+}
+
+.luxury-form input,
+.luxury-form textarea {
+    width: 100%;
+    padding: 1.2rem;
+    background-color: transparent;
+    border: 1px solid rgba(42, 39, 37, 0.2);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--color-charcoal);
+    border-radius: 12px;
+    transition: border-color 0.4s ease;
+}
+
+.luxury-form input:focus,
+.luxury-form textarea:focus {
+    outline: none;
+    border-color: var(--color-gold);
+}
+
+.full-width {
+    width: 100%;
+    margin-top: var(--spacing-xs);
+}
+
+.site-footer {
+    text-align: center;
+    padding: var(--spacing-sm);
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 300px;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.5s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.02);
+}
+
+.gallery-video-item {
+    grid-column: 1 / -1; /* Spans full width */
+    height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.gallery-video-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Process Steps */
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    position: relative;
+}
+
+.step-card {
+    background-color: var(--color-ivory);
+    padding: var(--spacing-md) var(--spacing-sm);
+    text-align: center;
+    border: 1px solid rgba(42, 39, 37, 0.05);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.step-number {
+    display: inline-block;
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    color: var(--color-gold);
+    margin-bottom: var(--spacing-xs);
+    border-bottom: 2px solid var(--color-gold);
+    padding-bottom: 0.5rem;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transition: opacity var(--transition-slow);
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .split-layout {
+        flex-direction: column;
+    }
+    .split-layout.reverse {
+        flex-direction: column;
+    }
+    .section-padding {
+        padding: var(--spacing-md) 5%;
+    }
+    
+    /* Optimize header pill for mobile */
+    .site-header {
+        width: 96%;
+        left: 2%;
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .logo-text {
+        font-size: 1.1rem;
+    }
+    
+    /* Mobile Menu Implementation */
+    .mobile-menu-btn {
+        display: flex;
+    }
+    
+    .desktop-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        flex-direction: column;
+        padding: 1rem 2rem 2rem;
+        border-radius: 24px;
+        margin-top: 0.5rem;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s ease;
+        transform: translateY(-10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+    
+    .desktop-nav.active {
+        opacity: 1;
+        pointer-events: all;
+        transform: translateY(0);
+    }
+    
+    .site-header.scrolled .desktop-nav {
+        background: rgba(252, 250, 246, 0.98);
+        border-color: rgba(0,0,0,0.05);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    
+    .desktop-nav a {
+        margin: 1rem 0;
+        text-align: center;
+        width: 100%;
+        font-size: 1.1rem;
+    }
+    
+    /* Optimize buttons for mobile tap targets */
+    .btn-primary {
+        padding: 1rem;
+    }
+}
