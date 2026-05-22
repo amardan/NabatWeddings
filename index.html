@@ -54,7 +54,7 @@
 
     <!-- Hero Section with Video Background -->
     <section class="hero" id="home">
-        <video class="hero-video" autoplay muted loop playsinline crossorigin="anonymous">
+        <video class="hero-video" autoplay muted loop playsinline crossorigin="anonymous" aria-label="Promotional Video">
             <source src="https://video.wixstatic.com/video/2f1655_bc992acd0bc049d3bcab323ffde5f2af/720p/mp4/file.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
@@ -159,7 +159,7 @@
             <h2 class="section-title text-center">Gallery</h2>
             
             <div class="gallery-video-item" style="margin-bottom: var(--spacing-sm);">
-                <video controls playsinline crossorigin="anonymous">
+                <video controls playsinline crossorigin="anonymous" aria-label="Wedding Gallery Video">
                     <source src="https://video.wixstatic.com/video/2f1655_bc992acd0bc049d3bcab323ffde5f2af/720p/mp4/file.mp4" type="video/mp4">
                 </video>
             </div>
@@ -226,16 +226,20 @@
                 <input type="hidden" name="_captcha" value="false">
                 
                 <div class="form-group">
-                    <input type="text" name="name" placeholder="Your Names" required>
+                    <label for="name">Your Names</label>
+                    <input type="text" id="name" name="name" placeholder="Your Names" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" name="email" placeholder="Your Email Address" required>
+                    <label for="email">Your Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email Address" required>
                 </div>
                 <div class="form-group">
-                    <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                    <label for="phone">Your Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
                 </div>
                 <div class="form-group">
-                    <textarea name="message" rows="5" placeholder="Tell us about your dream ceremony..." required></textarea>
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell us about your dream ceremony..." required></textarea>
                 </div>
                 <button type="submit" class="btn-primary full-width">Send Inquiry</button>
             </form>

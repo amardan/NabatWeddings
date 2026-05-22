@@ -55,4 +55,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+
+    // Async form submission feedback
+    const luxuryForm = document.querySelector('.luxury-form');
+    if (luxuryForm) {
+        luxuryForm.addEventListener('submit', (e) => {
+            const submitBtn = luxuryForm.querySelector('button[type="submit"]');
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+                submitBtn.style.opacity = '0.7';
+                submitBtn.style.cursor = 'not-allowed';
+            }
+        });
+    }
+
 });
