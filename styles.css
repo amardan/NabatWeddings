@@ -29,6 +29,14 @@
 }
 
 /* Reset & Base */
+html {
+    scroll-behavior: smooth;
+}
+
+section[id] {
+    scroll-margin-top: 100px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -183,6 +191,12 @@ p {
 
 .desktop-nav a:hover {
     opacity: 0.7;
+}
+
+.desktop-nav a.active {
+    color: var(--color-gold) !important;
+    opacity: 1 !important;
+    font-weight: 500;
 }
 
 /* Mobile Menu Button */

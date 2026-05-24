@@ -97,17 +97,17 @@
         let target = "/";
 
         if (path.includes("gallery")) {
-            target = "/#gallery";
+            target = "/gallery";
         } else if (path.includes("testimonial") || path.includes("stories") || path.includes("reviews") || path.includes("love")) {
-            target = "/#testimonials";
+            target = "/testimonials";
         } else if (path.includes("contact") || path.includes("book") || path.includes("inquiry")) {
-            target = "/#contact";
+            target = "/contact";
         } else if (path.includes("about") || path.includes("meaning") || path.includes("sweetness")) {
-            target = "/#about";
+            target = "/about";
         } else if (path.includes("process") || path.includes("step") || path.includes("service")) {
-            target = "/#process";
+            target = "/process";
         } else if (path.includes("experience") || path.includes("map") || path.includes("location")) {
-            target = "/#experience";
+            target = "/experience";
         }
 
         document.getElementById("redirect-link").href = target;
