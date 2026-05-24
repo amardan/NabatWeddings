@@ -125,12 +125,50 @@
     <!-- The Experience & Map -->
     <section class="section-padding split-layout reverse fade-in" id="experience">
         <div class="split-image map-container">
-            <!-- A minimalistic stylized map representation -->
             <div class="abstract-map">
+                <!-- Premium Stylized SVG Map of East Coast DMV Hubs -->
+                <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" class="map-svg" style="position: absolute; top:0; left:0; width:100%; height:100%; opacity:0.9;" aria-label="Stylized map showing D.C., MD, VA area and travel destinations">
+                    <defs>
+                        <!-- Define subtle glow filters for the luxury feel -->
+                        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="3" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                    </defs>
+                    <!-- Coastline / Regional boundaries abstraction -->
+                    <path d="M100,20 L150,50 L200,80 L230,120 L245,150 L240,190 L220,240 L230,290 L260,330 L230,360 L180,330 L160,280 L170,230 L150,170 L120,120 L80,70 Z" fill="rgba(212, 175, 55, 0.04)" stroke="rgba(42, 39, 37, 0.12)" stroke-width="1.5" stroke-dasharray="6 4" />
+                    
+                    <!-- Dotted connection lines from DMV to major travel regions -->
+                    <path d="M175,175 L280,80" stroke="rgba(212, 175, 55, 0.4)" stroke-width="1" stroke-dasharray="3 3" />
+                    <path d="M175,175 L100,280" stroke="rgba(212, 175, 55, 0.4)" stroke-width="1" stroke-dasharray="3 3" />
+                    <path d="M175,175 L290,290" stroke="rgba(212, 175, 55, 0.4)" stroke-width="1" stroke-dasharray="3 3" />
+                    
+                    <!-- DMV Center Core -->
+                    <circle cx="175" cy="175" r="24" fill="rgba(212, 175, 55, 0.1)" stroke="rgba(212, 175, 55, 0.2)" stroke-width="1" />
+                    <circle cx="175" cy="175" r="7" fill="#D4AF37" filter="url(#glow)" />
+                    <!-- Animated Ring around DMV -->
+                    <circle cx="175" cy="175" r="14" fill="none" stroke="#D4AF37" stroke-width="1">
+                        <animate attributeName="r" values="7;20;7" dur="4s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" values="0.8;0.1;0.8" dur="4s" repeatCount="indefinite" />
+                    </circle>
+
+                    <!-- Destination Hubs -->
+                    <!-- New York (NYC) -->
+                    <circle cx="280" cy="80" r="5" fill="#2A2725" stroke="#D4AF37" stroke-width="1" />
+                    <text x="290" y="84" font-family="Montserrat" font-size="9" fill="#2A2725" font-weight="300" letter-spacing="1">NYC & NE</text>
+
+                    <!-- California (LA/SF) -->
+                    <circle cx="100" cy="280" r="5" fill="#2A2725" stroke="#D4AF37" stroke-width="1" />
+                    <text x="50" y="295" font-family="Montserrat" font-size="9" fill="#2A2725" font-weight="300" letter-spacing="1">CALIFORNIA</text>
+
+                    <!-- Florida (Miami) -->
+                    <circle cx="290" cy="290" r="5" fill="#2A2725" stroke="#D4AF37" stroke-width="1" />
+                    <text x="300" y="294" font-family="Montserrat" font-size="9" fill="#2A2725" font-weight="300" letter-spacing="1">FLORIDA</text>
+                </svg>
                 <div class="map-text">
-                    <h3>Local to the DMV Area</h3>
-                    <p>Washington D.C. • Maryland • Virginia</p>
-                    <p class="small">Available for travel worldwide</p>
+                    <h3 style="color: var(--color-charcoal); font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: 0.25rem;">Local to the DMV</h3>
+                    <p style="color: var(--color-charcoal); font-size: 0.95rem; margin-bottom: 0.5rem; font-weight: 400;">Washington D.C. • Maryland • Virginia</p>
+                    <p class="small" style="font-size: 0.75rem; letter-spacing: 0.15em; font-weight: 400; text-transform: uppercase; color: var(--color-gold); margin-top: 1rem;">Available for travel worldwide</p>
                 </div>
             </div>
         </div>
@@ -164,7 +202,7 @@
                 </video>
             </div>
 
-            <div class="gallery-grid">
+            <div class="gallery-grid carousel-mobile">
                 <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_40ac6f4a3bcb4cbcbefbf56a7adecebc~mv2.png" alt="Nabat Persian Wedding Gallery">
                 <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_d6df235aa03048278e8aa57f4e968e22~mv2.jpg" alt="Nabat Persian Wedding Gallery">
                 <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_a83bfef105bb4699b9e35918741e3d70~mv2.png" alt="Nabat Persian Wedding Gallery">
@@ -182,7 +220,7 @@
     <section class="section-padding bg-cream fade-in" id="testimonials">
         <div class="container">
             <h2 class="section-title text-center">Love Stories</h2>
-            <div class="testimonial-grid">
+            <div class="testimonial-grid carousel-mobile">
                 <!-- Testimonial 1 -->
                 <div class="testimonial-card">
                     <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_69c2e032bb1540e1bc3b2cea3cb0c880~mv2.jpg" alt="Roxanna and Sam Wedding">
@@ -248,7 +286,7 @@
 
     <footer class="site-footer">
         <div class="container narrow">
-            <p style="font-size: 0.75rem; opacity: 0.5; margin-bottom: 1rem; line-height: 1.6;">
+            <p class="footer-destinations">
                 <strong>Destinations & Local Areas Served:</strong> Washington D.C., Maryland (MD), Virginia (VA), New York (NYC), New Jersey (NJ), Pennsylvania (PA), Massachusetts (Boston), Illinois (Chicago), Texas (Houston, Dallas), Florida (Miami), California (Los Angeles, San Francisco, Orange County), Washington (Seattle), Canada (Toronto), and worldwide destination weddings. <br>
                 <em>Specializing as a Bilingual (Farsi & English) Persian Wedding Officiant, traditional Sofreh Aghd, and modern Iranian ceremonies.</em>
             </p>
