@@ -476,6 +476,31 @@ p {
     border-top: 1px solid rgba(42, 39, 37, 0.05);
 }
 
+.footer-social {
+    margin-bottom: 0.75rem;
+}
+
+.footer-instagram-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: #6b6765;
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+}
+
+.footer-instagram-link:hover {
+    color: var(--color-gold);
+}
+
+.footer-instagram-link svg {
+    flex-shrink: 0;
+    transition: stroke 0.3s ease;
+}
+
+
 .site-footer p.footer-destinations {
     font-size: 0.75rem;
     color: #555250;
