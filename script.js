@@ -38,10 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateActiveNavLink(path) {
+        const normalize = (p) => (p || '/').replace(/\/$/, '') || '/';
         const navLinks = document.querySelectorAll('.desktop-nav a');
         navLinks.forEach(link => {
             const href = link.getAttribute('href');
-            if (href === path) {
+            if (normalize(href) === normalize(path)) {
                 link.classList.add('active');
             } else {
                 link.classList.remove('active');
@@ -164,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             header.classList.remove('scrolled');
         }
-    });
+    }, { passive: true });
 
     // Intersection Observer for smooth reveal-on-scroll
     const observerOptions = {

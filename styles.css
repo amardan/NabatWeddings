@@ -578,21 +578,44 @@ p {
     padding-bottom: 0.5rem;
 }
 
-/* Animations */
-.fade-in {
+/* Animations — scoped to .js so content stays visible if JavaScript fails to load */
+.js .fade-in {
     opacity: 0;
     transition: opacity var(--transition-slow);
 }
 
-.fade-in-up {
+.js .fade-in-up {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity var(--transition-slow), transform var(--transition-slow);
 }
 
-.is-visible {
+.js .is-visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    .js .fade-in,
+    .js .fade-in-up {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+    .map-svg animate {
+        display: none;
+    }
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
 
 /* FAQ Accordion Styles */

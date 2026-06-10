@@ -44,8 +44,9 @@ def generate_subpages():
         # Create folder if it doesn't exist
         os.makedirs(route, exist_ok=True)
         
-        # Target canonical url
-        canonical_url = f"https://www.nabatpersianweddings.com/{route}"
+        # Target canonical url (trailing slash matches the URL GitHub Pages
+        # actually serves with a 200; /about 301-redirects to /about/)
+        canonical_url = f"https://www.nabatpersianweddings.com/{route}/"
         
         # Perform SEO replacements
         html = original_html
