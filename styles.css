@@ -761,6 +761,12 @@ p {
         padding: 1rem;
     }
 
+    /* Prevent iOS Safari from zooming in on form inputs */
+    .luxury-form input,
+    .luxury-form textarea {
+        font-size: 16px !important;
+    }
+
     /* Tighten process step card padding on mobile */
     .step-card {
         padding: 2.5rem 1.5rem !important;
