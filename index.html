@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <title>Bilingual Farsi & Persian Wedding Officiant | Nabat Persian Weddings</title>
     <meta name="description" content="Luxury bilingual (Farsi & English) Persian wedding officiant services by Elmira Jafari in D.C., Maryland, Virginia (DMV), New York, California, Florida, and worldwide. Specializing in traditional Sofreh Aghd and modern custom vows.">
     <link rel="canonical" href="https://www.nabatpersianweddings.com/">
@@ -395,14 +400,17 @@
         <div class="container narrow">
             <h2 class="section-title">Book a Consultation</h2>
             <p class="body-text">Connect with us to begin weaving your story.</p>
-            <p class="contact-info">Phone: <a href="tel:7034239330">703-423-9330</a></p>
+            <p class="contact-info">Phone: <a href="tel:+17034239330">703-423-9330</a></p>
             <p class="contact-info">Email: <a href="mailto:elmira.jafari.media@gmail.com">elmira.jafari.media@gmail.com</a></p>
             
             <!-- Using formsubmit.co for a fully working backend submission -->
             <form action="https://formsubmit.co/elmira.jafari.media@gmail.com" method="POST" class="luxury-form">
                 <!-- Configuration for FormSubmit -->
                 <input type="hidden" name="_subject" value="New Wedding Inquiry - Nabat Persian Weddings">
-                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://www.nabatpersianweddings.com/contact?sent=true">
+                <input type="hidden" name="_template" value="table">
+                <!-- Honeypot field to catch bots silently -->
+                <input type="text" name="_honey" style="display:none">
                 
                 <div class="form-group">
                     <label for="name">Your Names</label>
@@ -422,6 +430,11 @@
                 </div>
                 <button type="submit" class="btn-primary full-width">Send Inquiry</button>
             </form>
+            <!-- Success message shown after form submission -->
+            <div id="form-success" style="display:none; margin-top:2rem; padding:1.5rem; border:1px solid var(--color-gold); border-radius:12px; background:rgba(212,175,55,0.05);">
+                <p style="margin:0; font-family:var(--font-serif); font-size:1.3rem; color:var(--color-charcoal);">✨ Thank you! Your inquiry has been received.</p>
+                <p style="margin:0.5rem 0 0; font-size:0.95rem; opacity:0.75;">Elmira will be in touch with you within 1–2 business days.</p>
+            </div>
         </div>
     </section>
 

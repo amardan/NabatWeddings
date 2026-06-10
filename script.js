@@ -1,5 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
+    // Show success message if redirected back after form submission
+    if (window.location.search.includes('sent=true')) {
+        const form = document.querySelector('.luxury-form');
+        const success = document.getElementById('form-success');
+        if (form && success) {
+            form.style.display = 'none';
+            success.style.display = 'block';
+            // Scroll to the contact section smoothly
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                setTimeout(() => contactSection.scrollIntoView({ behavior: 'smooth' }), 200);
+            }
+            // Clean URL without reload
+            window.history.replaceState(null, '', window.location.pathname);
+        }
+    }
+
+
     // Path routing map
     const pathToSectionMap = {
         '/about': 'about',
