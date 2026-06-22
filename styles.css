@@ -1301,3 +1301,129 @@ p {
     .lightbox-nav { width: 42px; height: 42px; }
     .split-image::after { display: none; }
 }
+
+/* ==========================================================================
+   Vertical Scroll Snapping (Page-to-Page pagination effect)
+   ========================================================================== */
+@media (min-width: 1024px) {
+    html {
+        scroll-snap-type: y proximity;
+        scroll-behavior: smooth;
+    }
+    
+    section, footer {
+        scroll-snap-align: start;
+    }
+    
+    .hero {
+        scroll-snap-align: start;
+    }
+    
+    .site-footer {
+        scroll-snap-align: end;
+    }
+}
+
+/* ==========================================================================
+   Scroll-Driven Animations & Visual Reveal Effects
+   ========================================================================== */
+@media (prefers-reduced-motion: no-preference) {
+    @supports ((animation-timeline: view()) and (animation-range: entry)) {
+        /* Bypass standard one-time IntersectionObserver transitions on SDA-supported browsers */
+        .js .fade-in,
+        .js .fade-in-up {
+            opacity: 1 !important;
+            transform: none !important;
+            transition: none !important;
+        }
+
+        /* 1. Entire Section Reveal Animation */
+        @keyframes sectionReveal {
+            from {
+                opacity: 0;
+                transform: translateY(100px) scale(0.97);
+                filter: blur(4px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
+        }
+
+        .section-padding {
+            animation: sectionReveal auto cubic-bezier(0.16, 1, 0.3, 1) both;
+            animation-timeline: view();
+            animation-range: entry 8% cover 35%;
+        }
+
+        /* 2. Split Content Layout Entry Slides */
+        @keyframes slideFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-70px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideFromRight {
+            from {
+                opacity: 0;
+                transform: translateX(70px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @media (min-width: 768px) {
+            /* Left to Right split animations */
+            .split-layout:not(.reverse) .split-image {
+                animation: slideFromLeft auto cubic-bezier(0.16, 1, 0.3, 1) both;
+                animation-timeline: view();
+                animation-range: entry 5% cover 30%;
+            }
+            .split-layout:not(.reverse) .split-content {
+                animation: slideFromRight auto cubic-bezier(0.16, 1, 0.3, 1) both;
+                animation-timeline: view();
+                animation-range: entry 5% cover 30%;
+            }
+            /* Right to Left split animations */
+            .split-layout.reverse .split-image {
+                animation: slideFromRight auto cubic-bezier(0.16, 1, 0.3, 1) both;
+                animation-timeline: view();
+                animation-range: entry 5% cover 30%;
+            }
+            .split-layout.reverse .split-content {
+                animation: slideFromLeft auto cubic-bezier(0.16, 1, 0.3, 1) both;
+                animation-timeline: view();
+                animation-range: entry 5% cover 30%;
+            }
+        }
+
+        /* 3. Cards & Grid Items Scale/Reveal Animation */
+        @keyframes itemZoomReveal {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.93);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .step-card, 
+        .testimonial-card, 
+        .gallery-grid img {
+            animation: itemZoomReveal auto cubic-bezier(0.16, 1, 0.3, 1) both;
+            animation-timeline: view();
+            animation-range: entry 5% cover 35%;
+        }
+    }
+}
+

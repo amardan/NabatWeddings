@@ -1,0 +1,166 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]: Nabat Persian Weddings
+    - button "Toggle navigation menu" [ref=e4] [cursor=pointer]
+    - navigation:
+      - link "About":
+        - /url: /about
+      - link "Journey":
+        - /url: /process
+      - link "Experience":
+        - /url: /experience
+      - link "Gallery":
+        - /url: /gallery
+      - link "Testimonials":
+        - /url: /testimonials
+      - link "FAQ":
+        - /url: /faq
+      - link "Inquire":
+        - /url: /contact
+  - generic [ref=e8]:
+    - generic "Promotional Video" [ref=e9]
+    - generic [ref=e11]:
+      - heading "Nabat Persian Weddings" [level=1] [ref=e12]
+      - paragraph [ref=e13]: Weaving sweet beginnings with poetry, warmth, and love.
+      - paragraph [ref=e14]: Proudly local to Northern Virginia & the DMV area, serving Washington D.C., Maryland, New York, and select destinations worldwide.
+      - link "Inquire Now" [ref=e15] [cursor=pointer]:
+        - /url: /contact
+  - generic [ref=e17]:
+    - heading "The Sweetness of Nabat" [level=2] [ref=e18]
+    - paragraph [ref=e19]: In a traditional Persian Sofreh Aghd, Nabat (sugar candy) represents the sweet beginnings of a shared life. It is the cornerstone of love, joy, and the journey ahead.
+    - blockquote [ref=e20]:
+      - text: "\"Let the beauty of what you love be what you do.\""
+      - text: — Rumi
+  - generic [ref=e21]:
+    - img "Elmira Jafari - Nabat Persian Wedding Officiant" [ref=e23]
+    - generic [ref=e24]:
+      - heading "Meet Elmira Jafari" [level=2] [ref=e25]
+      - paragraph [ref=e26]: With over 15 years of experience as an award-nominated international journalist and documentary filmmaker, Elmira brings professional poise, voice control, and a deep reverence for cultural storytelling to your wedding ceremony.
+      - paragraph [ref=e27]: Now local to the DMV area, she is deeply inspired by the poetry of Hafez, Saadi, and Rumi, crafting ceremonies that are beautifully tailored, culturally rich, and elegantly modern. With a Master's degree in communication and a background in visual arts, she holds space for your love story with grace and warmth.
+  - generic [ref=e29]:
+    - heading "The Journey to \"I Do\" — بله!" [level=2] [ref=e30]
+    - paragraph [ref=e31]: A collaborative, stress-free process to ensure you are in confident, caring hands on your most important day.
+    - generic [ref=e32]:
+      - generic [ref=e33]:
+        - generic [ref=e34]: "01"
+        - heading "The Connection" [level=3] [ref=e35]
+        - paragraph [ref=e36]: We begin with a personal consultation to understand your unique love story, cultural preferences, and vision for the big day.
+      - generic [ref=e37]:
+        - generic [ref=e38]: "02"
+        - heading "Scripting Your Story" [level=3] [ref=e39]
+        - paragraph [ref=e40]: Through collaborative meetings, we meticulously craft and refine your ceremony script. This is Elmira's favorite part—weaving poetry and tradition into a bespoke narrative.
+      - generic [ref=e41]:
+        - generic [ref=e42]: "03"
+        - heading "The Wedding Day" [level=3] [ref=e43]
+        - paragraph [ref=e44]: With everything flawlessly planned and rehearsed, you can relax. Elmira delivers the ceremony with professional grace, commanding presence, and deep warmth.
+  - generic [ref=e45]:
+    - generic [ref=e47]:
+      - img "Stylized map showing D.C., MD, VA area and travel destinations" [ref=e48]:
+        - generic [ref=e57]: NYC & NE
+        - generic [ref=e59]: CALIFORNIA
+        - generic [ref=e61]: FLORIDA
+      - generic [ref=e62]:
+        - heading "Local to the DMV" [level=3] [ref=e63]
+        - paragraph [ref=e64]: Washington D.C. • Maryland • Virginia
+        - paragraph [ref=e65]: Available for travel worldwide
+    - generic [ref=e66]:
+      - heading "Ceremony Styles" [level=2] [ref=e67]
+      - list [ref=e68]:
+        - listitem [ref=e69]:
+          - heading "Bilingual Ceremonies" [level=3] [ref=e70]
+          - paragraph [ref=e71]: Flawlessly flowing between English and Farsi to ensure every guest feels included.
+        - listitem [ref=e72]:
+          - heading "Traditional Sofreh Aghd" [level=3] [ref=e73]
+          - paragraph [ref=e74]: Honoring ancient Persian customs with depth and authentic vocabulary.
+        - listitem [ref=e75]:
+          - heading "Modern Custom Vows" [level=3] [ref=e76]
+          - paragraph [ref=e77]: Tailoring the script to reflect who you truly are as a modern couple.
+        - listitem [ref=e78]:
+          - heading "Available for Travel" [level=3] [ref=e79]
+          - paragraph [ref=e80]: Based in Reston, Virginia, regularly traveling to officiate custom ceremonies in New York, California, and luxury destinations.
+  - generic [ref=e82]:
+    - heading "Gallery" [level=2] [ref=e83]
+    - generic "Wedding Gallery Video" [ref=e85]
+    - generic [ref=e86]:
+      - img "Nabat Persian Wedding Gallery" [ref=e87]
+      - img "Nabat Persian Wedding Gallery" [ref=e88]
+      - img "Nabat Persian Wedding Gallery" [ref=e89]
+      - img "Nabat Persian Wedding Gallery" [ref=e90]
+      - img "Nabat Persian Wedding Gallery" [ref=e91]
+      - img "Nabat Persian Wedding Gallery" [ref=e92]
+      - img "Nabat Persian Wedding Gallery" [ref=e93]
+      - img "Nabat Persian Wedding Gallery" [ref=e94]
+      - img "Nabat Persian Wedding Gallery" [ref=e95]
+  - generic [ref=e97]:
+    - heading "Love Stories" [level=2] [ref=e98]
+    - generic [ref=e99]:
+      - generic [ref=e100]:
+        - img "Roxanna and Sam Wedding" [ref=e101]
+        - heading "Roxanna & Sam" [level=3] [ref=e102]
+        - paragraph [ref=e103]: "\"Elmira is a wonderful officiant. Professional, thoughtful, and a true pleasure. She gave us full control over the script with helpful guidance. She delivered everything exactly as agreed, with grace and warmth. Fluent in Farsi and English.\""
+      - generic [ref=e104]:
+        - img "Sara and Amen Wedding" [ref=e105]
+        - heading "Sara & Amen" [level=3] [ref=e106]
+        - paragraph [ref=e107]: "\"We can't thank Elmira enough. The attention to detail was incredible; our ceremony truly reflected who we are. Elmira's warmth made the process stress-free.\""
+      - generic [ref=e108]:
+        - img "Maryam and Reza Wedding" [ref=e109]
+        - heading "Maryam & Reza" [level=3] [ref=e110]
+        - paragraph [ref=e111]: "\"Our wedding ceremony was everything we hoped for. Elmira understood our vision and created a perfect balance of tradition and modernity.\""
+      - generic [ref=e112]:
+        - img "Nazanin and Arman Wedding" [ref=e113]
+        - heading "Nazanin & Arman" [level=3] [ref=e114]
+        - paragraph [ref=e115]: "\"Exceeded our expectations. Elmira was attentive, responsive, and committed to making our day perfect. The ceremony was beautiful and personalized.\""
+  - generic [ref=e117]:
+    - heading "Frequently Asked Questions" [level=2] [ref=e118]
+    - generic [ref=e119]:
+      - group [ref=e120]:
+        - generic "Who is Elmira Jafari and what is Nabat Persian Weddings? +" [ref=e121] [cursor=pointer]
+      - group [ref=e122]:
+        - generic "Do you perform ceremonies in both English and Farsi? +" [ref=e123] [cursor=pointer]
+      - group [ref=e124]:
+        - generic "Can we customize the Sofreh Aghd script and our wedding vows? +" [ref=e125] [cursor=pointer]
+      - group [ref=e126]:
+        - generic "Where are your main service locations? +" [ref=e127] [cursor=pointer]
+      - group [ref=e128]:
+        - generic "What is the meaning of \"Nabat\" in a Persian wedding? +" [ref=e129] [cursor=pointer]
+  - generic [ref=e131]:
+    - heading "Book a Consultation" [level=2] [ref=e132]
+    - paragraph [ref=e133]: Connect with us to begin weaving your story.
+    - paragraph [ref=e134]:
+      - text: "Phone:"
+      - link "703-423-9330" [ref=e135] [cursor=pointer]:
+        - /url: tel:+17034239330
+    - paragraph [ref=e136]:
+      - text: "Email:"
+      - link "elmira.jafari.media@gmail.com" [ref=e137] [cursor=pointer]:
+        - /url: mailto:elmira.jafari.media@gmail.com
+    - generic [ref=e138]:
+      - generic [ref=e139]:
+        - generic [ref=e140]: Your Names
+        - textbox "Your Names" [ref=e141]
+      - generic [ref=e142]:
+        - generic [ref=e143]: Your Email Address
+        - textbox "Your Email Address" [ref=e144]
+      - generic [ref=e145]:
+        - generic [ref=e146]: Your Phone Number
+        - textbox "Your Phone Number" [ref=e147]
+      - generic [ref=e148]:
+        - generic [ref=e149]: Wedding Date (optional)
+        - textbox "Wedding Date (optional)" [ref=e150]
+      - generic [ref=e151]:
+        - generic [ref=e152]: Your Message
+        - textbox "Your Message" [ref=e153]:
+          - /placeholder: Tell us about your dream ceremony...
+      - button "Send Inquiry" [ref=e154] [cursor=pointer]
+  - contentinfo [ref=e155]:
+    - generic [ref=e156]:
+      - paragraph [ref=e157]:
+        - strong [ref=e158]: "Destinations & Local Areas Served:"
+        - text: Washington D.C., Maryland (MD), Virginia (VA), New York (NYC), New Jersey (NJ), Pennsylvania (PA), Massachusetts (Boston), Illinois (Chicago), Texas (Houston, Dallas), Florida (Miami), California (Los Angeles, San Francisco, Orange County), Washington (Seattle), Canada (Toronto), and worldwide destination weddings.
+        - emphasis [ref=e159]: Specializing as a Bilingual (Farsi & English) Persian Wedding Officiant, traditional Sofreh Aghd, and modern Iranian ceremonies.
+      - paragraph [ref=e160]:
+        - link "Nabat Persian Weddings on Instagram" [ref=e161] [cursor=pointer]:
+          - /url: https://www.instagram.com/nabat_persian_weddings/
+          - img [ref=e162]
+          - text: "@nabat_persian_weddings"
+      - paragraph [ref=e166]: © 2026 Nabat Persian Weddings. All rights reserved.
