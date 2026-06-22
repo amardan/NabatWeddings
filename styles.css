@@ -94,6 +94,19 @@
 /* Reset & Base */
 html {
     scroll-behavior: smooth;
+    /* Page-to-page scroll snapping */
+    scroll-snap-type: y proximity;
+}
+
+@media (min-width: 768px) {
+    html {
+        scroll-snap-type: y mandatory;
+    }
+}
+
+section, .site-footer {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
 section[id] {

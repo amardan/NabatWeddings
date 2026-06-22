@@ -24,7 +24,7 @@
     <meta property="og:url" content="https://www.nabatpersianweddings.com/gallery/">
     <meta property="og:title" content="Gallery - Persian Wedding Photos & Videos | Nabat Persian Weddings">
     <meta property="og:description" content="View photos and videos of beautiful Persian wedding ceremonies and Sofreh Aghd officiated by Elmira Jafari.">
-    <meta property="og:image" content="https://static.wixstatic.com/media/2f1655_c6c2bda98e044b3898e19ba76a2f67b5~mv2.jpeg/v1/fill/w_1200,h_630,al_c,q_85,enc_auto/nabat-persian-weddings.jpeg">
+    <meta property="og:image" content="/assets/images/nabat-persian-weddings.jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
@@ -33,12 +33,15 @@
     <meta property="twitter:url" content="https://www.nabatpersianweddings.com/gallery/">
     <meta property="twitter:title" content="Gallery - Persian Wedding Photos & Videos | Nabat Persian Weddings">
     <meta property="twitter:description" content="View photos and videos of beautiful Persian wedding ceremonies and Sofreh Aghd officiated by Elmira Jafari.">
-    <meta property="twitter:image" content="https://static.wixstatic.com/media/2f1655_c6c2bda98e044b3898e19ba76a2f67b5~mv2.jpeg/v1/fill/w_1200,h_630,al_c,q_85,enc_auto/nabat-persian-weddings.jpeg">
+    <meta property="twitter:image" content="/assets/images/nabat-persian-weddings.jpeg">
 
     <!-- Google Fonts: Cormorant Garamond for Serifs, Montserrat for Sans-Serif -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- LLM Optimization -->
+    <link rel="alternate" type="text/markdown" href="/llms.txt">
     
     <!-- JSON-LD Structured Data for SEO & LLMs -->
     <script type="application/ld+json">
@@ -46,7 +49,7 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Nabat Persian Weddings",
-      "image": "https://static.wixstatic.com/media/2f1655_c6c2bda98e044b3898e19ba76a2f67b5~mv2.jpeg/v1/fill/w_1200,h_630,al_c,q_85,enc_auto/nabat-persian-weddings.jpeg",
+      "image": "/assets/images/nabat-persian-weddings.jpeg",
       "@id": "https://www.nabatpersianweddings.com/#localbusiness",
       "url": "https://www.nabatpersianweddings.com/",
       "telephone": "+1-703-423-9330",
@@ -306,11 +309,12 @@
     <!-- Hero Section with Video Background -->
     <section class="hero" id="home">
         <video class="hero-video" autoplay muted loop playsinline crossorigin="anonymous" poster="/poster.jpg" aria-label="Promotional Video">
-            <source src="https://video.wixstatic.com/video/2f1655_bc992acd0bc049d3bcab323ffde5f2af/720p/mp4/file.mp4" type="video/mp4">
+            <source src="/assets/videos/file.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
         <div class="hero-content fade-in-up">
             <h1>Nabat Persian Weddings</h1>
+            <h2 class="subtitle" style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 0.5rem; letter-spacing: 0.1em; text-transform: uppercase; font-family: var(--font-sans); font-style: normal;">Bilingual Farsi & English Wedding Officiant</h2>
             <span class="hero-divider" aria-hidden="true"></span>
             <p class="subtitle">Weaving sweet beginnings with poetry, warmth, and love.</p>
             <p class="location-text">Proudly local to Northern Virginia &amp; the DMV area, serving Washington D.C., Maryland, New York, and select destinations worldwide.</p>
@@ -336,7 +340,7 @@
     <!-- About Elmira Jafari -->
     <section class="section-padding split-layout fade-in" id="about">
         <div class="split-image">
-            <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_c6c2bda98e044b3898e19ba76a2f67b5~mv2.jpeg/v1/fill/w_1100,h_843,al_c,q_85,enc_auto/elmira-jafari-persian-wedding-officiant.jpeg" width="1100" height="843" alt="Elmira Jafari - Nabat Persian Wedding Officiant">
+            <img loading="lazy" src="/assets/images/elmira-jafari-persian-wedding-officiant.jpeg" width="1100" height="843" alt="Elmira Jafari - Nabat Persian Wedding Officiant">
         </div>
         <div class="split-content">
             <h2 class="section-title">Meet Elmira Jafari</h2>
@@ -464,20 +468,20 @@
             
             <div class="gallery-video-item" style="margin-bottom: var(--spacing-sm);">
                 <video controls preload="none" playsinline crossorigin="anonymous" poster="/poster.jpg" aria-label="Wedding Gallery Video">
-                    <source src="https://video.wixstatic.com/video/2f1655_bc992acd0bc049d3bcab323ffde5f2af/720p/mp4/file.mp4" type="video/mp4">
+                    <source src="/assets/videos/file.mp4" type="video/mp4">
                 </video>
             </div>
 
             <div class="gallery-grid carousel-mobile" id="galleryGrid">
-                <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_40ac6f4a3bcb4cbcbefbf56a7adecebc~mv2.png/v1/fill/w_800,h_600,al_c,q_85,enc_auto/persian-wedding-gallery-01.jpg" width="800" height="600" alt="Persian wedding ceremony with Sofreh Aghd setup">
-                <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_d6df235aa03048278e8aa57f4e968e22~mv2.jpg/v1/fill/w_800,h_600,al_c,q_85,enc_auto/persian-wedding-gallery-02.jpg" width="800" height="600" alt="Bride and groom during their bilingual Persian ceremony">
-                <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_a83bfef105bb4699b9e35918741e3d70~mv2.png/v1/fill/w_800,h_600,al_c,q_85,enc_auto/persian-wedding-gallery-03.jpg" width="800" height="600" alt="Close-up of traditional Sofreh Aghd details">
-                <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_1896f5969ce240a5905c130759bd2b48~mv2.png/v1/fill/w_800,h_600,al_c,q_85,enc_auto/persian-wedding-gallery-04.jpg" width="800" height="600" alt="Couple exchanging vows with the officiant">
-                <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_9aabf244752c400999c2ececc33baa02~mv2.jpeg/v1/fill/w_800,h_600,al_c,q_85,enc_auto/persian-wedding-gallery-05.jpg" width="800" height="600" alt="Decorated Persian wedding spread with gold accents">
-                <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_3aa20a7319264d058694340428204b30~mv2.jpeg/v1/fill/w_800,h_600,al_c,q_85,enc_auto/persian-wedding-gallery-06.jpg" width="800" height="600" alt="Bride smiling during her wedding ceremony">
-                <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_9cff4b7a793a4c8caa867a1dead8de79~mv2.jpg/v1/fill/w_800,h_600,al_c,q_85,enc_auto/persian-wedding-gallery-07.jpg" width="800" height="600" alt="Groom with family at a Persian wedding">
-                <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_c3c659929b254d58930d8bd428aedd5f~mv2.png/v1/fill/w_800,h_600,al_c,q_85,enc_auto/persian-wedding-gallery-08.jpg" width="800" height="600" alt="Elegant Persian wedding ceremony moment">
-                <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_14aae106170548ffb260bc4e1954f491~mv2.png/v1/fill/w_800,h_600,al_c,q_85,enc_auto/persian-wedding-gallery-09.jpg" width="800" height="600" alt="Celebrate love at a bilingual Persian wedding">
+                <img loading="lazy" src="/assets/images/persian-wedding-gallery-01.jpg" width="800" height="600" alt="Persian wedding ceremony with Sofreh Aghd setup">
+                <img loading="lazy" src="/assets/images/persian-wedding-gallery-02.jpg" width="800" height="600" alt="Bride and groom during their bilingual Persian ceremony">
+                <img loading="lazy" src="/assets/images/persian-wedding-gallery-03.jpg" width="800" height="600" alt="Close-up of traditional Sofreh Aghd details">
+                <img loading="lazy" src="/assets/images/persian-wedding-gallery-04.jpg" width="800" height="600" alt="Couple exchanging vows with the officiant">
+                <img loading="lazy" src="/assets/images/persian-wedding-gallery-05.jpg" width="800" height="600" alt="Decorated Persian wedding spread with gold accents">
+                <img loading="lazy" src="/assets/images/persian-wedding-gallery-06.jpg" width="800" height="600" alt="Bride smiling during her wedding ceremony">
+                <img loading="lazy" src="/assets/images/persian-wedding-gallery-07.jpg" width="800" height="600" alt="Groom with family at a Persian wedding">
+                <img loading="lazy" src="/assets/images/persian-wedding-gallery-08.jpg" width="800" height="600" alt="Elegant Persian wedding ceremony moment">
+                <img loading="lazy" src="/assets/images/persian-wedding-gallery-09.jpg" width="800" height="600" alt="Celebrate love at a bilingual Persian wedding">
             </div>
         </div>
     </section>
@@ -489,25 +493,25 @@
             <div class="testimonial-grid carousel-mobile">
                 <!-- Testimonial 1 -->
                 <div class="testimonial-card">
-                    <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_69c2e032bb1540e1bc3b2cea3cb0c880~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_auto/roxanna-sam-wedding.jpg" width="400" height="400" alt="Roxanna and Sam Wedding">
+                    <img loading="lazy" src="/assets/images/roxanna-sam-wedding.jpg" width="400" height="400" alt="Roxanna and Sam Wedding">
                     <h3>Roxanna & Sam</h3>
                     <p>"Elmira is a wonderful officiant. Professional, thoughtful, and a true pleasure. She gave us full control over the script with helpful guidance. She delivered everything exactly as agreed, with grace and warmth. Fluent in Farsi and English."</p>
                 </div>
                 <!-- Testimonial 2 -->
                 <div class="testimonial-card">
-                    <img loading="lazy" src="https://static.wixstatic.com/media/f61af8_82e45530c75e462f9964bcab7aaede5f~mv2_d_4202_2791_s_4_2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_auto/sara-amen-wedding.jpg" width="400" height="400" alt="Sara and Amen Wedding">
+                    <img loading="lazy" src="/assets/images/sara-amen-wedding.jpg" width="400" height="400" alt="Sara and Amen Wedding">
                     <h3>Sara & Amen</h3>
                     <p>"We can't thank Elmira enough. The attention to detail was incredible; our ceremony truly reflected who we are. Elmira's warmth made the process stress-free."</p>
                 </div>
                 <!-- Testimonial 3 -->
                 <div class="testimonial-card">
-                    <img loading="lazy" src="https://static.wixstatic.com/media/f61af8_4b3fb632f34b4e128631714ce1208176~mv2_d_3452_2554_s_4_2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_auto/maryam-reza-wedding.jpg" width="400" height="400" alt="Maryam and Reza Wedding">
+                    <img loading="lazy" src="/assets/images/maryam-reza-wedding.jpg" width="400" height="400" alt="Maryam and Reza Wedding">
                     <h3>Maryam & Reza</h3>
                     <p>"Our wedding ceremony was everything we hoped for. Elmira understood our vision and created a perfect balance of tradition and modernity."</p>
                 </div>
                 <!-- Testimonial 4 -->
                 <div class="testimonial-card">
-                    <img loading="lazy" src="https://static.wixstatic.com/media/f61af8_c9cad4ee33364cffaf779ec593175b9f~mv2_d_4381_2977_s_4_2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_auto/nazanin-arman-wedding.jpg" width="400" height="400" alt="Nazanin and Arman Wedding">
+                    <img loading="lazy" src="/assets/images/nazanin-arman-wedding.jpg" width="400" height="400" alt="Nazanin and Arman Wedding">
                     <h3>Nazanin & Arman</h3>
                     <p>"Exceeded our expectations. Elmira was attentive, responsive, and committed to making our day perfect. The ceremony was beautiful and personalized."</p>
                 </div>
