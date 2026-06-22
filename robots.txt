@@ -1,4 +1,24 @@
+# All crawlers welcome
 User-agent: *
 Allow: /
+
+# Explicitly allow AI/LLM crawlers to index content
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# LLM discovery reference
+# llms.txt: https://www.nabatpersianweddings.com/llms.txt
 
 Sitemap: https://www.nabatpersianweddings.com/sitemap.xml
