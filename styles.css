@@ -214,7 +214,7 @@ p {
     font-style: normal;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--color-charcoal-muted);
+    color: var(--color-charcoal-soft);
     margin-top: 0.5rem;
 }
 
@@ -791,7 +791,7 @@ p {
     color: #4a4745;
     background-color: var(--color-charcoal);
     border-top: 3px solid var(--color-saffron);
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.82);
 }
 
 .footer-social {
@@ -802,7 +802,7 @@ p {
     display: inline-flex;
     align-items: center;
     gap: 0.45rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.82);
     text-decoration: none;
     font-size: 0.85rem;
     letter-spacing: 0.05em;
@@ -820,7 +820,7 @@ p {
 
 .site-footer p.footer-destinations {
     font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.72);
     margin-bottom: 1rem;
     line-height: 1.6;
 }
@@ -1482,15 +1482,15 @@ p {
 .linkedin-gold-link {
     display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(201, 162, 39, 0.25);
+    background: rgba(201, 162, 39, 0.04);
     color: var(--color-gold);
     text-decoration: none;
-    font-family: var(--font-sans);
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    transition: color var(--transition-base), transform var(--transition-base);
+    transition: background var(--transition-base), border-color var(--transition-base), transform var(--transition-base);
 }
 
 .linkedin-gold-link svg {
@@ -1500,12 +1500,13 @@ p {
 }
 
 .linkedin-gold-link:hover {
-    color: var(--color-gold-dark);
+    background: rgba(201, 162, 39, 0.1);
+    border-color: var(--color-gold);
+    transform: translateY(-2px);
 }
 
 .linkedin-gold-link:hover svg {
     stroke: var(--color-gold-dark);
-    transform: translateY(-2px);
 }
 
 
