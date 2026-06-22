@@ -226,14 +226,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Scroll progress indicator
+    // Scroll progress indicator and vertical diamond timeline
     const scrollProgress = document.getElementById('scrollProgress');
-    if (scrollProgress) {
+    const timelineDiamond = document.getElementById('timelineDiamond');
+    if (scrollProgress || timelineDiamond) {
         const updateProgress = () => {
             const scrollTop = window.scrollY;
             const docHeight = document.documentElement.scrollHeight - window.innerHeight;
             const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-            scrollProgress.style.width = pct + '%';
+            
+            if (scrollProgress) {
+                scrollProgress.style.width = pct + '%';
+            }
+            if (timelineDiamond) {
+                // JS fallback for browsers that don't support native CSS scroll-driven animations
+                if (!CSS.supports('animation-timeline: scroll()')) {
+                    timelineDiamond.style.top = pct + '%';
+                }
+            }
         };
         window.addEventListener('scroll', updateProgress, { passive: true });
         updateProgress();
