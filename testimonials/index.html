@@ -139,6 +139,9 @@
 </head>
 <body>
 
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
     <!-- Header / Navigation -->
     <header class="site-header fade-in">
         <div class="logo-text">Nabat Persian Weddings</div>
@@ -169,10 +172,12 @@
         <div class="hero-overlay"></div>
         <div class="hero-content fade-in-up">
             <h1>Nabat Persian Weddings</h1>
+            <span class="hero-divider" aria-hidden="true"></span>
             <p class="subtitle">Weaving sweet beginnings with poetry, warmth, and love.</p>
             <p class="location-text">Proudly local to Northern Virginia &amp; the DMV area, serving Washington D.C., Maryland, New York, and select destinations worldwide.</p>
             <a href="/contact" class="btn-outline">Inquire Now</a>
         </div>
+        <div class="scroll-hint" aria-hidden="true">Scroll</div>
     </section>
 
     <!-- Meaning of Nabat -->
@@ -315,16 +320,16 @@
                 </video>
             </div>
 
-            <div class="gallery-grid carousel-mobile">
-                <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_40ac6f4a3bcb4cbcbefbf56a7adecebc~mv2.png/v1/fill/w_800,h_600,al_c,q_85,enc_auto/persian-wedding-gallery-01.jpg" width="800" height="600" alt="Nabat Persian Wedding Gallery">
-                <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_d6df235aa03048278e8aa57f4e968e22~mv2.jpg/v1/fill/w_800,h_600,al_c,q_85,enc_auto/persian-wedding-gallery-02.jpg" width="800" height="600" alt="Nabat Persian Wedding Gallery">
-                <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_a83bfef105bb4699b9e35918741e3d70~mv2.png/v1/fill/w_800,h_600,al_c,q_85,enc_auto/persian-wedding-gallery-03.jpg" width="800" height="600" alt="Nabat Persian Wedding Gallery">
-                <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_1896f5969ce240a5905c130759bd2b48~mv2.png/v1/fill/w_800,h_600,al_c,q_85,enc_auto/persian-wedding-gallery-04.jpg" width="800" height="600" alt="Nabat Persian Wedding Gallery">
-                <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_9aabf244752c400999c2ececc33baa02~mv2.jpeg/v1/fill/w_800,h_600,al_c,q_85,enc_auto/persian-wedding-gallery-05.jpg" width="800" height="600" alt="Nabat Persian Wedding Gallery">
-                <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_3aa20a7319264d058694340428204b30~mv2.jpeg/v1/fill/w_800,h_600,al_c,q_85,enc_auto/persian-wedding-gallery-06.jpg" width="800" height="600" alt="Nabat Persian Wedding Gallery">
-                <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_9cff4b7a793a4c8caa867a1dead8de79~mv2.jpg/v1/fill/w_800,h_600,al_c,q_85,enc_auto/persian-wedding-gallery-07.jpg" width="800" height="600" alt="Nabat Persian Wedding Gallery">
-                <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_c3c659929b254d58930d8bd428aedd5f~mv2.png/v1/fill/w_800,h_600,al_c,q_85,enc_auto/persian-wedding-gallery-08.jpg" width="800" height="600" alt="Nabat Persian Wedding Gallery">
-                <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_14aae106170548ffb260bc4e1954f491~mv2.png/v1/fill/w_800,h_600,al_c,q_85,enc_auto/persian-wedding-gallery-09.jpg" width="800" height="600" alt="Nabat Persian Wedding Gallery">
+            <div class="gallery-grid carousel-mobile" id="galleryGrid">
+                <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_40ac6f4a3bcb4cbcbefbf56a7adecebc~mv2.png/v1/fill/w_800,h_600,al_c,q_85,enc_auto/persian-wedding-gallery-01.jpg" width="800" height="600" alt="Persian wedding ceremony with Sofreh Aghd setup">
+                <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_d6df235aa03048278e8aa57f4e968e22~mv2.jpg/v1/fill/w_800,h_600,al_c,q_85,enc_auto/persian-wedding-gallery-02.jpg" width="800" height="600" alt="Bride and groom during their bilingual Persian ceremony">
+                <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_a83bfef105bb4699b9e35918741e3d70~mv2.png/v1/fill/w_800,h_600,al_c,q_85,enc_auto/persian-wedding-gallery-03.jpg" width="800" height="600" alt="Close-up of traditional Sofreh Aghd details">
+                <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_1896f5969ce240a5905c130759bd2b48~mv2.png/v1/fill/w_800,h_600,al_c,q_85,enc_auto/persian-wedding-gallery-04.jpg" width="800" height="600" alt="Couple exchanging vows with the officiant">
+                <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_9aabf244752c400999c2ececc33baa02~mv2.jpeg/v1/fill/w_800,h_600,al_c,q_85,enc_auto/persian-wedding-gallery-05.jpg" width="800" height="600" alt="Decorated Persian wedding spread with gold accents">
+                <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_3aa20a7319264d058694340428204b30~mv2.jpeg/v1/fill/w_800,h_600,al_c,q_85,enc_auto/persian-wedding-gallery-06.jpg" width="800" height="600" alt="Bride smiling during her wedding ceremony">
+                <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_9cff4b7a793a4c8caa867a1dead8de79~mv2.jpg/v1/fill/w_800,h_600,al_c,q_85,enc_auto/persian-wedding-gallery-07.jpg" width="800" height="600" alt="Groom with family at a Persian wedding">
+                <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_c3c659929b254d58930d8bd428aedd5f~mv2.png/v1/fill/w_800,h_600,al_c,q_85,enc_auto/persian-wedding-gallery-08.jpg" width="800" height="600" alt="Elegant Persian wedding ceremony moment">
+                <img loading="lazy" src="https://static.wixstatic.com/media/2f1655_14aae106170548ffb260bc4e1954f491~mv2.png/v1/fill/w_800,h_600,al_c,q_85,enc_auto/persian-wedding-gallery-09.jpg" width="800" height="600" alt="Celebrate love at a bilingual Persian wedding">
             </div>
         </div>
     </section>
@@ -463,6 +468,18 @@
   <p>&copy; 2026 Nabat Persian Weddings. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</button>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close image viewer">&times;</button>
+        <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous image">&lsaquo;</button>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="">
+        <button class="lightbox-nav next" id="lightboxNext" aria-label="Next image">&rsaquo;</button>
+        <span class="lightbox-counter" id="lightboxCounter"></span>
+    </div>
 
     <script src="/script.js"></script>
 </body>
