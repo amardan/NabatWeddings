@@ -173,26 +173,6 @@ h2.section-title {
     display: inline-block;
 }
 
-/* Ornamental gold divider for section titles — small diamond motif */
-h2.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -12px;
-    left: 50%;
-    transform: translateX(-50%) rotate(45deg);
-    width: 8px;
-    height: 8px;
-    background: var(--gradient-saffron);
-    transition: width var(--transition-slow), height var(--transition-slow);
-    box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.12);
-}
-
-h2.section-title:hover::after {
-    width: 12px;
-    height: 12px;
-    box-shadow: 0 0 0 6px rgba(201, 162, 39, 0.15);
-}
-
 h3 {
     font-size: 1.5rem;
     letter-spacing: 0.02em;
