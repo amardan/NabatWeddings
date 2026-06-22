@@ -1472,4 +1472,40 @@ p {
     }
 }
 
+/* ==========================================================================
+   LinkedIn Gold Link (About Section)
+   ========================================================================== */
+.about-social {
+    margin-top: 1.5rem;
+}
+
+.linkedin-gold-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--color-gold);
+    text-decoration: none;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color var(--transition-base), transform var(--transition-base);
+}
+
+.linkedin-gold-link svg {
+    stroke: var(--color-gold);
+    fill: none;
+    transition: transform var(--transition-base), stroke var(--transition-base);
+}
+
+.linkedin-gold-link:hover {
+    color: var(--color-gold-dark);
+}
+
+.linkedin-gold-link:hover svg {
+    stroke: var(--color-gold-dark);
+    transform: translateY(-2px);
+}
+
 
