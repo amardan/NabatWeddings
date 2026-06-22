@@ -1,57 +1,93 @@
 /*
-  Nabat Persian Weddings - Luxury Stylesheet
+  Nabat Persian Weddings — Luxury Stylesheet
+  Palette inspired by the Sofreh Aghd:
+    Pomegranate, Saffron Gold, Terracotta, Pistachio, Rose
+  Typography: Playfair Display (display), Cormorant Garamond (serif body), Montserrat (sans)
 */
 
 :root {
     /* Neutral ramp */
-    --color-ivory: #FCFAF6;
-    --color-cream: #F5EFEB;
-    --color-charcoal: #2A2725;
-    --color-blush: #EEDDDC;
+    --color-ivory: #FBF8F3;
+    --color-cream: #F3EDE3;
+    --color-charcoal: #211E1B;
+    --color-blush: #F6E7E2;
 
-    /* Gold accent ramp */
-    --color-gold: #D4AF37;
-    --color-gold-light: #E6C868;
-    --color-gold-dark: #B5952F;
+    /* Pomegranate accent ramp (primary brand) */
+    --color-pomegranate: #8B1E3F;
+    --color-pomegranate-light: #A93554;
+    --color-pomegranate-dark: #6B1430;
+
+    /* Saffron gold accent ramp */
+    --color-saffron: #C9A227;
+    --color-saffron-light: #E0BC44;
+    --color-saffron-dark: #A88416;
+
+    /* Terracotta accent ramp */
+    --color-terracotta: #C8553D;
+    --color-terracotta-light: #D97156;
+    --color-terracotta-dark: #A2432F;
+
+    /* Pistachio (secondary) */
+    --color-pistachio: #7A8B5A;
+    --color-pistachio-light: #93A472;
+    --color-pistachio-dark: #5F6E45;
+
+    /* Rose accent */
+    --color-rose: #E89B8E;
 
     /* Semantic accents */
-    --color-success: #6B8E5A;
-    --color-warning: #C9A24B;
-    --color-error: #B5483F;
+    --color-success: #7A8B5A;
+    --color-warning: #C9A227;
+    --color-error: #A2432F;
+
+    /* Aliases for backward compatibility with older markup */
+    --color-gold: var(--color-saffron);
+    --color-gold-light: var(--color-saffron-light);
+    --color-gold-dark: var(--color-saffron-dark);
 
     /* Functional shades */
-    --color-charcoal-soft: rgba(42, 39, 37, 0.7);
-    --color-charcoal-muted: rgba(42, 39, 37, 0.55);
-    --color-line: rgba(42, 39, 37, 0.1);
-    --color-line-soft: rgba(42, 39, 37, 0.05);
+    --color-charcoal-soft: rgba(33, 30, 27, 0.72);
+    --color-charcoal-muted: rgba(33, 30, 27, 0.56);
+    --color-line: rgba(33, 30, 27, 0.1);
+    --color-line-soft: rgba(33, 30, 27, 0.05);
 
+    /* Typography */
+    --font-display: 'Playfair Display', serif;
     --font-serif: 'Cormorant Garamond', serif;
     --font-sans: 'Montserrat', sans-serif;
 
+    /* Spacing — 8px base */
     --spacing-xs: 1rem;
     --spacing-sm: 2rem;
     --spacing-md: 3rem;
     --spacing-lg: 5rem;
     --spacing-xl: 8rem;
 
+    /* Radii */
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 16px;
     --radius-full: 50px;
 
-    --shadow-sm: 0 4px 12px rgba(42, 39, 37, 0.04);
-    --shadow-md: 0 12px 30px rgba(42, 39, 37, 0.06);
-    --shadow-lg: 0 24px 50px rgba(42, 39, 37, 0.10);
-    --shadow-gold: 0 12px 40px rgba(212, 175, 55, 0.25);
+    /* Shadows */
+    --shadow-sm: 0 4px 14px rgba(33, 30, 27, 0.05);
+    --shadow-md: 0 14px 34px rgba(33, 30, 27, 0.08);
+    --shadow-lg: 0 28px 56px rgba(33, 30, 27, 0.12);
+    --shadow-gold: 0 14px 44px rgba(201, 162, 39, 0.28);
+    --shadow-pomegranate: 0 14px 44px rgba(139, 30, 63, 0.30);
 
+    /* Transitions */
     --transition-slow: 0.8s cubic-bezier(0.25, 1, 0.5, 1);
     --transition-base: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+
+    /* Gradients */
+    --gradient-saffron: linear-gradient(135deg, var(--color-saffron-light), var(--color-saffron));
+    --gradient-pomegranate: linear-gradient(135deg, var(--color-pomegranate-light), var(--color-pomegranate-dark));
 }
 
-
-/* Global focus-visible for accessibility */
+/* Focus-visible for accessibility */
 *:focus-visible {
-    outline: 2px solid var(--color-gold);
+    outline: 2px solid var(--color-saffron);
     outline-offset: 4px;
 }
 
@@ -81,12 +117,25 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Subtle Persian-inspired texture overlay */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.025;
+    background-image:
+        radial-gradient(circle at 20% 30%, var(--color-saffron) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, var(--color-pomegranate) 0%, transparent 40%);
+}
+
 a {
     transition: color var(--transition-base);
 }
 
 ::selection {
-    background: var(--color-gold);
+    background: var(--color-saffron);
     color: var(--color-charcoal);
 }
 
@@ -97,66 +146,69 @@ a {
     left: 0;
     width: 0%;
     height: 2px;
-    background: linear-gradient(90deg, var(--color-gold-light), var(--color-gold));
+    background: linear-gradient(90deg, var(--color-saffron-light), var(--color-saffron), var(--color-pomegranate));
     z-index: 200;
     transition: width 0.1s linear;
 }
 
 /* Typography */
 h1, h2, h3, .logo-text {
-    font-family: var(--font-serif);
+    font-family: var(--font-display);
     font-weight: 400;
 }
 
 h1 {
-    font-size: clamp(3rem, 6vw, 6rem);
-    letter-spacing: 0.1em;
+    font-size: clamp(2.8rem, 6vw, 5.8rem);
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     margin-bottom: var(--spacing-sm);
     line-height: 1.1;
 }
 
 h2.section-title {
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    letter-spacing: 0.05em;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    letter-spacing: 0.02em;
     margin-bottom: var(--spacing-md);
     position: relative;
     display: inline-block;
 }
 
-/* Elegant underline for section titles */
+/* Ornamental gold divider for section titles — small diamond motif */
 h2.section-title::after {
     content: '';
     position: absolute;
-    bottom: -10px;
+    bottom: -12px;
     left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 1px;
-    background-color: var(--color-gold);
-    transition: width var(--transition-slow);
+    transform: translateX(-50%) rotate(45deg);
+    width: 8px;
+    height: 8px;
+    background: var(--gradient-saffron);
+    transition: width var(--transition-slow), height var(--transition-slow);
+    box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.12);
 }
 
 h2.section-title:hover::after {
-    width: 80px;
+    width: 12px;
+    height: 12px;
+    box-shadow: 0 0 0 6px rgba(201, 162, 39, 0.15);
 }
 
 h3 {
     font-size: 1.5rem;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.02em;
     margin-bottom: var(--spacing-xs);
 }
 
 p {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     margin-bottom: var(--spacing-sm);
 }
 
 .subtitle {
     font-family: var(--font-serif);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-style: italic;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
     margin-bottom: var(--spacing-sm);
 }
 
@@ -164,13 +216,13 @@ p {
     color: var(--color-charcoal-soft);
 }
 
-/* Poetry quote styling (rendered when present in markup) */
+/* Decorative ornament — a tiny Persian-inspired boteh/leaf divider */
 .poetry-quote {
     font-family: var(--font-serif);
-    font-size: 1.5rem;
+    font-size: 1.45rem;
     font-style: italic;
-    color: var(--color-gold-dark);
-    border-left: 2px solid var(--color-gold);
+    color: var(--color-pomegranate);
+    border-left: 2px solid var(--color-saffron);
     padding-left: var(--spacing-sm);
     margin-top: var(--spacing-md);
     text-align: left;
@@ -189,6 +241,7 @@ p {
 /* Layout Utilities */
 .section-padding {
     padding: var(--spacing-xl) 5%;
+    position: relative;
 }
 
 .container {
@@ -225,17 +278,17 @@ p {
     z-index: 100;
     transition: all var(--transition-base);
 
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(33, 30, 27, 0.45);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     border-radius: var(--radius-full);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .site-header.scrolled {
-    background: rgba(252, 250, 246, 0.95);
-    border-color: rgba(0, 0, 0, 0.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    background: rgba(251, 248, 243, 0.96);
+    border-color: rgba(33, 30, 27, 0.06);
+    box-shadow: 0 12px 32px rgba(33, 30, 27, 0.07);
 }
 
 .site-header.scrolled .logo-text,
@@ -245,10 +298,11 @@ p {
 
 .logo-text {
     font-size: 1.5rem;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: #fff;
     transition: color var(--transition-base);
+    font-weight: 500;
 }
 
 .desktop-nav {
@@ -260,8 +314,8 @@ p {
     color: #fff;
     text-decoration: none;
     margin-left: 1.5rem;
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     transition: color var(--transition-base), opacity var(--transition-base);
     position: relative;
@@ -274,7 +328,7 @@ p {
     bottom: -6px;
     width: 0;
     height: 1px;
-    background: var(--color-gold);
+    background: var(--color-saffron);
     transition: width var(--transition-base);
 }
 
@@ -283,12 +337,12 @@ p {
 }
 
 .desktop-nav a:hover {
-    color: var(--color-gold) !important;
+    color: var(--color-saffron) !important;
     opacity: 1 !important;
 }
 
 .desktop-nav a.active {
-    color: var(--color-gold) !important;
+    color: var(--color-saffron) !important;
     opacity: 1 !important;
     font-weight: 500;
 }
@@ -354,12 +408,9 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        180deg,
-        rgba(42, 39, 37, 0.55) 0%,
-        rgba(42, 39, 37, 0.35) 40%,
-        rgba(42, 39, 37, 0.65) 100%
-    );
+    background:
+        radial-gradient(ellipse at center, rgba(33, 30, 27, 0.35) 0%, rgba(33, 30, 27, 0.7) 100%),
+        linear-gradient(180deg, rgba(33, 30, 27, 0.4) 0%, rgba(33, 30, 27, 0.25) 40%, rgba(33, 30, 27, 0.65) 100%);
     z-index: -1;
 }
 
@@ -367,22 +418,40 @@ p {
     color: #fff;
     max-width: 900px;
     padding: 0 5%;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
 .hero-content .location-text {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.78);
     max-width: 620px;
     margin: 0 auto var(--spacing-sm);
 }
 
 .hero-divider {
     display: block;
-    width: 60px;
+    width: 80px;
     height: 1px;
-    background: var(--color-gold);
+    background: linear-gradient(90deg, transparent, var(--color-saffron), transparent);
     margin: var(--spacing-sm) auto;
+    position: relative;
+}
+
+/* Small diamond ornament on the hero divider */
+.hero-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 6px;
+    height: 6px;
+    background: var(--color-saffron);
 }
 
 .scroll-hint {
@@ -390,9 +459,9 @@ p {
     bottom: 2.5rem;
     left: 50%;
     transform: translateX(-50%);
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.7rem;
-    letter-spacing: 0.25em;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
     text-transform: uppercase;
     z-index: 2;
     animation: scrollHintBob 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
@@ -403,21 +472,21 @@ p {
     display: block;
     width: 1px;
     height: 30px;
-    background: rgba(255, 255, 255, 0.4);
+    background: linear-gradient(180deg, var(--color-saffron), transparent);
     margin: 0.6rem auto 0;
 }
 
 @keyframes scrollHintBob {
-    0%, 100% { transform: translate(-50%, 0); opacity: 0.7; }
-    50% { transform: translate(-50%, 8px); opacity: 0.4; }
+    0%, 100% { transform: translate(-50%, 0); opacity: 0.65; }
+    50% { transform: translate(-50%, 8px); opacity: 0.35; }
 }
 
 /* Buttons */
 .btn-primary, .btn-outline {
     display: inline-block;
     padding: 1rem 2.5rem;
-    font-size: 0.9rem;
-    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     text-decoration: none;
     transition: all var(--transition-base);
@@ -445,19 +514,18 @@ p {
 }
 
 .btn-primary {
-    background-color: var(--color-gold);
+    background: var(--gradient-pomegranate);
     color: #fff !important;
-    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.25);
+    box-shadow: var(--shadow-pomegranate);
 }
 
 .btn-primary:hover {
-    background-color: var(--color-gold-dark);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-gold);
+    box-shadow: 0 18px 50px rgba(139, 30, 63, 0.4);
 }
 
 .btn-outline {
-    border: 1px solid #fff;
+    border: 1px solid rgba(255, 255, 255, 0.7);
     color: #fff;
     background: transparent;
     margin-top: var(--spacing-sm);
@@ -466,6 +534,7 @@ p {
 .btn-outline:hover {
     background-color: #fff;
     color: var(--color-charcoal);
+    border-color: #fff;
     transform: translateY(-2px);
 }
 
@@ -474,11 +543,11 @@ p {
 }
 
 .site-header.scrolled .btn-primary {
-    background-color: var(--color-charcoal);
+    background: var(--color-charcoal);
 }
 
 .site-header.scrolled .btn-primary:hover {
-    background-color: var(--color-gold);
+    background: var(--color-pomegranate);
 }
 
 /* Split Layout */
@@ -517,13 +586,33 @@ p {
     box-shadow: var(--shadow-lg);
 }
 
+/* Decorative corner accent on split images */
+.split-image::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    right: -12px;
+    width: 80px;
+    height: 80px;
+    border-right: 2px solid var(--color-saffron);
+    border-bottom: 2px solid var(--color-saffron);
+    border-radius: 0 0 var(--radius-md) 0;
+    opacity: 0.5;
+    transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.split-image:hover::after {
+    opacity: 0.9;
+    transform: translate(4px, 4px);
+}
+
 /* Map Container */
 .abstract-map {
     width: 100%;
     padding-bottom: 100%;
     background-color: var(--color-cream);
     position: relative;
-    border: 1px solid rgba(42, 39, 37, 0.1);
+    border: 1px solid rgba(33, 30, 27, 0.1);
     border-radius: var(--radius-md);
     overflow: hidden;
 }
@@ -532,7 +621,7 @@ p {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+    background: radial-gradient(circle at 50% 50%, rgba(201, 162, 39, 0.06) 0%, transparent 70%);
     z-index: 1;
 }
 
@@ -572,7 +661,7 @@ p {
 }
 
 .services-list li:hover {
-    padding-left: 0.5rem;
+    padding-left: 0.75rem;
 }
 
 .services-list li h3 {
@@ -580,7 +669,7 @@ p {
 }
 
 .services-list li:hover h3 {
-    color: var(--color-gold);
+    color: var(--color-pomegranate);
 }
 
 .services-list li:last-child {
@@ -627,6 +716,7 @@ p {
 
 .testimonial-card:hover img {
     transform: scale(1.04);
+    border-color: var(--color-saffron-light);
 }
 
 .testimonial-card p {
@@ -641,7 +731,24 @@ p {
 }
 
 .testimonial-card:hover h3 {
-    color: var(--color-gold-dark);
+    color: var(--color-pomegranate);
+}
+
+/* Decorative quotation mark on testimonials */
+.testimonial-card::before {
+    content: '\201C';
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--color-saffron);
+    opacity: 0.15;
+    display: block;
+    margin-bottom: -1.5rem;
+    transition: opacity var(--transition-base);
+}
+
+.testimonial-card:hover::before {
+    opacity: 0.3;
 }
 
 /* Form */
@@ -657,8 +764,8 @@ p {
 .luxury-form label {
     display: block;
     margin-bottom: 0.5rem;
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--color-charcoal);
     text-align: left;
@@ -670,7 +777,7 @@ p {
     width: 100%;
     padding: 1.2rem;
     background-color: rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(42, 39, 37, 0.2);
+    border: 1px solid rgba(33, 30, 27, 0.18);
     font-family: var(--font-sans);
     font-size: 1rem;
     color: var(--color-charcoal);
@@ -686,9 +793,9 @@ p {
 .luxury-form input:focus,
 .luxury-form textarea:focus {
     outline: none;
-    border-color: var(--color-gold);
+    border-color: var(--color-saffron);
     background-color: #fff;
-    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.12);
+    box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.12);
 }
 
 .full-width {
@@ -702,8 +809,9 @@ p {
     padding: var(--spacing-md) var(--spacing-sm);
     font-size: 0.8rem;
     color: #4a4745;
-    background-color: var(--color-cream);
-    border-top: 1px solid rgba(42, 39, 37, 0.05);
+    background-color: var(--color-charcoal);
+    border-top: 3px solid var(--color-saffron);
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .footer-social {
@@ -714,7 +822,7 @@ p {
     display: inline-flex;
     align-items: center;
     gap: 0.45rem;
-    color: #6b6765;
+    color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
     font-size: 0.85rem;
     letter-spacing: 0.05em;
@@ -722,7 +830,7 @@ p {
 }
 
 .footer-instagram-link:hover {
-    color: var(--color-gold);
+    color: var(--color-saffron);
 }
 
 .footer-instagram-link svg {
@@ -732,7 +840,7 @@ p {
 
 .site-footer p.footer-destinations {
     font-size: 0.75rem;
-    color: #555250;
+    color: rgba(255, 255, 255, 0.4);
     margin-bottom: 1rem;
     line-height: 1.6;
 }
@@ -781,7 +889,7 @@ p {
 .lightbox {
     position: fixed;
     inset: 0;
-    background: rgba(20, 18, 16, 0.92);
+    background: rgba(20, 18, 16, 0.93);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -831,7 +939,7 @@ p {
 
 .lightbox-close:hover,
 .lightbox-nav:hover {
-    background: rgba(212, 175, 55, 0.35);
+    background: rgba(201, 162, 39, 0.35);
     transform: scale(1.06);
 }
 
@@ -846,7 +954,7 @@ p {
     bottom: 1.5rem;
     left: 50%;
     transform: translateX(-50%);
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.65);
     font-size: 0.8rem;
     letter-spacing: 0.15em;
 }
@@ -878,7 +986,7 @@ p {
     left: 0;
     width: 100%;
     height: 3px;
-    background: linear-gradient(90deg, var(--color-gold-light), var(--color-gold));
+    background: linear-gradient(90deg, var(--color-saffron-light), var(--color-saffron));
     transform: scaleX(0);
     transform-origin: left;
     transition: transform var(--transition-base);
@@ -895,17 +1003,17 @@ p {
 
 .step-number {
     display: inline-block;
-    font-family: var(--font-serif);
+    font-family: var(--font-display);
     font-size: 2.5rem;
-    color: var(--color-gold);
+    color: var(--color-saffron);
     margin-bottom: var(--spacing-xs);
-    border-bottom: 2px solid var(--color-gold);
+    border-bottom: 2px solid var(--color-saffron);
     padding-bottom: 0.5rem;
     transition: color var(--transition-base);
 }
 
 .step-card:hover .step-number {
-    color: var(--color-gold-dark);
+    color: var(--color-pomegranate);
 }
 
 .step-card p {
@@ -966,12 +1074,12 @@ p {
 }
 
 .faq-item[open] {
-    border-bottom: 1px solid var(--color-gold);
+    border-bottom: 1px solid var(--color-saffron);
 }
 
 .faq-item summary {
-    font-family: var(--font-serif);
-    font-size: 1.35rem;
+    font-family: var(--font-display);
+    font-size: 1.3rem;
     color: var(--color-charcoal);
     cursor: pointer;
     list-style: none;
@@ -994,7 +1102,7 @@ p {
     font-family: var(--font-sans);
     font-weight: 300;
     font-size: 1.5rem;
-    color: var(--color-gold);
+    color: var(--color-saffron);
     transition: transform 0.4s ease;
 }
 
@@ -1004,7 +1112,7 @@ p {
 }
 
 .faq-item summary:hover {
-    color: var(--color-gold-dark);
+    color: var(--color-pomegranate);
 }
 
 .faq-content {
@@ -1062,7 +1170,7 @@ p {
 }
 
 .back-to-top:hover {
-    background: var(--color-gold);
+    background: var(--color-pomegranate);
     transform: translateY(-3px);
 }
 
@@ -1104,7 +1212,7 @@ p {
         top: 100%;
         left: 0;
         width: 100%;
-        background: #2A2725 !important;
+        background: #211E1B !important;
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         flex-direction: column;
@@ -1126,9 +1234,9 @@ p {
     }
 
     .site-header.scrolled .desktop-nav {
-        background: #FCFAF6 !important;
-        border-color: rgba(0, 0, 0, 0.05);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        background: #FBF8F3 !important;
+        border-color: rgba(33, 30, 27, 0.06);
+        box-shadow: 0 20px 40px rgba(33, 30, 27, 0.1);
     }
 
     .desktop-nav a {
@@ -1191,4 +1299,5 @@ p {
     .scroll-hint { display: none; }
     .lightbox-close { top: 1rem; right: 1rem; width: 42px; height: 42px; }
     .lightbox-nav { width: 42px; height: 42px; }
+    .split-image::after { display: none; }
 }
