@@ -747,16 +747,16 @@ p {
 /* Form */
 .luxury-form {
     max-width: 600px;
-    margin: var(--spacing-md) auto 0;
+    margin: 1.5rem auto 0;
 }
 
 .form-group {
-    margin-bottom: var(--spacing-xs);
+    margin-bottom: 0.75rem;
 }
 
 .luxury-form label {
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
     font-size: 0.82rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -768,7 +768,7 @@ p {
 .luxury-form input,
 .luxury-form textarea {
     width: 100%;
-    padding: 1.2rem;
+    padding: 0.9rem 1.2rem;
     background-color: rgba(255, 255, 255, 0.6);
     border: 1px solid rgba(33, 30, 27, 0.18);
     font-family: var(--font-sans);
@@ -1750,7 +1750,7 @@ p {
 .contact-info {
     font-family: var(--font-serif);
     font-size: 1.3rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.35rem;
     letter-spacing: 0.02em;
 }
 
