@@ -1168,6 +1168,75 @@ p {
 }
 
 /* Responsive */
+/* ==========================================================================
+   Tablet breakpoint (769px – 1024px)
+   ========================================================================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .section-padding {
+        padding: 4rem 6%;
+    }
+
+    .split-layout,
+    .split-layout.reverse {
+        gap: var(--spacing-sm);
+    }
+
+    .split-image,
+    .split-content {
+        min-width: 260px;
+    }
+
+    .gallery-grid.mosaic {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 220px;
+    }
+
+    .gallery-grid.mosaic img:nth-child(1) {
+        grid-row: span 2;
+    }
+
+    .gallery-grid.mosaic img:nth-child(4),
+    .gallery-grid.mosaic img:nth-child(6),
+    .gallery-grid.mosaic img:nth-child(9) {
+        grid-column: span 2;
+        grid-row: auto;
+    }
+
+    .gallery-grid.mosaic img:nth-child(6) {
+        object-position: right center;
+    }
+
+    .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .site-footer .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .site-footer .footer-col:first-child {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+
+    .section-divider::before,
+    .section-divider::after {
+        max-width: 120px;
+    }
+
+    h1 {
+        font-size: clamp(2.5rem, 6vw, 3.5rem);
+    }
+
+    .section-title {
+        font-size: clamp(1.8rem, 4vw, 2.4rem);
+    }
+}
+
+/* ==========================================================================
+   Mobile breakpoint (max 768px)
+   ========================================================================== */
 @media (max-width: 768px) {
     h1 {
         font-size: clamp(2rem, 8vw, 2.8rem) !important;
@@ -1293,6 +1362,90 @@ p {
     .lightbox-close { top: 1rem; right: 1rem; width: 42px; height: 42px; }
     .lightbox-nav { width: 42px; height: 42px; }
     .split-image::after { display: none; }
+}
+
+/* ==========================================================================
+   Small phone breakpoint (max 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+    h1 {
+        font-size: clamp(1.8rem, 9vw, 2.2rem) !important;
+    }
+
+    .hero-tagline {
+        font-size: 0.7rem;
+        letter-spacing: 0.25em;
+    }
+
+    .subtitle {
+        font-size: 1rem !important;
+    }
+
+    .section-title {
+        font-size: 1.6rem !important;
+    }
+
+    .section-padding {
+        padding: 3rem 6% !important;
+    }
+
+    .nabat-ornament::before,
+    .nabat-ornament::after {
+        width: 40px;
+    }
+
+    .section-divider .ornament span {
+        width: 5px;
+        height: 5px;
+    }
+
+    .section-divider .ornament span:nth-child(2) {
+        width: 8px;
+        height: 8px;
+    }
+
+    .contact-info {
+        font-size: 1rem;
+    }
+
+    .footer-brand {
+        font-size: 1.2rem;
+    }
+
+    .site-footer .footer-col h4 {
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        padding: 0.9rem 1.5rem;
+        font-size: 0.85rem;
+    }
+
+    .btn-outline {
+        padding: 0.9rem 1.5rem;
+        font-size: 0.85rem;
+    }
+
+    .luxury-form {
+        padding: 1.5rem !important;
+    }
+
+    .step-card {
+        padding: 2rem 1.25rem !important;
+    }
+
+    .step-card .step-number {
+        font-size: 2.5rem !important;
+    }
+
+    .testimonial-card {
+        padding: 1.5rem !important;
+    }
+
+    .faq-item summary {
+        font-size: 1rem !important;
+        padding: 1.25rem !important;
+    }
 }
 
 /* ==========================================================================
@@ -1663,14 +1816,18 @@ p {
     grid-template-columns: repeat(4, 1fr);
 }
 
-.gallery-grid.mosaic img:nth-child(1),
-.gallery-grid.mosaic img:nth-child(6) {
+.gallery-grid.mosaic img:nth-child(1) {
     grid-row: span 2;
 }
 
 .gallery-grid.mosaic img:nth-child(4),
+.gallery-grid.mosaic img:nth-child(6),
 .gallery-grid.mosaic img:nth-child(9) {
     grid-column: span 2;
+}
+
+.gallery-grid.mosaic img:nth-child(6) {
+    object-position: right center;
 }
 
 @media (max-width: 768px) {
@@ -1759,5 +1916,47 @@ p {
     .section-divider::before,
     .section-divider::after {
         max-width: 80px;
+    }
+}
+
+/* ==========================================================================
+   Map container — abstract map layout
+   ========================================================================== */
+.map-container {
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.abstract-map {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+}
+
+.map-text {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .map-container {
+        min-height: 320px;
+    }
+    .abstract-map {
+        min-height: 320px;
+    }
+    .map-text {
+        bottom: 1rem;
+        left: 1rem;
+    }
+    .map-text h3 {
+        font-size: 1.4rem !important;
     }
 }
