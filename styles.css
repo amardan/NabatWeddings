@@ -94,19 +94,6 @@
 /* Reset & Base */
 html {
     scroll-behavior: smooth;
-    /* Page-to-page scroll snapping */
-    scroll-snap-type: y proximity;
-}
-
-@media (min-width: 768px) {
-    html {
-        scroll-snap-type: y mandatory;
-    }
-}
-
-section, .site-footer {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
 }
 
 section[id] {
@@ -1465,27 +1452,7 @@ p {
     }
 }
 
-/* ==========================================================================
-   Vertical Scroll Snapping (Page-to-Page pagination effect)
-   ========================================================================== */
-@media (min-width: 1024px) {
-    html {
-        scroll-snap-type: y proximity;
-        scroll-behavior: smooth;
-    }
-    
-    section, footer {
-        scroll-snap-align: start;
-    }
-    
-    .hero {
-        scroll-snap-align: start;
-    }
-    
-    .site-footer {
-        scroll-snap-align: end;
-    }
-}
+
 
 /* ==========================================================================
    Scroll-Driven Animations & Visual Reveal Effects
