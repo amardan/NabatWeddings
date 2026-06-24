@@ -4,7 +4,7 @@ import re
 # Define the routes and their specific SEO metadata
 routes = {
     "about": {
-        "title": "Meet Elmira Jafari | Bilingual Farsi & Persian Wedding Officiant",
+        "title": "Meet Elmira Jafari | Bilingual Persian & English Wedding Officiant",
         "description": "Meet Elmira Jafari, an award-nominated journalist and storyteller offering luxury bilingual Farsi/English wedding ceremonies and Sofreh Aghd in DMV and worldwide.",
     },
     "process": {
