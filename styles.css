@@ -607,25 +607,25 @@ p {
 
 .map-text {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    top: 2.5rem;
+    left: 2.5rem;
+    text-align: left;
     z-index: 2;
-    width: 80%;
+    max-width: 55%;
 }
 
 .map-text h3 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
 }
 
 .map-text p.small {
-    font-size: 0.8rem;
-    opacity: 0.6;
-    margin-top: 1rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    color: var(--color-gold);
+    margin-top: 1rem;
 }
 
 /* Services List */
@@ -1923,8 +1923,9 @@ p {
 
 .map-text {
     position: absolute;
-    bottom: 2rem;
+    top: 2rem;
     left: 2rem;
+    bottom: auto;
     z-index: 2;
 }
 
@@ -1936,8 +1937,10 @@ p {
         min-height: 320px;
     }
     .map-text {
-        bottom: 1rem;
-        left: 1rem;
+        top: 1.5rem;
+        left: 1.5rem;
+        bottom: auto;
+        max-width: 80%;
     }
     .map-text h3 {
         font-size: 1.4rem !important;
