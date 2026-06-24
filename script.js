@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '/process': 'process',
         '/experience': 'experience',
         '/gallery': 'gallery',
-        '/testimonials': 'testimonials',
+        '/love-stories': 'testimonials',
         '/faq': 'faq',
         '/contact': 'contact'
     };

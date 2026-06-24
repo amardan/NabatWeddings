@@ -19,7 +19,7 @@ routes = {
         "title": "Gallery - Persian Wedding Photos & Videos | Nabat Persian Weddings",
         "description": "View photos and videos of beautiful Persian wedding ceremonies and Sofreh Aghd officiated by Elmira Jafari.",
     },
-    "testimonials": {
+    "love-stories": {
         "title": "Love Stories & Client Reviews | Nabat Persian Weddings",
         "description": "Read testimonials and client reviews from couples who experienced luxury, bilingual, custom Persian wedding ceremonies with Elmira Jafari.",
     },
