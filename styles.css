@@ -218,6 +218,127 @@ p {
     margin-top: 0.5rem;
 }
 
+/* Bilingual Poetry Layout */
+.bilingual-poetry-container {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-lg);
+    justify-content: center;
+    align-items: stretch;
+    margin-top: var(--spacing-md);
+    text-align: left;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.poetry-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.poetry-column .poetry-quote {
+    margin-top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    line-height: 1.8;
+}
+
+.poetry-column.persian-column {
+    text-align: right;
+}
+
+.poetry-column.persian-column .poetry-quote.farsi-poetry {
+    border-left: none !important;
+    border-right: 2px solid var(--color-saffron) !important;
+    padding-left: 0 !important;
+    padding-right: var(--spacing-sm) !important;
+    text-align: right !important;
+    font-family: 'Noto Nastaliq Urdu', var(--font-serif) !important;
+    font-style: normal !important;
+    font-size: 1.4rem !important;
+    line-height: 2.5 !important;
+    direction: rtl !important;
+}
+
+.poetry-column.persian-column .poetry-quote.farsi-poetry span {
+    text-align: right !important;
+    direction: rtl !important;
+}
+
+.farsi-poetry .gold-word {
+    background-image: linear-gradient(120deg, 
+        var(--color-saffron) 20%, 
+        var(--color-saffron-light) 40%, 
+        #FFF9E6 50%, 
+        var(--color-saffron-light) 60%, 
+        var(--color-saffron) 80%
+    ) !important;
+    background-size: 200% auto !important;
+    background-position: 200% center;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+    animation: goldShine 4s linear infinite !important;
+    display: inline-block !important;
+    font-size: 1.1em !important;
+    font-weight: 700 !important;
+    font-style: normal !important;
+    text-transform: none !important;
+    letter-spacing: inherit !important;
+    margin: 0 0.05em !important;
+    vertical-align: baseline !important;
+}
+
+@keyframes goldShine {
+    0% {
+        background-position: 200% center;
+        filter: drop-shadow(0.5px 0.5px 0px rgba(139, 30, 63, 0.5))
+                drop-shadow(1.5px 1.5px 0px rgba(201, 162, 39, 0.45))
+                drop-shadow(0 2px 4px rgba(201, 162, 39, 0.25));
+    }
+    50% {
+        filter: drop-shadow(0.5px 0.75px 0px rgba(139, 30, 63, 0.6))
+                drop-shadow(1.5px 2px 0px rgba(201, 162, 39, 0.55))
+                drop-shadow(0 6px 14px rgba(255, 220, 100, 0.7));
+    }
+    100% {
+        background-position: 0% center;
+        filter: drop-shadow(0.5px 0.5px 0px rgba(139, 30, 63, 0.5))
+                drop-shadow(1.5px 1.5px 0px rgba(201, 162, 39, 0.45))
+                drop-shadow(0 2px 4px rgba(201, 162, 39, 0.25));
+    }
+}
+
+.poetry-lines {
+    margin: 0;
+    padding: 0;
+    font-style: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    color: inherit;
+}
+
+@media (max-width: 768px) {
+    .bilingual-poetry-container {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        align-items: stretch;
+    }
+    
+    .poetry-column.persian-column .poetry-quote {
+        border-right: 2px solid var(--color-saffron);
+        padding-right: var(--spacing-sm);
+        text-align: right;
+    }
+}
+
 /* Layout Utilities */
 .section-padding {
     padding: var(--spacing-xl) 5%;
