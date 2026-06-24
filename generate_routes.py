@@ -28,7 +28,7 @@ routes = {
         "description": "Find answers to common questions about bilingual wedding ceremonies, traditional Sofreh Aghd, custom vows, travel fees, and more.",
     },
     "contact": {
-        "title": "Inquire & Book a Consultation | Nabat Persian Weddings",
+        "title": "Inquire & Start Your Journey | Nabat Persian Weddings",
         "description": "Connect with Elmira Jafari to book your luxury bilingual Persian wedding officiant. Available in D.C., Maryland, Virginia, California, Florida, and worldwide.",
     }
 }
