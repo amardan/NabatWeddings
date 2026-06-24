@@ -1522,4 +1522,242 @@ p {
     stroke: var(--color-gold-dark);
 }
 
+/* ==========================================================================
+   Hero Tagline — refined gold-accented label
+   ========================================================================== */
+.hero-tagline {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--color-saffron-light);
+    margin-bottom: 0.5rem;
+    opacity: 0.95;
+}
 
+/* ==========================================================================
+   Persian Geometric Section Divider
+   ========================================================================== */
+.section-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem 5%;
+    background: transparent;
+}
+
+.section-divider::before,
+.section-divider::after {
+    content: '';
+    flex: 1;
+    max-width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-line), transparent);
+}
+
+.section-divider .ornament {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    opacity: 0.5;
+}
+
+.section-divider .ornament span {
+    display: block;
+    width: 6px;
+    height: 6px;
+    background: var(--color-saffron);
+    transform: rotate(45deg);
+    transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+.section-divider .ornament span:nth-child(2) {
+    width: 10px;
+    height: 10px;
+    opacity: 0.7;
+}
+
+.section-divider:hover .ornament span {
+    transform: rotate(225deg);
+    opacity: 1;
+}
+
+/* ==========================================================================
+   Contact Info — elegant action elements
+   ========================================================================== */
+.contact-info {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.02em;
+}
+
+.contact-info a {
+    color: var(--color-pomegranate);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--transition-base), color var(--transition-base);
+}
+
+.contact-info a:hover {
+    border-bottom-color: var(--color-saffron);
+    color: var(--color-saffron-dark);
+}
+
+.contact-info::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--color-saffron);
+    vertical-align: middle;
+    margin-right: 0.75rem;
+    opacity: 0.6;
+}
+
+/* ==========================================================================
+   Meaning of Nabat — decorative ornament
+   ========================================================================== */
+.nabat-ornament {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: var(--spacing-md) 0;
+    opacity: 0.4;
+}
+
+.nabat-ornament::before,
+.nabat-ornament::after {
+    content: '';
+    width: 60px;
+    height: 1px;
+    background: var(--color-saffron);
+}
+
+.nabat-ornament .diamond-row {
+    display: flex;
+    gap: 8px;
+}
+
+.nabat-ornament .diamond-row span {
+    display: block;
+    width: 5px;
+    height: 5px;
+    background: var(--color-saffron);
+    transform: rotate(45deg);
+}
+
+.nabat-ornament .diamond-row span:nth-child(2) {
+    width: 8px;
+    height: 8px;
+}
+
+/* ==========================================================================
+   Gallery — mosaic layout for visual rhythm
+   ========================================================================== */
+.gallery-grid.mosaic {
+    grid-auto-rows: 240px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery-grid.mosaic img:nth-child(1),
+.gallery-grid.mosaic img:nth-child(6) {
+    grid-row: span 2;
+}
+
+.gallery-grid.mosaic img:nth-child(4),
+.gallery-grid.mosaic img:nth-child(9) {
+    grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+    .gallery-grid.mosaic {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 220px;
+    }
+    .gallery-grid.mosaic img,
+    .gallery-grid.mosaic img:nth-child(1),
+    .gallery-grid.mosaic img:nth-child(4),
+    .gallery-grid.mosaic img:nth-child(6),
+    .gallery-grid.mosaic img:nth-child(9) {
+        grid-row: auto;
+        grid-column: auto;
+    }
+}
+
+/* ==========================================================================
+   Footer — restructured with columns
+   ========================================================================== */
+.site-footer .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--spacing-md);
+    text-align: left;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.site-footer .footer-col h4 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--color-saffron);
+    margin-bottom: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+.site-footer .footer-col p,
+.site-footer .footer-col a {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+    line-height: 1.8;
+    display: block;
+    transition: color var(--transition-base);
+}
+
+.site-footer .footer-col a:hover {
+    color: var(--color-saffron);
+}
+
+.site-footer .footer-brand {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: #fff;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+}
+
+.site-footer .footer-tagline {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.site-footer .footer-bottom {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .site-footer .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+        text-align: center;
+    }
+    .contact-info {
+        font-size: 1.1rem;
+    }
+    .contact-info::before {
+        display: none;
+    }
+    .section-divider::before,
+    .section-divider::after {
+        max-width: 80px;
+    }
+}
