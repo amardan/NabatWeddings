@@ -863,6 +863,17 @@ p {
     box-shadow: var(--shadow-md);
 }
 
+/* Custom crop coordinates based on native Vision saliency/face mapping */
+.gallery-grid img:nth-child(1) { object-position: 46% 49%; }
+.gallery-grid img:nth-child(2) { object-position: 50% 39%; }
+.gallery-grid img:nth-child(3) { object-position: 48% 53%; }
+.gallery-grid img:nth-child(4) { object-position: 46% 43%; }
+.gallery-grid img:nth-child(5) { object-position: 46% 30%; }
+.gallery-grid img:nth-child(6) { object-position: 73% 23%; }
+.gallery-grid img:nth-child(7) { object-position: 32% 45%; }
+.gallery-grid img:nth-child(8) { object-position: 50% 28%; }
+.gallery-grid img:nth-child(9) { object-position: 47% 35%; }
+
 .gallery-video-item {
     grid-column: 1 / -1;
     height: 500px;
@@ -1204,7 +1215,6 @@ p {
     .gallery-grid.mosaic img:nth-child(6) {
         grid-row: span 2;
         grid-column: auto;
-        object-position: center;
     }
 
     .gallery-grid.mosaic img:nth-child(4),
@@ -1833,7 +1843,6 @@ p {
 
 .gallery-grid.mosaic img:nth-child(6) {
     grid-row: span 2;
-    object-position: center;
 }
 
 @media (max-width: 768px) {
