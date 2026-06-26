@@ -2081,6 +2081,74 @@ p {
     align-self: flex-start;
 }
 
+.locations-overview-card.center-align {
+    text-align: center;
+    align-items: center;
+}
+
+.locations-overview-card.center-align .btn-primary {
+    align-self: center;
+}
+
+/* ==========================================================================
+   Ceremony Styles Section
+   ========================================================================== */
+.ceremony-styles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: 2.5rem;
+}
+
+.style-card {
+    background-color: var(--color-ivory);
+    padding: 3.5rem 2rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-line-soft);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    position: relative;
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.style-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-saffron-light), var(--color-saffron));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-base);
+}
+
+.style-card:hover::before {
+    transform: scaleX(1);
+}
+
+.style-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(201, 162, 39, 0.3);
+}
+
+.style-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    color: var(--color-charcoal);
+    margin-bottom: 1.2rem;
+}
+
+.style-card p {
+    color: var(--color-charcoal);
+    opacity: 0.85;
+    font-size: 1rem;
+    line-height: 1.65;
+    margin: 0;
+}
+
 /* ==========================================================================
    Map container — abstract map layout
    ========================================================================== */
