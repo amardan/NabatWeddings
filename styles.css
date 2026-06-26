@@ -2067,3 +2067,48 @@ p {
         font-size: 1.4rem !important;
     }
 }
+
+/* Return to Home button in header (for location subpages) */
+.header-return-btn {
+    text-decoration: none;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 0.5rem 1.2rem;
+    border-radius: var(--radius-full);
+    transition: all var(--transition-base);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.header-return-btn:hover {
+    background-color: #fff;
+    color: var(--color-charcoal) !important;
+    border-color: #fff;
+    transform: translateY(-1px);
+}
+
+.site-header.scrolled .header-return-btn {
+    color: var(--color-charcoal);
+    border-color: rgba(33, 30, 27, 0.25);
+}
+
+.site-header.scrolled .header-return-btn:hover {
+    background-color: var(--color-charcoal);
+    color: #fff !important;
+    border-color: var(--color-charcoal);
+}
+
+@media (max-width: 480px) {
+    .header-return-btn .btn-text {
+        display: none;
+    }
+    .header-return-btn {
+        padding: 0.5rem;
+    }
+}

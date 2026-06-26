@@ -133,4 +133,37 @@
       <geo:point>25.7617 -80.1918</geo:point>
     </geo:geo>
   </url>
+  <url>
+    <loc>https://www.nabatpersianweddings.com/locations/philadelphia/</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <geo:geo>
+      <geo:placename>Philadelphia, Pennsylvania</geo:placename>
+      <geo:region>US-PA</geo:region>
+      <geo:point>39.9526 -75.1652</geo:point>
+    </geo:geo>
+  </url>
+  <url>
+    <loc>https://www.nabatpersianweddings.com/locations/delaware/</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <geo:geo>
+      <geo:placename>Rehoboth Beach, Delaware</geo:placename>
+      <geo:region>US-DE</geo:region>
+      <geo:point>38.7189 -75.0760</geo:point>
+    </geo:geo>
+  </url>
+  <url>
+    <loc>https://www.nabatpersianweddings.com/locations/canada/</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <geo:geo>
+      <geo:placename>Toronto, Canada</geo:placename>
+      <geo:region>CA-ON</geo:region>
+      <geo:point>43.6532 -79.3832</geo:point>
+    </geo:geo>
+  </url>
 </urlset>
