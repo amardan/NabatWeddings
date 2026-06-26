@@ -41,7 +41,7 @@ def submit_to_indexnow():
     print(f"Found {len(urls)} URLs in sitemap.xml.")
 
     host = "www.nabatpersianweddings.com"
-    key = "7410dff99f15c1b9edc47c360576971a"
+    key = "16aa960c59c842f68f610ee9c4fff643"
     key_location = f"https://{host}/{key}.txt"
 
     payload = {
