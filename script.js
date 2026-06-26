@@ -74,6 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const sectionId = getSectionIdFromPath(href);
             if (sectionId) {
                 link.addEventListener('click', (e) => {
+                    const targetExists = sectionId === 'home' ? !!document.getElementById('home') : !!document.getElementById(sectionId);
+                    if (!targetExists) {
+                        return; // Let standard browser navigation happen
+                    }
                     e.preventDefault();
                     
                     // Close mobile menu if active

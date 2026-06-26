@@ -110,7 +110,9 @@
             target = "/about";
         } else if (path.includes("process") || path.includes("step") || path.includes("service")) {
             target = "/process";
-        } else if (path.includes("experience") || path.includes("map") || path.includes("location")) {
+        } else if (path.includes("locations") || path.includes("location") || path.includes("map")) {
+            target = "/locations";
+        } else if (path.includes("experience")) {
             target = "/experience";
         }
 

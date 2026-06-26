@@ -97,10 +97,24 @@
     <!-- Header -->
     <header class="site-header fade-in">
         <a href="/" style="text-decoration: none;"><div class="logo-text">Nabat Persian Weddings</div></a>
-        <a href="/" class="header-return-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-            <span class="btn-text">Return to Home</span>
-        </a>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-btn" aria-expanded="false" aria-label="Toggle navigation menu" aria-controls="mobile-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <nav id="mobile-nav" class="desktop-nav">
+            <a href="/about">About</a>
+            <a href="/process">Journey</a>
+            <a href="/experience">Ceremony Styles</a>
+            <a href="/locations/">Locations</a>
+            <a href="/gallery">Gallery</a>
+            <a href="/love-stories">Love Stories</a>
+            <a href="/faq">FAQ</a>
+            <a href="/contact">Inquire</a>
+        </nav>
     </header>
 
     <!-- Hero Section -->
@@ -121,9 +135,81 @@
     <!-- Main Content -->
     <section class="section-padding">
         <div class="container">
-            <p class="body-text text-center narrow" style="margin: 0 auto 3rem;">
-                Elmira Jafari is deeply rooted in the DMV area while regularly traveling to serve Persian communities across the United States and beyond. Select a location below to learn more about services in your area.
-            </p>
+            
+            <div class="split-layout reverse" style="margin-bottom: 4rem;">
+                <div class="split-image map-container">
+                    <div class="abstract-map">
+                        <!-- Premium Stylized SVG Map of East Coast DMV Hubs -->
+                        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" class="map-svg" style="position: absolute; top:0; left:0; width:100%; height:100%; opacity:0.9;" aria-label="Stylized map showing D.C., MD, VA area and travel destinations">
+                            <defs>
+                                <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feGaussianBlur stdDeviation="3" result="blur" />
+                                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                </filter>
+                                <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#F3E5AB" />
+                                    <stop offset="50%" stop-color="#D4AF37" />
+                                    <stop offset="100%" stop-color="#AA7C11" />
+                                </linearGradient>
+                                <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                                    <circle cx="2" cy="2" r="0.7" fill="rgba(212, 175, 55, 0.12)" />
+                                </pattern>
+                            </defs>
+                            <rect width="100%" height="100%" fill="url(#grid)" />
+                            <path d="M 60,40 C 50,100 45,160 55,220 C 65,270 80,310 95,360" fill="none" stroke="rgba(212, 175, 55, 0.15)" stroke-width="1.5" stroke-dasharray="6 4" />
+                            <path d="M 330,40 C 310,90 290,140 280,180 C 270,210 285,250 270,300 C 260,330 255,345 250,360" fill="none" stroke="rgba(212, 175, 55, 0.15)" stroke-width="1.5" stroke-dasharray="6 4" />
+                            <path d="M 220,200 Q 260,150 300,110" fill="none" stroke="rgba(212, 175, 55, 0.15)" stroke-width="1.5" stroke-linecap="round" />
+                            <path d="M 220,200 Q 260,150 300,110" fill="none" stroke="url(#goldGradient)" stroke-width="1.5" stroke-dasharray="5 5" stroke-linecap="round">
+                                <animate attributeName="stroke-dashoffset" values="30;0" dur="4s" repeatCount="indefinite" />
+                            </path>
+                            <path d="M 220,200 Q 150,210 80,250" fill="none" stroke="rgba(212, 175, 55, 0.15)" stroke-width="1.5" stroke-linecap="round" />
+                            <path d="M 220,200 Q 150,210 80,250" fill="none" stroke="url(#goldGradient)" stroke-width="1.5" stroke-dasharray="5 5" stroke-linecap="round">
+                                <animate attributeName="stroke-dashoffset" values="30;0" dur="6s" repeatCount="indefinite" />
+                            </path>
+                            <path d="M 220,200 Q 250,250 270,300" fill="none" stroke="rgba(212, 175, 55, 0.15)" stroke-width="1.5" stroke-linecap="round" />
+                            <path d="M 220,200 Q 250,250 270,300" fill="none" stroke="url(#goldGradient)" stroke-width="1.5" stroke-dasharray="5 5" stroke-linecap="round">
+                                <animate attributeName="stroke-dashoffset" values="30;0" dur="5s" repeatCount="indefinite" />
+                            </path>
+                            <circle cx="220" cy="200" r="20" fill="rgba(212, 175, 55, 0.08)" stroke="rgba(212, 175, 55, 0.2)" stroke-width="1" />
+                            <circle cx="220" cy="200" r="14" fill="none" stroke="#D4AF37" stroke-width="1">
+                                <animate attributeName="r" values="6;16;6" dur="4s" repeatCount="indefinite" />
+                                <animate attributeName="opacity" values="0.8;0.1;0.8" dur="4s" repeatCount="indefinite" />
+                            </circle>
+                            <polygon points="220,193 227,200 220,207 213,200" fill="url(#goldGradient)" filter="url(#glow)" />
+                            <polygon points="220,195 225,200 220,205 215,200" fill="#FAF8F5" opacity="0.4" />
+                            <polygon points="300,104 306,110 300,116 294,110" fill="#2A2725" stroke="#D4AF37" stroke-width="1" />
+                            <text x="312" y="114" font-family="Montserrat, sans-serif" font-size="9.5" font-weight="400" letter-spacing="0.15em" fill="#FAF8F5" stroke="#FAF8F5" stroke-width="3" stroke-linejoin="round">NYC & NE</text>
+                            <text x="312" y="114" font-family="Montserrat, sans-serif" font-size="9.5" font-weight="400" letter-spacing="0.15em" fill="#2A2725">NYC & NE</text>
+                            <polygon points="80,244 86,250 80,256 74,250" fill="#2A2725" stroke="#D4AF37" stroke-width="1" />
+                            <text x="92" y="254" font-family="Montserrat, sans-serif" font-size="9.5" font-weight="400" letter-spacing="0.15em" fill="#FAF8F5" stroke="#FAF8F5" stroke-width="3" stroke-linejoin="round">CALIFORNIA</text>
+                            <text x="92" y="254" font-family="Montserrat, sans-serif" font-size="9.5" font-weight="400" letter-spacing="0.15em" fill="#2A2725">CALIFORNIA</text>
+                            <polygon points="270,294 276,300 270,306 264,300" fill="#2A2725" stroke="#D4AF37" stroke-width="1" />
+                            <text x="282" y="304" font-family="Montserrat, sans-serif" font-size="9.5" font-weight="400" letter-spacing="0.15em" fill="#FAF8F5" stroke="#FAF8F5" stroke-width="3" stroke-linejoin="round">FLORIDA</text>
+                            <text x="282" y="304" font-family="Montserrat, sans-serif" font-size="9.5" font-weight="400" letter-spacing="0.15em" fill="#2A2725">FLORIDA</text>
+                        </svg>
+                        <div class="map-text">
+                            <h3 style="color: var(--color-charcoal); font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: 0.25rem;">Local to the DMV</h3>
+                            <p style="color: var(--color-charcoal); font-size: 0.95rem; margin-bottom: 0.5rem; font-weight: 400; margin-top: 0;">Washington D.C. • Maryland • Virginia</p>
+                            <p class="small" style="margin-top: 0.75rem;">Available for travel worldwide</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="split-content">
+                    <h2 class="section-title" style="margin-bottom: 1.5rem; text-align: left;">Service Areas &amp; Travel</h2>
+                    <p class="body-text" style="margin-bottom: 1.5rem; line-height: 1.6;">
+                        Elmira Jafari is deeply rooted in the DMV (D.C., Maryland, Virginia) area while regularly traveling to serve Persian communities across the United States and beyond.
+                    </p>
+                    <div style="background: rgba(201, 162, 39, 0.05); border-left: 3px solid var(--color-gold); padding: 1.5rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin-bottom: 1.5rem;">
+                        <h3 style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--color-charcoal); margin-bottom: 0.5rem;">Available for Travel</h3>
+                        <p class="body-text" style="font-size: 0.95rem; margin: 0; line-height: 1.5;">
+                            Based in Reston, Virginia, regularly traveling to officiate custom ceremonies in New York, California, Florida, Delaware, Canada, and luxury destinations worldwide.
+                        </p>
+                    </div>
+                    <p class="body-text" style="line-height: 1.6;">
+                        Select a location below to learn more about the bilingual Persian wedding officiant services we offer in that area.
+                    </p>
+                </div>
+            </div>
 
             <!-- Locations Grid -->
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
@@ -257,7 +343,10 @@
                     <a href="/about/">About Elmira</a>
                     <a href="/process/">The Process</a>
                     <a href="/experience/">Ceremony Styles</a>
+                    <a href="/locations/">Locations</a>
                     <a href="/gallery/">Gallery</a>
+                    <a href="/love-stories/">Love Stories</a>
+                    <a href="/faq/">FAQ</a>
                     <a href="/contact/">Contact</a>
                 </div>
                 <div class="footer-col">
