@@ -2069,7 +2069,7 @@ p {
 }
 
 /* Return to Home button in header (for location subpages) */
-.header-return-btn {
+.header-return-btn, .header-return-btn:visited {
     text-decoration: none;
     font-family: var(--font-sans);
     font-size: 0.8rem;
@@ -2093,7 +2093,8 @@ p {
     transform: translateY(-1px);
 }
 
-.site-header.scrolled .header-return-btn {
+.site-header.scrolled .header-return-btn,
+.site-header.scrolled .header-return-btn:visited {
     color: var(--color-charcoal);
     border-color: rgba(33, 30, 27, 0.25);
 }
