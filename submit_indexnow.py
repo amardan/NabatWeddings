@@ -51,7 +51,7 @@ def submit_to_indexnow():
         "urlList": urls
     }
 
-    url = "https://api.indexnow.org/indexnow"
+    url = "https://yandex.com/indexnow"
     data = json.dumps(payload).encode('utf-8')
     
     req = urllib.request.Request(
