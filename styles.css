@@ -404,6 +404,7 @@ p {
     color: #fff;
     transition: color var(--transition-base);
     font-weight: 500;
+    white-space: nowrap;
 }
 
 .desktop-nav {
@@ -420,6 +421,7 @@ p {
     text-transform: uppercase;
     transition: color var(--transition-base), opacity var(--transition-base);
     position: relative;
+    white-space: nowrap;
 }
 
 .desktop-nav a::after {
@@ -475,6 +477,24 @@ p {
 
 .site-header.scrolled .mobile-menu-btn span {
     background-color: var(--color-charcoal);
+}
+
+/* Responsive adjustment for desktop menu to prevent wrapping on medium screens */
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .site-header {
+        width: 94%;
+        left: 3%;
+        padding: 0.5rem 1.5rem;
+    }
+
+    .logo-text {
+        font-size: 1.25rem;
+    }
+
+    .desktop-nav a {
+        margin-left: 1.1rem;
+        font-size: 0.75rem;
+    }
 }
 
 /* Hero Section */
@@ -1365,26 +1385,9 @@ p {
 }
 
 /* ==========================================================================
-   Mobile breakpoint (max 768px)
+   Mobile/Tablet Navigation Breakpoint (max 1024px)
    ========================================================================== */
-@media (max-width: 768px) {
-    h1 {
-        font-size: clamp(2rem, 8vw, 2.8rem) !important;
-        margin-bottom: var(--spacing-xs) !important;
-    }
-
-    .subtitle {
-        font-size: 1.15rem !important;
-    }
-
-    .split-layout,
-    .split-layout.reverse {
-        flex-direction: column;
-    }
-    .section-padding {
-        padding: 3.5rem 5% !important;
-    }
-
+@media (max-width: 1024px) {
     .site-header {
         width: 96%;
         left: 2%;
@@ -1441,6 +1444,28 @@ p {
 
     .site-header.scrolled .desktop-nav a {
         color: var(--color-charcoal) !important;
+    }
+}
+
+/* ==========================================================================
+   Mobile breakpoint (max 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    h1 {
+        font-size: clamp(2rem, 8vw, 2.8rem) !important;
+        margin-bottom: var(--spacing-xs) !important;
+    }
+
+    .subtitle {
+        font-size: 1.15rem !important;
+    }
+
+    .split-layout,
+    .split-layout.reverse {
+        flex-direction: column;
+    }
+    .section-padding {
+        padding: 3.5rem 5% !important;
     }
 
     .btn-primary {
