@@ -480,7 +480,7 @@ p {
 }
 
 /* Responsive adjustment for desktop menu to prevent wrapping on medium screens */
-@media (min-width: 1025px) and (max-width: 1280px) {
+@media (min-width: 1181px) and (max-width: 1300px) {
     .site-header {
         width: 94%;
         left: 3%;
@@ -1385,9 +1385,9 @@ p {
 }
 
 /* ==========================================================================
-   Mobile/Tablet Navigation Breakpoint (max 1024px)
+   Mobile/Tablet Navigation Breakpoint (max 1180px)
    ========================================================================== */
-@media (max-width: 1024px) {
+@media (max-width: 1180px) {
     .site-header {
         width: 96%;
         left: 2%;
