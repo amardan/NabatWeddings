@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '/about': 'about',
         '/process': 'process',
         '/experience': 'experience',
+        '/locations': 'locations-preview',
         '/gallery': 'gallery',
         '/love-stories': 'testimonials',
         '/faq': 'faq',
@@ -41,7 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const normalize = (p) => (p || '/').replace(/\/$/, '') || '/';
         const navLinks = document.querySelectorAll('.desktop-nav a');
         navLinks.forEach(link => {
-            const href = link.getAttribute('href');
+            let href = link.getAttribute('href');
+            if (href === '/#locations-preview') {
+                href = '/locations';
+            }
             if (normalize(href) === normalize(path)) {
                 link.classList.add('active');
             } else {
@@ -69,7 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Intercept navigation link clicks
     let isScrollingToTarget = false;
     document.querySelectorAll('.desktop-nav a, .btn-outline, .hero-content a').forEach(link => {
-        const href = link.getAttribute('href');
+        let href = link.getAttribute('href');
+        if (href === '/#locations-preview') {
+            href = '/locations';
+        }
         if (href && href.startsWith('/')) {
             const sectionId = getSectionIdFromPath(href);
             if (sectionId) {
