@@ -5,15 +5,15 @@ import re
 routes = {
     "about": {
         "title": "Meet Elmira Jafari | Bilingual Persian & English Wedding Officiant",
-        "description": "Meet Elmira Jafari, an award-nominated journalist and storyteller offering luxury bilingual Farsi/English wedding ceremonies and Sofreh Aghd in DMV and worldwide.",
+        "description": "Meet Elmira Jafari, an award-nominated journalist offering luxury bilingual Farsi/English wedding ceremonies and Sofreh Aghd in DMV and worldwide.",
     },
     "process": {
         "title": "The Journey to I Do - Our Process | Nabat Persian Weddings",
-        "description": "Explore our three-step collaborative process for planning and delivering your custom Persian wedding ceremony, from consultation to script creation and the wedding day.",
+        "description": "Explore our collaborative process for planning and officiating your custom Persian wedding ceremony, from initial consultation to the wedding day.",
     },
     "experience": {
         "title": "Ceremony Styles & Experience | Nabat Persian Weddings",
-        "description": "Specialized wedding officiating including bilingual ceremonies, traditional Sofreh Aghd, and modern custom vows. Based in DMV, serving NYC, California, Florida, and worldwide.",
+        "description": "Bilingual wedding officiating, traditional Sofreh Aghd, and modern custom scripts. Based in DMV, serving NYC, California, Florida, and worldwide.",
     },
     "gallery": {
         "title": "Gallery - Persian Wedding Photos & Videos | Nabat Persian Weddings",
@@ -25,7 +25,7 @@ routes = {
     },
     "faq": {
         "title": "Frequently Asked Questions | Nabat Persian Weddings",
-        "description": "Find answers to common questions about bilingual wedding ceremonies, traditional Sofreh Aghd, custom vows, travel fees, and more.",
+        "description": "Find answers to common questions about bilingual wedding ceremonies, traditional Sofreh Aghd, custom scripts, travel fees, and more.",
     },
     "contact": {
         "title": "Inquire & Start Your Journey | Nabat Persian Weddings",
