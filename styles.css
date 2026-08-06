@@ -659,6 +659,31 @@ p {
     transform: translateY(-2px);
 }
 
+/* Light background context for .btn-outline */
+section:not(.hero) .btn-outline,
+.package-card .btn-outline,
+.bg-cream .btn-outline,
+.bg-alt .btn-outline,
+.terms-card .btn-outline,
+.package-footer .btn-outline {
+    border: 1.5px solid var(--color-charcoal);
+    color: var(--color-charcoal) !important;
+    background: transparent;
+}
+
+section:not(.hero) .btn-outline:hover,
+.package-card .btn-outline:hover,
+.bg-cream .btn-outline:hover,
+.bg-alt .btn-outline:hover,
+.terms-card .btn-outline:hover,
+.package-footer .btn-outline:hover {
+    background-color: var(--color-pomegranate-dark) !important;
+    color: #fff !important;
+    border-color: var(--color-pomegranate-dark) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(107, 20, 48, 0.25);
+}
+
 .btn-primary:active, .btn-outline:active {
     transform: translateY(0);
 }
