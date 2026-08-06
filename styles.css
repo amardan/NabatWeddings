@@ -2836,21 +2836,58 @@ section:not(.hero) .btn-outline:hover,
 
 @media (max-width: 768px) {
     .packages-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+        margin-top: 1.75rem;
     }
     .package-card {
         padding: 1.75rem 1.25rem;
+        box-shadow: 0 4px 16px rgba(33, 30, 27, 0.05);
+    }
+    .package-title {
+        font-size: 1.5rem;
+    }
+    .package-price {
+        font-size: 2.1rem;
+    }
+    .package-features li {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+    .package-footer .btn-primary,
+    .package-footer .btn-outline {
+        width: 100%;
+        text-align: center;
+        padding: 0.9rem 1.25rem;
     }
     .travel-table-wrapper {
         padding: 1.25rem 0.75rem;
         overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
     .travel-table th, .travel-table td {
-        padding: 0.75rem 0.85rem;
+        padding: 0.75rem 0.75rem;
         font-size: 0.85rem;
     }
     .terms-card {
-        padding: 1.5rem 1.25rem;
+        padding: 1.75rem 1.25rem;
+    }
+    .terms-list li {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .package-card {
+        padding: 1.5rem 1rem;
+    }
+    .package-price {
+        font-size: 1.9rem;
+    }
+    .travel-table th, .travel-table td {
+        padding: 0.65rem 0.5rem;
+        font-size: 0.8rem;
     }
 }
 
