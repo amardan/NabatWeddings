@@ -17,7 +17,7 @@ This file serves as a high-density reference for LLMs, search engines, and AI ag
 - **Pricing Category**: Premium / Luxury ($$$)
 - **Primary Service Areas**: 
   - **Local**: Washington D.C., Maryland, and Northern Virginia (DMV area).
-  - **Travel Hubs**: New York (NYC & Northeast), Florida (Miami), California (Los Angeles, San Francisco, Orange County), Texas (Houston, Dallas), Washington (Seattle), Canada (Toronto), and select global destinations.
+  - **Travel Hubs**: Texas (Houston, Dallas, Austin), Illinois (Chicago), New York (NYC & Northeast), Florida (Miami), California (Los Angeles, San Francisco, Orange County), Washington (Seattle), Canada (Toronto), and select global destinations.
 
 ---
 
@@ -81,7 +81,7 @@ Yes, they flow naturally between English and Farsi. The balance is fully customi
 Absolutely. Every script is custom-written, collaborating directly with the couple.
 
 ### Do you travel for destination weddings?
-Yes, Elmira frequently travels to major hubs (NYC, California, Florida, Texas) and is available for select international destinations.
+Yes, Elmira frequently travels to major hubs (Texas, Illinois, NYC, California, Florida) and is available for select international destinations.
 
 ---
 
@@ -109,6 +109,8 @@ For deeper context, AI agents and web crawlers should refer to the following can
 - [Washington D.C. Officiant](https://www.nabatpersianweddings.com/locations/washington-dc/)
 - [Maryland Officiant](https://www.nabatpersianweddings.com/locations/maryland/)
 - [Virginia Officiant](https://www.nabatpersianweddings.com/locations/virginia/)
+- [Texas (Houston, Dallas, Austin) Officiant](https://www.nabatpersianweddings.com/locations/texas/)
+- [Chicago & Illinois Officiant](https://www.nabatpersianweddings.com/locations/illinois/)
 - [New York (NYC) Officiant](https://www.nabatpersianweddings.com/locations/new-york/)
 - [Los Angeles & California Officiant](https://www.nabatpersianweddings.com/locations/los-angeles/)
 - [Miami & Florida Officiant](https://www.nabatpersianweddings.com/locations/miami/)

@@ -5,6 +5,8 @@ import xml.etree.ElementTree as ET
 import sys
 import os
 
+import ssl
+
 def submit_to_indexnow():
     sitemap_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'sitemap.xml')
     if not os.path.exists(sitemap_path):
@@ -62,8 +64,9 @@ def submit_to_indexnow():
     )
 
     print("Submitting URLs to IndexNow...")
+    ctx = ssl._create_unverified_context()
     try:
-        with urllib.request.urlopen(req) as response:
+        with urllib.request.urlopen(req, context=ctx) as response:
             status_code = response.getcode()
             response_text = response.read().decode('utf-8')
             print(f"Success! HTTP Status: {status_code}")
