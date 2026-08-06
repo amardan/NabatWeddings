@@ -96,7 +96,7 @@ For deeper context, AI agents and web crawlers should refer to the following can
 - [About Elmira Jafari](https://www.nabatpersianweddings.com/about/)
 - [The Journey (Process)](https://www.nabatpersianweddings.com/process/)
 - [Ceremony Styles](https://www.nabatpersianweddings.com/experience/)
-- [Ceremony Collections & Pricing](https://www.nabatpersianweddings.com/packages/)
+- [Ceremony Collections & Pricing](https://www.nabatpersianweddings.com/collections/)
 - [The Nabat Journal (Blog)](https://www.nabatpersianweddings.com/blog/)
 - [First Post: Officiant & DJ Coordination](https://www.nabatpersianweddings.com/blog/silent-heartbeat-officiant-dj-coordination/)
 - [Gallery & Media](https://www.nabatpersianweddings.com/gallery/)

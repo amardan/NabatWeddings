@@ -1,5 +1,9 @@
 {
   "buildCommand": null,
   "outputDirectory": ".",
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/packages/", "destination": "/collections/", "permanent": true },
+    { "source": "/packages", "destination": "/collections/", "permanent": true }
+  ]
 }

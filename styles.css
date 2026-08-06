@@ -369,27 +369,27 @@ p {
 /* Header */
 .site-header {
     position: fixed;
-    top: 1.5rem;
-    left: 5%;
-    width: 90%;
-    padding: 0.5rem 2rem;
+    top: 1.25rem;
+    left: 4%;
+    width: 92%;
+    padding: 0.5rem 1.75rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
+    z-index: 1000;
     transition: all var(--transition-base);
 
-    background: rgba(33, 30, 27, 0.45);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    background: rgba(33, 30, 27, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-radius: var(--radius-full);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .site-header.scrolled {
-    background: rgba(251, 248, 243, 0.96);
-    border-color: rgba(33, 30, 27, 0.06);
-    box-shadow: 0 12px 32px rgba(33, 30, 27, 0.07);
+    background: rgba(251, 248, 243, 0.98);
+    border-color: rgba(33, 30, 27, 0.08);
+    box-shadow: 0 12px 36px rgba(33, 30, 27, 0.1);
 }
 
 .site-header.scrolled .logo-text,
@@ -398,8 +398,8 @@ p {
 }
 
 .logo-text {
-    font-size: 1.5rem;
-    letter-spacing: 0.12em;
+    font-size: 1.35rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #fff;
     transition: color var(--transition-base);
@@ -415,9 +415,9 @@ p {
 .desktop-nav a {
     color: #fff;
     text-decoration: none;
-    margin-left: 1.5rem;
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
+    margin-left: 0.95rem;
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     transition: color var(--transition-base), opacity var(--transition-base);
     position: relative;
@@ -430,7 +430,7 @@ p {
     left: 0;
     bottom: -6px;
     width: 0;
-    height: 1px;
+    height: 1.5px;
     background: var(--color-saffron);
     transition: width var(--transition-base);
 }
@@ -447,7 +447,7 @@ p {
 .desktop-nav a.active {
     color: var(--color-saffron) !important;
     opacity: 1 !important;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .desktop-nav a.active::after {
