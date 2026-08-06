@@ -2891,3 +2891,82 @@ section:not(.hero) .btn-outline:hover,
     }
 }
 
+/* ==========================================================================
+   UNIVERSAL MOBILE, TABLET & MULTI-SCREEN RESPONSIVENESS SYSTEM
+   ========================================================================== */
+
+/* Prevent unwanted horizontal overflow artifacts globally */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+}
+
+/* Responsive Media & Embed Elements */
+img, video, canvas, iframe, svg, table {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Mobile Touch Guidelines & iOS Input Zoom Prevention */
+@media (max-width: 768px) {
+    /* Prevent iOS Safari from auto-zooming input fields on focus */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
+        font-size: 16px !important;
+    }
+
+    /* Responsive Section Padding */
+    .section-padding {
+        padding: 3.5rem 1.25rem;
+    }
+
+    /* Mobile Navigation Menu Touch & Scroll Container */
+    .desktop-nav.active {
+        max-height: 85vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Table Container Touch Momentum Scrolling */
+    table, .travel-table-wrapper {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Hero Typography Sizing for Small Screens */
+    .hero-title {
+        font-size: clamp(2rem, 8vw, 3.2rem);
+        line-height: 1.15;
+    }
+
+    .hero-tagline {
+        font-size: clamp(0.85rem, 3.5vw, 1.15rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .section-padding {
+        padding: 2.75rem 1rem;
+    }
+
+    .container {
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+    }
+
+    .btn-primary,
+    .btn-outline {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 0.95rem 1.25rem;
+    }
+}
+
