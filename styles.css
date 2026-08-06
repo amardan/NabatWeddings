@@ -659,8 +659,8 @@ p {
     transform: translateY(-2px);
 }
 
-/* Light background context for .btn-outline */
-section:not(.hero) .btn-outline,
+/* Light background context for .btn-outline (excluding hero and page-hero dark sections) */
+section:not(.hero):not(.page-hero) .btn-outline,
 .package-card .btn-outline,
 .bg-cream .btn-outline,
 .bg-alt .btn-outline,
@@ -671,7 +671,7 @@ section:not(.hero) .btn-outline,
     background: transparent;
 }
 
-section:not(.hero) .btn-outline:hover,
+section:not(.hero):not(.page-hero) .btn-outline:hover,
 .package-card .btn-outline:hover,
 .bg-cream .btn-outline:hover,
 .bg-alt .btn-outline:hover,
@@ -2573,12 +2573,75 @@ section:not(.hero) .btn-outline:hover,
     .blog-post-header {
         margin-bottom: 2.5rem;
     }
+    .blog-post-card h2 {
+        font-size: 1.3rem;
+    }
     .blog-post-content {
         font-size: 1.15rem;
     }
     .blog-outreach-cta {
         padding: 1.5rem;
     }
+}
+
+/* ==========================================================================
+   Breadcrumb Navigation Bar
+   ========================================================================== */
+.breadcrumb-container {
+    padding: 1.25rem 2rem 0;
+    background: transparent;
+}
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: rgba(250, 248, 245, 0.8);
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.breadcrumbs.light {
+    color: var(--color-charcoal);
+}
+
+.breadcrumbs a {
+    color: var(--color-gold);
+    text-decoration: none;
+    transition: color var(--transition-base);
+}
+
+.breadcrumbs a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.breadcrumbs.light a {
+    color: var(--color-charcoal);
+    font-weight: 500;
+}
+
+.breadcrumbs.light a:hover {
+    color: var(--color-gold-dark);
+    text-decoration: underline;
+}
+
+.breadcrumbs .separator {
+    opacity: 0.5;
+    font-size: 0.75rem;
+}
+
+.breadcrumbs .current {
+    color: var(--color-cream);
+    font-weight: 500;
+}
+
+.breadcrumbs.light .current {
+    color: var(--color-charcoal);
+    font-weight: 600;
 }
 
 /* ==========================================
