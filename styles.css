@@ -2555,3 +2555,277 @@ p {
         padding: 1.5rem;
     }
 }
+
+/* ==========================================
+   Ceremony & Officiant Collections / Pricing
+   (PDF Inspired Aesthetic)
+   ========================================== */
+
+.pdf-diamond-ornament {
+    color: var(--color-saffron);
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    display: block;
+    margin: 0.5rem auto 1.25rem;
+    text-align: center;
+    opacity: 0.85;
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.package-card {
+    background: #FDFBF7;
+    border: 1px solid rgba(201, 162, 39, 0.22);
+    border-radius: var(--radius-md);
+    padding: 2.25rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.package-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(201, 162, 39, 0.45);
+}
+
+.package-card.featured {
+    border: 1.5px solid var(--color-saffron);
+    background: linear-gradient(180deg, #FDFBF7 0%, #FAF5EC 100%);
+    box-shadow: var(--shadow-gold);
+}
+
+.package-card.featured::before {
+    content: "Most Popular";
+    position: absolute;
+    top: -12px;
+    right: 24px;
+    background: var(--gradient-saffron);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.25rem 0.85rem;
+    border-radius: var(--radius-full);
+    box-shadow: 0 2px 8px rgba(201, 162, 39, 0.3);
+}
+
+.package-header {
+    text-align: center;
+    border-bottom: 1px solid var(--color-line-soft);
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.package-tag {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-saffron-dark);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.package-title {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    color: var(--color-pomegranate-dark);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.package-subtitle {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--color-charcoal-muted);
+    font-style: italic;
+}
+
+.package-price-wrap {
+    text-align: center;
+    margin: 1.25rem 0;
+}
+
+.package-price {
+    font-family: var(--font-display);
+    font-size: 2.35rem;
+    color: var(--color-charcoal);
+    font-weight: 600;
+    line-height: 1;
+}
+
+.package-deposit {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--color-saffron-dark);
+    letter-spacing: 0.04em;
+    font-weight: 500;
+    margin-top: 0.35rem;
+    display: block;
+}
+
+.package-features {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 2rem;
+    flex-grow: 1;
+}
+
+.package-features li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.85rem;
+    font-family: var(--font-serif);
+    font-size: 1.08rem;
+    color: var(--color-charcoal-soft);
+    line-height: 1.45;
+}
+
+.package-features li::before {
+    content: "◆";
+    position: absolute;
+    left: 0;
+    top: 1px;
+    color: var(--color-saffron);
+    font-size: 0.65rem;
+}
+
+.package-description-box {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--color-charcoal-muted);
+    background: rgba(243, 237, 227, 0.4);
+    border-left: 2px solid var(--color-saffron);
+    padding: 0.75rem 1rem;
+    margin-top: 1rem;
+    border-radius: 0 6px 6px 0;
+    line-height: 1.5;
+}
+
+.package-footer {
+    margin-top: auto;
+    text-align: center;
+}
+
+/* Travel Fee Schedule Table */
+.travel-table-wrapper {
+    background: #FDFBF7;
+    border: 1px solid rgba(201, 162, 39, 0.22);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: var(--shadow-sm);
+}
+
+.travel-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-sans);
+    font-size: 0.92rem;
+    margin-top: 1rem;
+}
+
+.travel-table th {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-pomegranate-dark);
+    padding: 0.9rem 1.25rem;
+    text-align: left;
+    border-bottom: 2px solid var(--color-line);
+    background: rgba(243, 237, 227, 0.4);
+}
+
+.travel-table td {
+    padding: 0.85rem 1.25rem;
+    color: var(--color-charcoal-soft);
+    border-bottom: 1px solid var(--color-line-soft);
+}
+
+.travel-table tr:last-child td {
+    border-bottom: none;
+}
+
+.travel-table tr:hover td {
+    background: rgba(243, 237, 227, 0.3);
+}
+
+/* Booking Terms Card */
+.terms-card {
+    background: linear-gradient(135deg, rgba(253, 251, 247, 0.95), rgba(243, 237, 227, 0.6));
+    border: 1px solid rgba(201, 162, 39, 0.3);
+    border-radius: var(--radius-md);
+    padding: 2.25rem;
+    margin-top: 2.5rem;
+    text-align: center;
+}
+
+.terms-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--color-pomegranate-dark);
+    margin-bottom: 1.25rem;
+}
+
+.terms-list {
+    list-style: none;
+    padding: 0;
+    max-width: 720px;
+    margin: 0 auto 1.5rem;
+    text-align: left;
+}
+
+.terms-list li {
+    position: relative;
+    padding-left: 1.6rem;
+    margin-bottom: 0.85rem;
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--color-charcoal-soft);
+}
+
+.terms-list li::before {
+    content: "◆";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: var(--color-saffron);
+    font-size: 0.65rem;
+}
+
+@media (max-width: 768px) {
+    .packages-grid {
+        grid-template-columns: 1fr;
+    }
+    .package-card {
+        padding: 1.75rem 1.25rem;
+    }
+    .travel-table-wrapper {
+        padding: 1.25rem 0.75rem;
+        overflow-x: auto;
+    }
+    .travel-table th, .travel-table td {
+        padding: 0.75rem 0.85rem;
+        font-size: 0.85rem;
+    }
+    .terms-card {
+        padding: 1.5rem 1.25rem;
+    }
+}
+
