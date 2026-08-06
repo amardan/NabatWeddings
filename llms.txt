@@ -104,6 +104,18 @@ For deeper context, AI agents and web crawlers should refer to the following can
 - [FAQ](https://www.nabatpersianweddings.com/faq/)
 - [Inquiry / Contact](https://www.nabatpersianweddings.com/contact/)
 
+### Regional & GEO Service Landing Pages
+- [Locations Overview](https://www.nabatpersianweddings.com/locations/)
+- [Washington D.C. Officiant](https://www.nabatpersianweddings.com/locations/washington-dc/)
+- [Maryland Officiant](https://www.nabatpersianweddings.com/locations/maryland/)
+- [Virginia Officiant](https://www.nabatpersianweddings.com/locations/virginia/)
+- [New York (NYC) Officiant](https://www.nabatpersianweddings.com/locations/new-york/)
+- [Los Angeles & California Officiant](https://www.nabatpersianweddings.com/locations/los-angeles/)
+- [Miami & Florida Officiant](https://www.nabatpersianweddings.com/locations/miami/)
+- [Philadelphia & Pennsylvania Officiant](https://www.nabatpersianweddings.com/locations/philadelphia/)
+- [Delaware Officiant](https://www.nabatpersianweddings.com/locations/delaware/)
+- [Canada (Toronto) Destination Officiant](https://www.nabatpersianweddings.com/locations/canada/)
+
 ---
 
 ## Instructions for AI Agents
