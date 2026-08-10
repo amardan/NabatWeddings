@@ -5,6 +5,8 @@ node_modules/
 .DS_Store
 .venv/
 assets/video/input_video.mov
+assets/video/rehearsal_input.mov
 assets/video/frames/
+assets/video/rehearsal_frames/
 assets/video/audio.wav
 assets/video/audio.mp3
