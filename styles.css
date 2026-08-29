@@ -3033,3 +3033,133 @@ img, video, canvas, iframe, svg, table {
     }
 }
 
+/* ==========================================================================
+   Bilingual Video Showcase & Gallery Video Cards
+   ========================================================================== */
+.bilingual-video-showcase-wrap {
+    margin-bottom: var(--spacing-lg, 4rem);
+}
+
+.bilingual-video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.video-showcase-card {
+    background: #FFFFFF;
+    border-radius: var(--radius-md, 12px);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(201, 162, 39, 0.18);
+    transition: transform 0.35s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.35s cubic-bezier(0.2, 0, 0.2, 1), border-color 0.35s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.video-showcase-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 36px rgba(201, 162, 39, 0.14), 0 6px 18px rgba(0, 0, 0, 0.08);
+    border-color: rgba(201, 162, 39, 0.45);
+}
+
+.video-showcase-card .video-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    max-height: 520px;
+    background: #11100F;
+    overflow: hidden;
+}
+
+.video-showcase-card .video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--radius-md, 12px) var(--radius-md, 12px) 0 0;
+}
+
+.video-card-body {
+    padding: 1.5rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background: #FAF7F2;
+}
+
+.video-tags {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.85rem;
+}
+
+.video-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.35rem 0.8rem;
+    border-radius: 50px;
+    font-family: var(--font-sans, 'Montserrat', sans-serif);
+}
+
+.video-badge .badge-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.badge-persian {
+    background: rgba(201, 162, 39, 0.12);
+    color: #8C6A12;
+    border: 1px solid rgba(201, 162, 39, 0.35);
+}
+
+.badge-persian .badge-dot {
+    background: #C9A227;
+    box-shadow: 0 0 6px rgba(201, 162, 39, 0.6);
+}
+
+.badge-english {
+    background: rgba(33, 30, 27, 0.08);
+    color: #211E1B;
+    border: 1px solid rgba(33, 30, 27, 0.2);
+}
+
+.badge-english .badge-dot {
+    background: #211E1B;
+}
+
+.video-duration-tag {
+    font-size: 0.75rem;
+    color: var(--color-charcoal-muted, #6E6862);
+    font-family: var(--font-sans, 'Montserrat', sans-serif);
+    font-weight: 500;
+}
+
+.video-title {
+    font-family: var(--font-serif, 'Playfair Display', serif);
+    font-size: 1.25rem;
+    color: var(--color-charcoal, #211E1B);
+    margin: 0 0 0.65rem;
+    line-height: 1.35;
+}
+
+.video-desc {
+    font-family: var(--font-sans, 'Montserrat', sans-serif);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--color-charcoal-muted, #5A544F);
+    margin: 0;
+}
+
+

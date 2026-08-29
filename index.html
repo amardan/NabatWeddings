@@ -333,6 +333,36 @@
     }
     </script>
 
+    <!-- VideoObject Structured Data for Video Showcase -->
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "Persian Sofreh Aghd & Sugar Ceremony (Kand-Sabi) | Nabat Persian Weddings",
+        "description": "Live footage of Persian wedding officiant Elmira Jafari officiating the traditional Sofreh Aghd and sugar rubbing ceremony in poetic Farsi.",
+        "thumbnailUrl": "https://www.nabatpersianweddings.com/assets/images/video-poster-persian-ceremony.jpg",
+        "uploadDate": "2026-08-28T21:00:00-04:00",
+        "duration": "PT44S",
+        "contentUrl": "https://www.nabatpersianweddings.com/assets/videos/bilingual-persian-wedding-persian.mp4",
+        "embedUrl": "https://www.nabatpersianweddings.com/gallery/",
+        "inLanguage": "fa"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "Bilingual Persian Wedding English Address & Ceremony | Officiant Elmira Jafari",
+        "description": "Elmira Jafari delivering an eloquent bilingual English address and wedding vows at a luxury waterfront Persian wedding ceremony.",
+        "thumbnailUrl": "https://www.nabatpersianweddings.com/assets/images/video-poster-english-address.jpg",
+        "uploadDate": "2026-08-28T21:00:00-04:00",
+        "duration": "PT50S",
+        "contentUrl": "https://www.nabatpersianweddings.com/assets/videos/bilingual-persian-wedding-english.mp4",
+        "embedUrl": "https://www.nabatpersianweddings.com/gallery/",
+        "inLanguage": "en"
+      }
+    ]
+    </script>
+
     <link rel="stylesheet" href="/styles.css?v=1.8">
     
     <!-- Vercel Web Analytics -->
@@ -623,10 +653,63 @@
         <div class="container">
             <h2 class="section-title text-center">Gallery</h2>
             
-            <div class="gallery-video-item" style="margin-bottom: var(--spacing-sm);">
-                <video controls preload="none" playsinline crossorigin="anonymous" poster="/poster.jpg" aria-label="Wedding Gallery Video">
-                    <source src="/assets/videos/file.mp4" type="video/mp4">
-                </video>
+            <!-- Bilingual Ceremony Video Showcase -->
+            <div class="bilingual-video-showcase-wrap">
+                <div class="showcase-header text-center" style="max-width: 720px; margin: 0 auto 2.5rem;">
+                    <span class="category-tag">Live Ceremony Highlights</span>
+                    <h3 style="font-family: var(--font-serif); font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0.5rem 0 0.75rem; color: var(--color-charcoal);">
+                        Bilingual Ceremony Showcase
+                    </h3>
+                    <p class="body-text" style="font-size: 1.05rem; line-height: 1.7; color: var(--color-charcoal-muted); margin: 0;">
+                        Watch how seamless transitions between English and Farsi honor centuries of Persian tradition while inviting every guest into the emotional heart of the ceremony.
+                    </p>
+                </div>
+
+                <div class="bilingual-video-grid">
+                    <!-- Persian Ceremony Video Card -->
+                    <div class="video-showcase-card">
+                        <div class="video-container">
+                            <video controls preload="metadata" playsinline poster="/assets/images/video-poster-persian-ceremony.jpg" aria-label="Persian Sofreh Aghd & Sugar Ceremony Video">
+                                <source src="/assets/videos/bilingual-persian-wedding-persian.mp4" type="video/mp4">
+                                Your browser does not support HTML5 video.
+                            </video>
+                        </div>
+                        <div class="video-card-body">
+                            <div class="video-tags">
+                                <span class="video-badge badge-persian">
+                                    <span class="badge-dot"></span> Persian Ceremony (Farsi)
+                                </span>
+                                <span class="video-duration-tag">0:44</span>
+                            </div>
+                            <h4 class="video-title">Sofreh Aghd &amp; The Sugar Ceremony</h4>
+                            <p class="video-desc">
+                                Elmira recites the traditional marital blessings in poetic Farsi as happily married women hold the silk cloth and shower the couple with sugar cones (<em>Kand-Sabi</em>).
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- English Ceremony Video Card -->
+                    <div class="video-showcase-card">
+                        <div class="video-container">
+                            <video controls preload="metadata" playsinline poster="/assets/images/video-poster-english-address.jpg" aria-label="English Address & Vows Video">
+                                <source src="/assets/videos/bilingual-persian-wedding-english.mp4" type="video/mp4">
+                                Your browser does not support HTML5 video.
+                            </video>
+                        </div>
+                        <div class="video-card-body">
+                            <div class="video-tags">
+                                <span class="video-badge badge-english">
+                                    <span class="badge-dot"></span> English Address &amp; Vows
+                                </span>
+                                <span class="video-duration-tag">0:50</span>
+                            </div>
+                            <h4 class="video-title">Welcoming Address &amp; Storytelling</h4>
+                            <p class="video-desc">
+                                Delivering an engaging, eloquent English address that illuminates the cultural significance of each Sofreh Aghd element and makes every guest feel connected.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="gallery-grid carousel-mobile mosaic" id="galleryGrid">
