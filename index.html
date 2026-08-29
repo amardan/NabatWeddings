@@ -339,6 +339,18 @@
       {
         "@context": "https://schema.org",
         "@type": "VideoObject",
+        "name": "The Persian Wedding Ceremony Experience - Cinematic Highlight Film",
+        "description": "A cinematic preview of luxury Persian wedding ceremonies, Sofreh Aghd rituals, and bilingual storytelling officiated by Elmira Jafari.",
+        "thumbnailUrl": "https://www.nabatpersianweddings.com/poster.jpg",
+        "uploadDate": "2026-08-01T12:00:00-04:00",
+        "duration": "PT47S",
+        "contentUrl": "https://www.nabatpersianweddings.com/assets/videos/file.mp4",
+        "embedUrl": "https://www.nabatpersianweddings.com/gallery/",
+        "inLanguage": "en"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
         "name": "Persian Sofreh Aghd & Sugar Ceremony (Kand-Sabi) | Nabat Persian Weddings",
         "description": "Live footage of Persian wedding officiant Elmira Jafari officiating the traditional Sofreh Aghd and sugar rubbing ceremony in poetic Farsi.",
         "thumbnailUrl": "https://www.nabatpersianweddings.com/assets/images/video-poster-persian-ceremony.jpg",
@@ -652,15 +664,40 @@
     <section class="section-padding fade-in" id="gallery">
         <div class="container">
             <h2 class="section-title text-center">Gallery</h2>
+            <p class="body-text text-center narrow" style="margin: 0 auto 3rem;">
+                Experience the beauty of our custom Persian wedding ceremonies through cinematic highlights, live bilingual ceremony moments, and timeless Sofreh Aghd details.
+            </p>
             
-            <!-- Bilingual Ceremony Video Showcase -->
+            <!-- 1. Featured Widescreen Cinematic Highlight Film -->
+            <div class="featured-video-card">
+                <div class="featured-video-container">
+                    <video controls preload="metadata" playsinline poster="/poster.jpg" aria-label="Persian Wedding Ceremony Highlights Film">
+                        <source src="/assets/videos/file.mp4" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+                </div>
+                <div class="video-card-body">
+                    <div class="video-tags">
+                        <span class="video-badge badge-cinematic">
+                            <span class="badge-dot"></span> Cinematic Ceremony Film
+                        </span>
+                        <span class="video-duration-tag">0:47</span>
+                    </div>
+                    <h3 class="video-title" style="font-size: 1.4rem;">The Persian Wedding Experience</h3>
+                    <p class="video-desc">
+                        A cinematic overview of luxury Persian wedding ceremonies, heartfelt poetry readings, and joyous family celebrations officiated by Elmira Jafari.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 2. Dual Bilingual Ceremony Video Showcase (Reels) -->
             <div class="bilingual-video-showcase-wrap">
-                <div class="showcase-header text-center" style="max-width: 720px; margin: 0 auto 2.5rem;">
+                <div class="showcase-header text-center" style="max-width: 720px; margin: 3rem auto 2rem;">
                     <span class="category-tag">Live Ceremony Highlights</span>
-                    <h3 style="font-family: var(--font-serif); font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0.5rem 0 0.75rem; color: var(--color-charcoal);">
+                    <h3 style="font-family: var(--font-serif); font-size: clamp(1.5rem, 2.8vw, 2rem); margin: 0.5rem 0 0.6rem; color: var(--color-charcoal);">
                         Bilingual Ceremony Showcase
                     </h3>
-                    <p class="body-text" style="font-size: 1.05rem; line-height: 1.7; color: var(--color-charcoal-muted); margin: 0;">
+                    <p class="body-text" style="font-size: 1rem; line-height: 1.65; color: var(--color-charcoal-muted); margin: 0;">
                         Watch how seamless transitions between English and Farsi honor centuries of Persian tradition while inviting every guest into the emotional heart of the ceremony.
                     </p>
                 </div>
@@ -683,7 +720,7 @@
                             </div>
                             <h4 class="video-title">Sofreh Aghd &amp; The Sugar Ceremony</h4>
                             <p class="video-desc">
-                                Elmira recites the traditional marital blessings in poetic Farsi as happily married women hold the silk cloth and shower the couple with sugar cones (<em>Kand-Sabi</em>).
+                                Elmira recites traditional marital blessings in poetic Farsi as happily married women hold the silk cloth and shower the couple with sugar cones (<em>Kand-Sabi</em>).
                             </p>
                         </div>
                     </div>
@@ -710,6 +747,13 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- 3. Curated Photography Collection -->
+            <div class="gallery-subheading">
+                <span class="category-tag">Photo Collection</span>
+                <h3>Sofreh Aghd &amp; Ceremony Moments</h3>
+                <p>Cherished memories and fine details from our luxury Persian weddings.</p>
             </div>
 
             <div class="gallery-grid carousel-mobile mosaic" id="galleryGrid">
