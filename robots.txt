@@ -1,24 +1,51 @@
-# All crawlers welcome
+# All search engine crawlers welcome
 User-agent: *
 Allow: /
 
-# Explicitly allow AI/LLM crawlers to index content
+# OpenAI / SearchGPT / ChatGPT
 User-agent: GPTBot
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic / Claude
 User-agent: ClaudeBot
 Allow: /
 
+# Perplexity AI Search
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: CCBot
-Allow: /
-
+# Google Gemini / AI Extended
 User-agent: Google-Extended
 Allow: /
 
-# LLM discovery reference
-# llms.txt: https://www.nabatpersianweddings.com/llms.txt
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
 
+# Amazon AI / Alexa
+User-agent: Amazonbot
+Allow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# Meta AI Search
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Common Crawl
+User-agent: CCBot
+Allow: /
+
+# Sitemaps and LLM Discovery Specifications
 Sitemap: https://www.nabatpersianweddings.com/sitemap.xml
+# LLM Context: https://www.nabatpersianweddings.com/llms.txt
+# LLM Full Context: https://www.nabatpersianweddings.com/llms-full.txt
+
