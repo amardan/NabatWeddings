@@ -7,7 +7,8 @@ import os
 import ssl
 
 def submit_to_indexnow():
-    sitemap_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'sitemap.xml')
+    repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+    sitemap_path = os.path.join(repo_root, 'sitemap.xml')
     if not os.path.exists(sitemap_path):
         print(f"Error: {sitemap_path} does not exist.")
         sys.exit(1)

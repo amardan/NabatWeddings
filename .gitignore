@@ -1,13 +1,13 @@
+# Dependencies & Environments
 node_modules/
-.env
-.vercel
-.playwright-mcp/
-.DS_Store
 .venv/
-assets/video/input_video.mov
-assets/video/rehearsal_input.mov
-assets/video/frames/
-assets/video/rehearsal_frames/
-assets/video/audio.wav
-assets/video/audio.mp3
-assets/video/persian_music.mp3
+.env
+
+# Deployment & Test Artifacts
+.vercel/
+.playwright-mcp/
+
+# System Files
+.DS_Store
+*.swp
+*.tmp

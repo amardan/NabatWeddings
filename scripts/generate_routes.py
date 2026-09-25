@@ -47,14 +47,18 @@ routes = {
     }
 }
 
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
 def generate_subpages():
-    with open("index.html", "r", encoding="utf-8") as f:
+    index_path = os.path.join(REPO_ROOT, "index.html")
+    with open(index_path, "r", encoding="utf-8") as f:
         original_html = f.read()
 
     print("Generating subpage routes...")
     
     for route, meta in routes.items():
-        os.makedirs(route, exist_ok=True)
+        route_dir = os.path.join(REPO_ROOT, route)
+        os.makedirs(route_dir, exist_ok=True)
         
         canonical_url = f"https://www.nabatpersianweddings.com/{route}/"
         
@@ -181,7 +185,7 @@ def generate_subpages():
         html = re.sub(nav_pattern, set_active_nav_link, html)
         
         # Write to subpage index.html
-        subpage_path = os.path.join(route, "index.html")
+        subpage_path = os.path.join(REPO_ROOT, route, "index.html")
         with open(subpage_path, "w", encoding="utf-8") as f:
             f.write(html)
             

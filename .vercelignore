@@ -1,0 +1,13 @@
+# Environments & Dependencies
+.venv/
+node_modules/
+
+# Python Utility Scripts
+scripts/
+*.py
+
+# Test & Tool Artifacts
+.playwright-mcp/
+.DS_Store
+*.swp
+*.tmp

@@ -6,7 +6,9 @@
   "scripts": {
     "build": "echo \"Static site - no build step required\"",
     "dev": "python3 -m http.server 5173",
-    "start": "python3 -m http.server 5173"
+    "start": "python3 -m http.server 5173",
+    "routes": "python3 scripts/generate_routes.py",
+    "indexnow": "python3 scripts/submit_indexnow.py"
   },
   "keywords": [],
   "license": "ISC",
