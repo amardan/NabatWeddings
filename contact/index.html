@@ -12,7 +12,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <title>Inquire & Start Your Journey | Nabat Persian Weddings</title>
     <meta name="description" content="Connect with Elmira Jafari to book your luxury bilingual Persian wedding officiant. Available in D.C., Maryland, Virginia, California, Florida, and worldwide.">
-    <link rel="canonical" href="https://www.nabatpersianweddings.com/contact/">
+    <link rel="canonical" href="https://www.nabatpersianweddings.com/">
     <meta name="keywords" content="Persian wedding officiant, Farsi wedding officiant, bilingual Persian officiant, Iranian wedding officiant, Farsi English wedding, Sofreh Aghd officiant, DMV wedding officiant, Washington DC, Maryland, Virginia, New York, NYC, California, Los Angeles, San Francisco, Orange County, Florida, Miami, Texas, Houston, Dallas, Austin, Illinois, Chicago, destination Persian wedding">
     <meta name="author" content="Elmira Jafari — Nabat Persian Weddings">
     <link rel="me" href="https://www.instagram.com/nabat_persian_officiant/">
@@ -48,9 +48,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@200;300;400;500&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Preload Critical Assets -->
-    <link rel="preload" as="image" href="/poster.jpg">
-    <link rel="preload" as="image" href="/assets/images/elmira-jafari-persian-wedding-officiant.jpeg">
+    <!-- Preload Critical LCP Hero Poster -->
+    <link rel="preload" as="image" href="/poster.jpg" fetchpriority="high">
     
     <!-- LLM Optimization -->
     <link rel="alternate" type="text/markdown" href="/llms.txt">
@@ -69,10 +68,10 @@
       "@id": "https://www.nabatpersianweddings.com/#localbusiness",
       "url": "https://www.nabatpersianweddings.com/",
       "telephone": "+1-703-423-9330",
+      "email": "elmira.jafari.media@gmail.com",
       "priceRange": "$$$",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "",
         "addressLocality": "Reston",
         "addressRegion": "VA",
         "postalCode": "20190",
@@ -103,10 +102,16 @@
       ],
       "founder": {
         "@type": "Person",
+        "@id": "https://www.nabatpersianweddings.com/#elmira-jafari",
         "name": "Elmira Jafari",
         "jobTitle": "Wedding Officiant & Bilingual Storyteller",
+        "image": "https://www.nabatpersianweddings.com/assets/images/elmira-jafari-persian-wedding-officiant.jpeg",
         "alumniOf": "Master's Degree in Communication",
-        "sameAs": "https://www.linkedin.com/in/elmira-j-76560117/"
+        "knowsLanguage": ["en", "fa"],
+        "sameAs": [
+          "https://www.linkedin.com/in/elmira-j-76560117/",
+          "https://www.instagram.com/nabat_persian_officiant/"
+        ]
       },
       "areaServed": [
         { "@type": "City", "name": "Washington D.C.", "sameAs": "https://en.wikipedia.org/wiki/Washington,_D.C." },
@@ -258,9 +263,12 @@
       "serviceType": "Wedding Officiating",
       "provider": {
         "@type": "LocalBusiness",
+        "@id": "https://www.nabatpersianweddings.com/#localbusiness",
         "name": "Nabat Persian Weddings",
+        "image": "https://www.nabatpersianweddings.com/assets/images/nabat-persian-weddings.jpeg",
         "url": "https://www.nabatpersianweddings.com/",
         "telephone": "+1-703-423-9330",
+        "email": "elmira.jafari.media@gmail.com",
         "priceRange": "$$$",
         "address": {
           "@type": "PostalAddress",
@@ -271,7 +279,7 @@
         }
       },
       "areaServed": [
-        { "@type": "State", "name": "Washington D.C." },
+        { "@type": "City", "name": "Washington D.C." },
         { "@type": "State", "name": "Maryland" },
         { "@type": "State", "name": "Virginia" },
         { "@type": "State", "name": "New York" },
@@ -447,6 +455,7 @@
         </nav>
     </header>
 
+    <main id="main-content">
     <!-- Hero Section with Video Background -->
     <section class="hero" id="home">
         <video class="hero-video" autoplay muted loop playsinline crossorigin="anonymous" poster="/poster.jpg" aria-label="Promotional Video">
@@ -844,14 +853,35 @@
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; text-align: left; margin-bottom: 2.5rem;">
                 
-                <!-- Tile 1: Nikki & Sam -->
+                <!-- Tile 1: The Art of Bilingual Persian Weddings -->
                 <div style="background: #FDFBF7; border: 1px solid rgba(201, 162, 39, 0.25); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
-                    <a href="/blog/nikki-and-sam-waterfront-persian-wedding/" style="display: block; overflow: hidden; height: 210px;">
-                        <img src="/assets/images/nikki-sam-wedding-hero.jpg" alt="Nikki &amp; Sam waterfront destination wedding" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1.0)'">
+                    <a href="/blog/the-art-of-bilingual-persian-weddings/" style="display: block; overflow: hidden; height: 210px;">
+                        <img loading="lazy" src="/assets/images/video-poster-persian-ceremony.jpg" width="720" height="1280" alt="Bilingual Persian wedding ceremony with Sofreh Aghd and sugar rubbing ritual" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1.0)'">
                     </a>
                     <div style="padding: 1.75rem 1.5rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
                         <div>
-                            <span style="font-family: var(--font-sans); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-saffron-dark); font-weight: 600; display: block; margin-bottom: 0.5rem;">Latest Story • Destination Wedding</span>
+                            <span style="font-family: var(--font-sans); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-saffron-dark); font-weight: 600; display: block; margin-bottom: 0.5rem;">Featured Guide • Ceremony Craft</span>
+                            <h3 style="font-family: var(--font-display); font-size: 1.35rem; color: var(--color-pomegranate-dark); margin-bottom: 0.75rem; line-height: 1.35;">
+                                <a href="/blog/the-art-of-bilingual-persian-weddings/" style="text-decoration: none; color: inherit;">The Art of the Bilingual Persian Wedding: Weaving Farsi, English &amp; Sacred Traditions</a>
+                            </h3>
+                            <p style="font-family: var(--font-serif); font-size: 0.95rem; color: var(--color-charcoal-soft); line-height: 1.6; margin-bottom: 1.25rem;">
+                                Explore how an experienced bilingual officiant weaves classical poetry from Rumi and Hafez, Sofreh Aghd symbolism, and English storytelling into a unified celebration.
+                            </p>
+                        </div>
+                        <div>
+                            <a href="/blog/the-art-of-bilingual-persian-weddings/" class="btn-outline" style="font-size: 0.85rem; padding: 0.55rem 1.25rem; display: inline-block;">Read Article &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tile 2: Nikki & Sam -->
+                <div style="background: #FDFBF7; border: 1px solid rgba(201, 162, 39, 0.25); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
+                    <a href="/blog/nikki-and-sam-waterfront-persian-wedding/" style="display: block; overflow: hidden; height: 210px;">
+                        <img loading="lazy" src="/assets/images/nikki-sam-wedding-hero.jpg" width="1080" height="1790" alt="Nikki &amp; Sam waterfront destination wedding" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1.0)'">
+                    </a>
+                    <div style="padding: 1.75rem 1.5rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <span style="font-family: var(--font-sans); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-saffron-dark); font-weight: 600; display: block; margin-bottom: 0.5rem;">Real Wedding • Destination Story</span>
                             <h3 style="font-family: var(--font-display); font-size: 1.35rem; color: var(--color-pomegranate-dark); margin-bottom: 0.75rem; line-height: 1.35;">
                                 <a href="/blog/nikki-and-sam-waterfront-persian-wedding/" style="text-decoration: none; color: inherit;">Behind the Scenes: Total Peace of Mind for Nikki &amp; Sam's Destination Wedding</a>
                             </h3>
@@ -865,10 +895,10 @@
                     </div>
                 </div>
 
-                <!-- Tile 2: Officiant & DJ Coordination -->
+                <!-- Tile 3: Officiant & DJ Coordination -->
                 <div style="background: #FDFBF7; border: 1px solid rgba(201, 162, 39, 0.25); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
                     <a href="/blog/silent-heartbeat-officiant-dj-coordination/" style="display: block; overflow: hidden; height: 210px;">
-                        <img src="/assets/images/officiant-dj-coordination.jpg" alt="Officiant and DJ coordination at Persian ceremony" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1.0)'">
+                        <img loading="lazy" src="/assets/images/officiant-dj-coordination.jpg" width="1080" height="1620" alt="Officiant and DJ coordination at Persian ceremony" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1.0)'">
                     </a>
                     <div style="padding: 1.75rem 1.5rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
                         <div>
@@ -996,6 +1026,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <footer class="site-footer">
         <div class="container">

@@ -57,7 +57,7 @@ def submit_to_indexnow():
     ]
 
     data = json.dumps(payload).encode('utf-8')
-    ctx = ssl._create_unverified_context()
+    ctx = ssl.create_default_context()
 
     for endpoint in endpoints:
         print(f"\nSubmitting URLs to {endpoint}...")

@@ -1,10 +1,10 @@
 import os
 import re
 
-# Define the routes and their specific SEO metadata, H1s, and breadcrumb labels
+# Define the routes and their specific SEO metadata (<60 char titles, 125-158 char descriptions), H1s, and breadcrumb labels
 routes = {
     "about": {
-        "title": "Meet Elmira Jafari | Bilingual Persian & English Wedding Officiant",
+        "title": "Meet Elmira Jafari | Bilingual Persian Wedding Officiant",
         "description": "Meet Elmira Jafari, an award-nominated journalist offering luxury bilingual Farsi/English wedding ceremonies and Sofreh Aghd in DMV and worldwide.",
         "h1": "About Elmira Jafari",
         "breadcrumb_name": "About Elmira",
@@ -22,8 +22,8 @@ routes = {
         "breadcrumb_name": "Ceremony Styles",
     },
     "gallery": {
-        "title": "Gallery - Persian Wedding Photos & Videos | Nabat Persian Weddings",
-        "description": "View photos and videos of beautiful Persian wedding ceremonies and Sofreh Aghd officiated by Elmira Jafari.",
+        "title": "Persian Wedding Photos & Videos | Nabat Persian Weddings",
+        "description": "View curated photos and live ceremony videos of luxury bilingual Persian wedding ceremonies and traditional Sofreh Aghd officiated by Elmira Jafari.",
         "h1": "Persian Wedding Gallery",
         "breadcrumb_name": "Gallery",
     },
@@ -54,13 +54,15 @@ def generate_subpages():
     with open(index_path, "r", encoding="utf-8") as f:
         original_html = f.read()
 
-    print("Generating subpage routes...")
+    print("Generating scroll-alias subpage routes (canonicalized to homepage)...")
     
+    canonical_root = "https://www.nabatpersianweddings.com/"
+
     for route, meta in routes.items():
         route_dir = os.path.join(REPO_ROOT, route)
         os.makedirs(route_dir, exist_ok=True)
         
-        canonical_url = f"https://www.nabatpersianweddings.com/{route}/"
+        route_url = f"https://www.nabatpersianweddings.com/{route}/"
         
         html = original_html
         
@@ -80,10 +82,10 @@ def generate_subpages():
             flags=re.IGNORECASE
         )
         
-        # Replace canonical link tag
+        # Point canonical link tag to homepage root to prevent duplicate-content cannibalization
         html = re.sub(
             r'<link\s+rel="canonical"\s+href=".*?">',
-            f'<link rel="canonical" href="{canonical_url}">',
+            f'<link rel="canonical" href="{canonical_root}">',
             html,
             flags=re.IGNORECASE
         )
@@ -91,7 +93,7 @@ def generate_subpages():
         # Replace Open Graph URL tag
         html = re.sub(
             r'<meta\s+property="og:url"\s+content=".*?">',
-            f'<meta property="og:url" content="{canonical_url}">',
+            f'<meta property="og:url" content="{route_url}">',
             html,
             flags=re.IGNORECASE
         )
@@ -115,7 +117,7 @@ def generate_subpages():
         # Replace Twitter URL tag
         html = re.sub(
             r'<meta\s+property="twitter:url"\s+content=".*?">',
-            f'<meta property="twitter:url" content="{canonical_url}">',
+            f'<meta property="twitter:url" content="{route_url}">',
             html,
             flags=re.IGNORECASE
         )
@@ -160,7 +162,7 @@ def generate_subpages():
           "@type": "ListItem",
           "position": 2,
           "name": "{meta['breadcrumb_name']}",
-          "item": "{canonical_url}"
+          "item": "{route_url}"
         }}
       ]
     }}
@@ -189,7 +191,7 @@ def generate_subpages():
         with open(subpage_path, "w", encoding="utf-8") as f:
             f.write(html)
             
-        print(f"  Generated: {subpage_path} (Canonical: {canonical_url})")
+        print(f"  Generated: {subpage_path} (Canonical -> {canonical_root})")
 
     print("Subpage generation complete!")
 

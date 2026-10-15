@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <title>Page Not Found | Nabat Persian Weddings</title>
+    <meta name="description" content="Page not found on Nabat Persian Weddings. Return to our homepage to explore bilingual Farsi and English wedding officiating by Elmira Jafari.">
     <!-- Google Fonts: Cormorant Garamond for Serifs, Montserrat for Sans-Serif -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -96,12 +97,12 @@
     <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
-    <div class="error-container">
+    <main id="main-content" class="error-container">
         <h1>Page Moved</h1>
-        <div class="error-message">Our ceremony of love continues on our main page</div>
+        <p class="error-message">Our ceremony of love continues on our main page</p>
         <p class="redirect-text">You are being redirected to our homepage in <span id="countdown">3</span> seconds...</p>
         <a id="redirect-link" href="/" class="btn-luxury">Go to Homepage</a>
-    </div>
+    </main>
 
     <script>
         // Mapping old page paths to sections of the new single-page experience
@@ -109,19 +110,19 @@
         let target = "/";
 
         if (path.includes("gallery")) {
-            target = "/gallery";
+            target = "/gallery/";
         } else if (path.includes("testimonial") || path.includes("stories") || path.includes("reviews") || path.includes("love")) {
-            target = "/love-stories";
+            target = "/love-stories/";
         } else if (path.includes("contact") || path.includes("book") || path.includes("inquiry")) {
-            target = "/contact";
+            target = "/contact/";
         } else if (path.includes("about") || path.includes("meaning") || path.includes("sweetness")) {
-            target = "/about";
+            target = "/about/";
         } else if (path.includes("process") || path.includes("step") || path.includes("service")) {
-            target = "/process";
+            target = "/process/";
         } else if (path.includes("locations") || path.includes("location") || path.includes("map")) {
-            target = "/locations";
+            target = "/locations/";
         } else if (path.includes("experience")) {
-            target = "/experience";
+            target = "/experience/";
         }
 
         document.getElementById("redirect-link").href = target;

@@ -28,6 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
         '/locations': 'locations-preview',
         '/gallery': 'gallery',
         '/love-stories': 'testimonials',
+        '/testimonials': 'testimonials',
+        '/reviews': 'testimonials',
         '/blog': 'blog',
         '/faq': 'faq',
         '/contact': 'contact'
@@ -295,8 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const showImage = (index) => {
             currentIndex = (index + images.length) % images.length;
             const img = images[currentIndex];
-            const fullSrc = img.src.replace(/w_800,h_600/, 'w_1400,h_1050');
-            lightboxImg.src = fullSrc;
+            lightboxImg.src = img.src;
             lightboxImg.alt = img.alt;
             lightboxCounter.textContent = (currentIndex + 1) + ' / ' + images.length;
         };
