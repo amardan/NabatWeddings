@@ -1283,15 +1283,16 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
 }
 
 /* Custom crop coordinates based on native Vision saliency/face mapping */
-.gallery-grid img:nth-child(1) { object-position: 46% 49%; }
-.gallery-grid img:nth-child(2) { object-position: 50% 39%; }
-.gallery-grid img:nth-child(3) { object-position: 48% 53%; }
-.gallery-grid img:nth-child(4) { object-position: 46% 43%; }
-.gallery-grid img:nth-child(5) { object-position: 46% 30%; }
-.gallery-grid img:nth-child(6) { object-position: 73% 23%; }
-.gallery-grid img:nth-child(7) { object-position: 32% 45%; }
-.gallery-grid img:nth-child(8) { object-position: 50% 28%; }
-.gallery-grid img:nth-child(9) { object-position: 47% 35%; }
+.gallery-grid img[src*="gallery-01"] { object-position: 46% 49%; }
+.gallery-grid img[src*="gallery-02"] { object-position: 50% 39%; }
+.gallery-grid img[src*="gallery-03"] { object-position: 48% 53%; }
+.gallery-grid img[src*="gallery-04"] { object-position: 46% 43%; }
+.gallery-grid img[src*="gallery-05"] { object-position: 46% 30%; }
+.gallery-grid img[src*="gallery-06"] { object-position: 73% 23%; }
+.gallery-grid img[src*="gallery-07"] { object-position: 32% 45%; }
+.gallery-grid img[src*="gallery-08"] { object-position: 50% 28%; }
+.gallery-grid img[src*="gallery-09"] { object-position: 47% 35%; }
+.gallery-grid img[src*="gallery-10"] { object-position: 50% 24%; }
 
 .gallery-video-item {
     grid-column: 1 / -1;
@@ -1701,32 +1702,6 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
     .split-content {
         min-width: 100%;
         width: 100%;
-    }
-
-    .gallery-grid.mosaic {
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 240px;
-    }
-
-    .gallery-grid.mosaic img:nth-child(1) {
-        grid-column: span 2;
-        grid-row: auto;
-    }
-
-    .gallery-grid.mosaic img:nth-child(2) {
-        grid-row: span 2;
-        grid-column: auto;
-    }
-
-    .gallery-grid.mosaic img:nth-child(6) {
-        grid-row: span 2;
-        grid-column: auto;
-    }
-
-    .gallery-grid.mosaic img:nth-child(4),
-    .gallery-grid.mosaic img:nth-child(9) {
-        grid-column: auto;
-        grid-row: auto;
     }
 
     .process-steps {
@@ -2360,7 +2335,7 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
 }
 
 /* ==========================================================================
-   Gallery — mosaic layout for visual rhythm
+   Gallery — mosaic layout for visual rhythm (10 images = 12 cells)
    ========================================================================== */
 .gallery-grid.mosaic {
     grid-template-columns: repeat(3, 1fr);
@@ -2375,8 +2350,11 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
     grid-row: span 2;
 }
 
-.gallery-grid.mosaic img:nth-child(6) {
-    grid-row: span 2;
+@media (min-width: 769px) and (max-width: 1024px) {
+    .gallery-grid.mosaic {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 240px;
+    }
 }
 
 @media (max-width: 768px) {
