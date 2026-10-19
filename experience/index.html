@@ -410,7 +410,7 @@
     ]
     </script>
 
-    <link rel="stylesheet" href="/styles.css?v=2.1">
+    <link rel="stylesheet" href="/styles.css?v=2.2">
     
     <!-- Vercel Web Analytics -->
     <script>
@@ -852,10 +852,10 @@
             <div class="pdf-diamond-ornament" aria-hidden="true">◆ &nbsp; ◆ &nbsp; ◆</div>
             <p class="body-text narrow" style="margin: 0 auto 2.5rem;">Insights on Persian wedding traditions, bilingual ceremony design, and working seamlessly with your wedding team.</p>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; text-align: left; margin-bottom: 2.5rem;">
+            <div class="blog-grid" style="text-align: left; margin-top: 0; margin-bottom: 2.5rem;">
                 
                 <!-- Tile 1: The Art of Bilingual Persian Weddings -->
-                <div style="background: #FDFBF7; border: 1px solid rgba(201, 162, 39, 0.25); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
+                <div class="blog-card" style="background: #FDFBF7; border: 1px solid rgba(201, 162, 39, 0.25); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
                     <a href="/blog/the-art-of-bilingual-persian-weddings/" style="display: block; overflow: hidden; height: 210px;">
                         <img loading="lazy" src="/assets/images/video-poster-persian-ceremony.jpg" width="720" height="1280" alt="Bilingual Persian wedding ceremony with Sofreh Aghd and sugar rubbing ritual" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1.0)'">
                     </a>
@@ -876,7 +876,7 @@
                 </div>
 
                 <!-- Tile 2: Nikki & Sam -->
-                <div style="background: #FDFBF7; border: 1px solid rgba(201, 162, 39, 0.25); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
+                <div class="blog-card" style="background: #FDFBF7; border: 1px solid rgba(201, 162, 39, 0.25); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
                     <a href="/blog/nikki-and-sam-waterfront-persian-wedding/" style="display: block; overflow: hidden; height: 210px;">
                         <img loading="lazy" src="/assets/images/nikki-sam-wedding-hero.jpg" width="1080" height="1790" alt="Nikki &amp; Sam waterfront destination wedding" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1.0)'">
                     </a>
@@ -897,7 +897,7 @@
                 </div>
 
                 <!-- Tile 3: Officiant & DJ Coordination -->
-                <div style="background: #FDFBF7; border: 1px solid rgba(201, 162, 39, 0.25); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
+                <div class="blog-card" style="background: #FDFBF7; border: 1px solid rgba(201, 162, 39, 0.25); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
                     <a href="/blog/silent-heartbeat-officiant-dj-coordination/" style="display: block; overflow: hidden; height: 210px;">
                         <img loading="lazy" src="/assets/images/officiant-dj-coordination.jpg" width="1080" height="1620" alt="Officiant and DJ coordination at Persian ceremony" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1.0)'">
                     </a>
@@ -1019,11 +1019,14 @@
                     <textarea id="message" name="message" rows="5" placeholder="Tell us about your dream ceremony..." required></textarea>
                 </div>
                 <button type="submit" class="btn-primary full-width">Send Inquiry</button>
+                <div class="form-error-msg" id="form-error" role="alert"></div>
             </form>
             <!-- Success message shown after form submission -->
-            <div id="form-success" style="display:none; margin-top:2rem; padding:1.5rem; border:1px solid var(--color-gold); border-radius:12px; background:rgba(212,175,55,0.05);">
-                <p style="margin:0; font-family:var(--font-serif); font-size:1.3rem; color:var(--color-charcoal);">✨ Thank you! Your inquiry has been received.</p>
-                <p style="margin:0.5rem 0 0; font-size:0.95rem; opacity:0.75;">Elmira will be in touch with you within 1–2 business days.</p>
+            <div id="form-success" role="status" aria-live="polite" style="display:none;">
+                <div class="pdf-diamond-ornament" aria-hidden="true" style="margin-top:0;">◆ &nbsp; ◆ &nbsp; ◆</div>
+                <h3 style="margin:0 0 0.5rem; font-family:var(--font-display); font-size:1.65rem; color:var(--color-pomegranate-dark);">Thank You — Your Inquiry Has Been Received</h3>
+                <p style="margin:0.5rem auto 1.25rem; font-size:1.05rem; color:var(--color-charcoal-soft); max-width:480px; line-height:1.7;">Elmira will review your ceremony details and be in touch with you within 24–48 hours to schedule your complimentary connection call.</p>
+                <button type="button" id="form-reset-btn" class="btn-outline" style="padding:0.65rem 1.6rem; font-size:0.78rem;">Send Another Message</button>
             </div>
         </div>
     </section>
@@ -1082,6 +1085,6 @@
         <span class="lightbox-counter" id="lightboxCounter"></span>
     </div>
 
-    <script src="/script.js?v=2.0"></script>
+    <script src="/script.js?v=2.2"></script>
 </body>
 </html>

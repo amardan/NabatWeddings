@@ -69,20 +69,24 @@
     --radius-lg: 20px;
     --radius-full: 50px;
 
-    /* Multi-layered luxury shadows */
+    /* Multi-layered luxury shadows & specular highlight */
+    --shadow-xs: 0 1px 3px rgba(33, 30, 27, 0.03), 0 4px 12px rgba(33, 30, 27, 0.04);
     --shadow-sm: 0 2px 6px rgba(33, 30, 27, 0.03), 0 10px 24px rgba(33, 30, 27, 0.05);
     --shadow-md: 0 4px 12px rgba(33, 30, 27, 0.04), 0 20px 44px rgba(33, 30, 27, 0.08);
     --shadow-lg: 0 8px 24px rgba(33, 30, 27, 0.06), 0 32px 64px rgba(33, 30, 27, 0.13);
     --shadow-gold: 0 4px 14px rgba(201, 162, 39, 0.12), 0 18px 48px rgba(201, 162, 39, 0.24);
     --shadow-pomegranate: 0 6px 18px rgba(139, 30, 63, 0.18), 0 16px 44px rgba(139, 30, 63, 0.30);
+    --border-specular: inset 0 1px 0 rgba(255, 255, 255, 0.85);
 
     /* Silky spring-tuned transitions */
     --transition-slow: 0.85s cubic-bezier(0.16, 1, 0.3, 1);
     --transition-base: 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: 0.22s cubic-bezier(0.16, 1, 0.3, 1);
 
     /* Gradients */
     --gradient-saffron: linear-gradient(135deg, var(--color-saffron-light), var(--color-saffron));
     --gradient-pomegranate: linear-gradient(135deg, var(--color-pomegranate-light), var(--color-pomegranate-dark));
+    --gradient-card: linear-gradient(180deg, #FFFFFF 0%, #FCF9F4 100%);
 }
 
 /* Focus-visible for accessibility */
@@ -201,7 +205,14 @@ h2.section-title {
     line-height: 1.18;
     margin-bottom: var(--spacing-md);
     position: relative;
-    display: inline-block;
+    display: block;
+}
+
+h2.section-title.text-center {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-inline: auto;
 }
 
 /* Global Editorial Eyebrow Tag (.category-tag) */
@@ -320,11 +331,11 @@ p {
 
 .farsi-poetry .gold-word {
     background-image: linear-gradient(120deg, 
-        var(--color-saffron) 20%, 
-        var(--color-saffron-light) 40%, 
-        #FFF9E6 50%, 
-        var(--color-saffron-light) 60%, 
-        var(--color-saffron) 80%
+        #8C6508 15%, 
+        var(--color-saffron) 38%, 
+        #E2BE4A 50%, 
+        var(--color-saffron) 62%, 
+        #8C6508 85%
     ) !important;
     background-size: 200% auto !important;
     background-position: 200% center;
@@ -332,34 +343,25 @@ p {
     -webkit-text-fill-color: transparent !important;
     background-clip: text !important;
     color: transparent !important;
-    animation: goldShine 4s linear infinite !important;
+    animation: goldShine 5s linear infinite !important;
     display: inline-block !important;
-    font-size: 1.1em !important;
+    font-size: 1.08em !important;
     font-weight: 700 !important;
     font-style: normal !important;
     text-transform: none !important;
     letter-spacing: inherit !important;
     margin: 0 0.05em !important;
     vertical-align: baseline !important;
+    filter: drop-shadow(0.5px 0.5px 0px rgba(107, 20, 48, 0.35))
+            drop-shadow(0 1px 2px rgba(168, 132, 22, 0.2));
 }
 
 @keyframes goldShine {
     0% {
         background-position: 200% center;
-        filter: drop-shadow(0.5px 0.5px 0px rgba(139, 30, 63, 0.5))
-                drop-shadow(1.5px 1.5px 0px rgba(201, 162, 39, 0.45))
-                drop-shadow(0 2px 4px rgba(201, 162, 39, 0.25));
-    }
-    50% {
-        filter: drop-shadow(0.5px 0.75px 0px rgba(139, 30, 63, 0.6))
-                drop-shadow(1.5px 2px 0px rgba(201, 162, 39, 0.55))
-                drop-shadow(0 6px 14px rgba(255, 220, 100, 0.7));
     }
     100% {
         background-position: 0% center;
-        filter: drop-shadow(0.5px 0.5px 0px rgba(139, 30, 63, 0.5))
-                drop-shadow(1.5px 1.5px 0px rgba(201, 162, 39, 0.45))
-                drop-shadow(0 2px 4px rgba(201, 162, 39, 0.25));
     }
 }
 
@@ -382,7 +384,8 @@ p {
     
     .poetry-column.persian-column .poetry-quote {
         border-right: 2px solid var(--color-saffron);
-        padding-right: var(--spacing-sm);
+        padding-right: 1.5rem;
+        margin-right: 0.25rem;
         text-align: right;
     }
 }
@@ -428,13 +431,13 @@ p {
     align-items: center;
     z-index: 1000;
     transition:
-        background var(--transition-base),
-        border-color var(--transition-base),
-        box-shadow var(--transition-base),
-        padding var(--transition-base),
-        top var(--transition-base);
+        background 0.24s ease,
+        border-color 0.24s ease,
+        box-shadow 0.24s ease,
+        padding 0.24s ease,
+        top 0.24s ease;
 
-    background: rgba(26, 23, 21, 0.58);
+    background: rgba(26, 23, 21, 0.64);
     backdrop-filter: blur(22px) saturate(180%);
     -webkit-backdrop-filter: blur(22px) saturate(180%);
     border-radius: var(--radius-full);
@@ -444,20 +447,23 @@ p {
         inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 
-.site-header.scrolled {
+.site-header.scrolled,
+body:not(:has(.hero, .page-hero, .error-page-container)) .site-header {
     top: 0.85rem;
-    background: rgba(251, 248, 243, 0.86);
+    background: rgba(251, 248, 243, 0.92);
     backdrop-filter: blur(24px) saturate(190%);
     -webkit-backdrop-filter: blur(24px) saturate(190%);
-    border-color: rgba(201, 162, 39, 0.24);
+    border-color: rgba(201, 162, 39, 0.26);
     box-shadow:
         0 14px 44px rgba(33, 30, 27, 0.09),
         0 2px 10px rgba(33, 30, 27, 0.04),
-        inset 0 1px 0 rgba(255, 255, 255, 0.85);
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .site-header.scrolled .logo-text,
-.site-header.scrolled .desktop-nav a {
+.site-header.scrolled .desktop-nav a,
+body:not(:has(.hero, .page-hero, .error-page-container)) .site-header .logo-text,
+body:not(:has(.hero, .page-hero, .error-page-container)) .site-header .desktop-nav a {
     color: var(--color-charcoal);
 }
 
@@ -466,7 +472,7 @@ p {
     letter-spacing: 0.11em;
     text-transform: uppercase;
     color: #fff;
-    transition: color var(--transition-base), opacity var(--transition-fast);
+    transition: color 0.24s ease, opacity 0.2s ease;
     font-weight: 500;
     white-space: nowrap;
     flex-shrink: 0;
@@ -490,7 +496,7 @@ p {
     font-weight: 400;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    transition: color var(--transition-base), opacity var(--transition-base);
+    transition: color 0.24s ease, opacity 0.2s ease;
     position: relative;
     white-space: nowrap;
     padding: 0.25rem 0;
@@ -524,7 +530,8 @@ p {
     font-weight: 600;
 }
 
-.site-header.scrolled .desktop-nav a.active {
+.site-header.scrolled .desktop-nav a.active,
+body:not(:has(.hero, .page-hero, .error-page-container)) .site-header .desktop-nav a.active {
     color: var(--color-pomegranate) !important;
 }
 
@@ -559,12 +566,13 @@ p {
     width: 24px;
     height: 2px;
     background-color: #fff;
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, background-color 0.3s ease;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, background-color 0.24s ease;
     border-radius: 2px;
     transform-origin: center;
 }
 
-.site-header.scrolled .mobile-menu-btn span {
+.site-header.scrolled .mobile-menu-btn span,
+body:not(:has(.hero, .page-hero, .error-page-container)) .site-header .mobile-menu-btn span {
     background-color: var(--color-charcoal);
 }
 
@@ -758,6 +766,7 @@ p {
 .btn-primary {
     background: var(--gradient-pomegranate);
     color: #fff !important;
+    border: 1px solid transparent;
     box-shadow: var(--shadow-pomegranate), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
@@ -772,6 +781,10 @@ p {
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
+    margin-top: 0;
+}
+
+.hero-content > .btn-outline {
     margin-top: var(--spacing-sm);
 }
 
@@ -965,9 +978,15 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
 /* Testimonial Grid */
 .testimonial-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--spacing-md);
     margin-top: var(--spacing-md);
+}
+
+@media (min-width: 1320px) {
+    .testimonial-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
 }
 
 .testimonial-card {
@@ -1120,6 +1139,30 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
 .full-width {
     width: 100%;
     margin-top: var(--spacing-xs);
+}
+
+#form-success {
+    max-width: 640px;
+    margin: 2rem auto 0 !important;
+    padding: clamp(2rem, 4vw, 3rem) !important;
+    border: 1.5px solid var(--color-saffron) !important;
+    border-radius: var(--radius-lg) !important;
+    background: linear-gradient(180deg, #FFFFFF 0%, #FAF5EC 100%) !important;
+    box-shadow: var(--shadow-gold), var(--border-specular) !important;
+    text-align: center;
+    animation: fadeInFaq 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.form-error-msg {
+    margin-top: 1rem;
+    padding: 0.85rem 1rem;
+    border-radius: var(--radius-sm);
+    background: rgba(139, 30, 63, 0.08);
+    border: 1px solid rgba(139, 30, 63, 0.25);
+    color: var(--color-pomegranate-dark);
+    font-size: 0.9rem;
+    text-align: center;
+    display: none;
 }
 
 /* Footer */
@@ -1319,9 +1362,13 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
 /* Process Steps */
 .process-steps {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: clamp(1.25rem, 2.2vw, 2.25rem);
     position: relative;
+}
+
+.process-steps:has(> :nth-child(4)) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .step-card {
@@ -1615,14 +1662,22 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
         padding: 4.5rem 5%;
     }
 
+    body:not(:has(.hero, .page-hero, .error-page-container)) main > section.section-padding:first-of-type {
+        padding-top: 7.5rem !important;
+    }
+
     .split-layout,
     .split-layout.reverse {
+        flex-direction: column;
         gap: 2.25rem;
+        max-width: 720px;
+        margin-inline: auto;
     }
 
     .split-image,
     .split-content {
-        min-width: 280px;
+        min-width: 100%;
+        width: 100%;
     }
 
     .gallery-grid.mosaic {
@@ -1735,10 +1790,12 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
         border-radius: 22px;
         margin-top: 0;
         opacity: 0;
+        visibility: hidden;
         pointer-events: none;
         transition:
-            opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1),
-            transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+            transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+            visibility 0.28s;
         transform: translateY(-10px) scale(0.98);
         transform-origin: top center;
         border: 1px solid rgba(201, 162, 39, 0.22);
@@ -1747,11 +1804,13 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
 
     .desktop-nav.active {
         opacity: 1;
+        visibility: visible;
         pointer-events: all;
         transform: translateY(0) scale(1);
     }
 
-    .site-header.scrolled .desktop-nav {
+    .site-header.scrolled .desktop-nav,
+    body:not(:has(.hero, .page-hero, .error-page-container)) .site-header .desktop-nav {
         background: rgba(251, 248, 243, 0.96) !important;
         border-color: rgba(201, 162, 39, 0.26);
         box-shadow: 0 24px 56px rgba(33, 30, 27, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.9);
@@ -1778,11 +1837,13 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
         display: none;
     }
 
-    .site-header.scrolled .desktop-nav a {
+    .site-header.scrolled .desktop-nav a,
+    body:not(:has(.hero, .page-hero, .error-page-container)) .site-header .desktop-nav a {
         color: var(--color-charcoal) !important;
     }
 
-    .site-header.scrolled .desktop-nav a.active {
+    .site-header.scrolled .desktop-nav a.active,
+    body:not(:has(.hero, .page-hero, .error-page-container)) .site-header .desktop-nav a.active {
         color: var(--color-pomegranate) !important;
         background-color: rgba(139, 30, 63, 0.07);
     }
@@ -1814,7 +1875,23 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
     }
 
     .section-padding {
-        padding: 3.5rem 5% !important;
+        padding: 3.5rem 5%;
+    }
+
+    body:not(:has(.hero, .page-hero, .error-page-container)) main > section.section-padding:first-of-type {
+        padding-top: 7.25rem !important;
+    }
+
+    .page-hero {
+        padding: 6.75rem 1.25rem 3.25rem !important;
+    }
+
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        bottom: 1rem;
+        right: 1rem;
+        font-size: 1rem;
     }
 
     .process-steps {
@@ -1909,7 +1986,11 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
     }
 
     .section-padding {
-        padding: 3rem 5% !important;
+        padding: 3rem 5%;
+    }
+
+    body:not(:has(.hero, .page-hero, .error-page-container)) main > section.section-padding:first-of-type {
+        padding-top: 6.75rem !important;
     }
 
     .nabat-ornament::before,
@@ -2545,7 +2626,7 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
     border: 1px solid rgba(255, 255, 255, 0.38);
     padding: 0.5rem 1.2rem;
     border-radius: var(--radius-full);
-    transition: all var(--transition-base);
+    transition: color 0.22s ease, border-color 0.22s ease, background-color 0.22s ease, transform 0.22s ease;
     display: flex;
     align-items: center;
     gap: 0.4rem;
@@ -2559,15 +2640,18 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
 }
 
 .site-header.scrolled .header-return-btn,
-.site-header.scrolled .header-return-btn:visited {
-    color: var(--color-charcoal);
-    border-color: rgba(33, 30, 27, 0.25);
+.site-header.scrolled .header-return-btn:visited,
+body:not(:has(.hero, .page-hero, .error-page-container)) .site-header .header-return-btn {
+    color: var(--color-charcoal) !important;
+    border-color: rgba(33, 30, 27, 0.28) !important;
+    background-color: rgba(33, 30, 27, 0.04);
 }
 
-.site-header.scrolled .header-return-btn:hover {
-    background-color: var(--color-charcoal);
+.site-header.scrolled .header-return-btn:hover,
+body:not(:has(.hero, .page-hero, .error-page-container)) .site-header .header-return-btn:hover {
+    background-color: var(--color-charcoal) !important;
     color: #fff !important;
-    border-color: var(--color-charcoal);
+    border-color: var(--color-charcoal) !important;
 }
 
 @media (max-width: 480px) {
@@ -3126,6 +3210,14 @@ a[href^="/locations/"]:hover > div {
     text-align: center;
 }
 
+.package-footer .btn-primary,
+.package-footer .btn-outline {
+    padding: 0.9rem 1.2rem;
+    font-size: 0.74rem;
+    letter-spacing: 0.11em;
+    white-space: nowrap;
+}
+
 /* Travel Fee Schedule Table */
 .travel-table-wrapper {
     background: var(--gradient-card);
@@ -3570,3 +3662,41 @@ img, video, canvas, iframe, svg {
     color: var(--color-charcoal-muted, #6E6862);
     margin: 0;
 }
+
+/* ==========================================================================
+   Late-Cascade Tablet Grid Refinements (769px – 1024px)
+   ========================================================================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .packages-grid,
+    .ceremony-styles-grid,
+    .blog-grid,
+    .process-steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .packages-grid > .package-card:last-child:nth-child(odd),
+    .ceremony-styles-grid > .style-card:last-child:nth-child(odd),
+    .blog-grid > .blog-card:last-child:nth-child(odd),
+    .process-steps > .step-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        max-width: calc(50% - 1rem);
+        margin-inline: auto;
+        width: 100%;
+    }
+
+    .bilingual-video-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem;
+    }
+
+    .site-footer .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .site-footer .footer-col:first-child {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+}
+

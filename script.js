@@ -233,14 +233,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Header Scroll Effect
     const header = document.querySelector('.site-header');
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
+    const hasDarkHero = !!document.querySelector('.hero, .page-hero, .error-page-container');
+
+    function syncHeaderScrollState() {
+        if (!header) return;
+        if (!hasDarkHero || window.scrollY > 50) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
-    }, { passive: true });
+    }
+
+    syncHeaderScrollState();
+    window.addEventListener('scroll', syncHeaderScrollState, { passive: true });
 
     // Intersection Observer for smooth reveal-on-scroll
     const observerOptions = {
@@ -287,16 +292,74 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // Async form submission feedback
+    // Inline AJAX form submission (zero page redirect, with standard POST fallback)
     const luxuryForm = document.querySelector('.luxury-form');
     if (luxuryForm) {
-        luxuryForm.addEventListener('submit', (e) => {
-            const submitBtn = luxuryForm.querySelector('button[type="submit"]');
+        const submitBtn = luxuryForm.querySelector('button[type="submit"]');
+        const successBox = document.getElementById('form-success');
+        const errorBox = document.getElementById('form-error');
+        const resetBtn = document.getElementById('form-reset-btn');
+        const originalBtnText = submitBtn ? submitBtn.textContent : 'Send Inquiry';
+
+        if (resetBtn && successBox) {
+            resetBtn.addEventListener('click', () => {
+                luxuryForm.reset();
+                successBox.style.display = 'none';
+                luxuryForm.style.display = '';
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalBtnText;
+                    submitBtn.style.opacity = '';
+                    submitBtn.style.cursor = '';
+                }
+            });
+        }
+
+        luxuryForm.addEventListener('submit', async (e) => {
+            if (!window.fetch || !window.FormData) {
+                return; // Let native form POST proceed on legacy browsers
+            }
+            e.preventDefault();
+
+            if (errorBox) {
+                errorBox.style.display = 'none';
+                errorBox.textContent = '';
+            }
             if (submitBtn) {
                 submitBtn.disabled = true;
                 submitBtn.textContent = 'Sending...';
-                submitBtn.style.opacity = '0.7';
-                submitBtn.style.cursor = 'not-allowed';
+                submitBtn.style.opacity = '0.75';
+                submitBtn.style.cursor = 'wait';
+            }
+
+            const rawAction = luxuryForm.getAttribute('action') || '';
+            const ajaxUrl = rawAction.includes('formsubmit.co/') && !rawAction.includes('/ajax/')
+                ? rawAction.replace('formsubmit.co/', 'formsubmit.co/ajax/')
+                : rawAction;
+
+            try {
+                const formData = new FormData(luxuryForm);
+                const response = await fetch(ajaxUrl, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    luxuryForm.style.display = 'none';
+                    if (successBox) {
+                        successBox.style.display = 'block';
+                        successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                } else {
+                    // Fallback to native form submission if AJAX endpoint rejects
+                    HTMLFormElement.prototype.submit.call(luxuryForm);
+                }
+            } catch (err) {
+                // Network/CORS fallback to native form submission
+                HTMLFormElement.prototype.submit.call(luxuryForm);
             }
         });
     }
