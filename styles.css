@@ -616,11 +616,11 @@ body:not(:has(.hero, .page-hero, .error-page-container)) .site-header .mobile-me
     position: relative;
     height: 100vh;
     height: 100svh;
-    min-height: 600px;
+    min-height: 640px;
     max-height: 1200px;
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
     text-align: center;
     overflow: hidden;
@@ -646,31 +646,62 @@ body:not(:has(.hero, .page-hero, .error-page-container)) .site-header .mobile-me
     width: 100%;
     height: 100%;
     background:
-        radial-gradient(ellipse at center, rgba(33, 30, 27, 0.28) 0%, rgba(24, 21, 18, 0.72) 100%),
-        linear-gradient(180deg, rgba(24, 21, 18, 0.48) 0%, rgba(33, 30, 27, 0.22) 42%, rgba(24, 21, 18, 0.72) 100%);
+        radial-gradient(ellipse at 50% 45%, rgba(24, 21, 18, 0.08) 0%, rgba(24, 21, 18, 0.58) 100%),
+        linear-gradient(
+            180deg,
+            rgba(20, 17, 15, 0.64) 0%,
+            rgba(24, 21, 18, 0.38) 22%,
+            rgba(24, 21, 18, 0.10) 36%,
+            rgba(24, 21, 18, 0.12) 56%,
+            rgba(20, 17, 15, 0.62) 72%,
+            rgba(18, 15, 13, 0.82) 100%
+        );
     z-index: -1;
 }
 
 .hero-content {
     color: #fff;
-    max-width: 920px;
-    padding: 2.5rem 5% 0;
+    width: 100%;
+    max-width: 1080px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: clamp(5.2rem, 10vh, 6.5rem) 5% clamp(2.35rem, 5vh, 3.5rem);
     z-index: 2;
 }
 
 .hero-content h1 {
+    font-size: clamp(1.55rem, 2.9vw, 2.65rem) !important;
+    letter-spacing: 0.09em;
+    line-height: 1.12;
+    margin-bottom: 0.35rem !important;
     text-shadow:
-        0 4px 32px rgba(0, 0, 0, 0.38),
-        0 1px 3px rgba(0, 0, 0, 0.25);
+        0 4px 28px rgba(0, 0, 0, 0.55),
+        0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+.hero-content .hero-tagline {
+    margin-bottom: auto;
+    font-size: clamp(0.66rem, 0.85vw, 0.82rem);
+    letter-spacing: 0.28em;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content .subtitle {
+    font-size: clamp(1.1rem, 1.8vw, 1.38rem);
+    margin-bottom: 0.45rem;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.55);
 }
 
 .hero-content .location-text {
-    font-size: clamp(0.84rem, 1.1vw, 0.96rem);
-    letter-spacing: 0.09em;
-    color: rgba(255, 255, 255, 0.84);
-    max-width: 650px;
-    margin: 0 auto var(--spacing-sm);
-    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
+    font-size: clamp(0.8rem, 1vw, 0.92rem);
+    letter-spacing: 0.08em;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.88);
+    max-width: 640px;
+    margin: 0 auto 0.85rem;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
 }
 
 .hero-divider {
@@ -678,8 +709,9 @@ body:not(:has(.hero, .page-hero, .error-page-container)) .site-header .mobile-me
     width: 96px;
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--color-saffron-light), transparent);
-    margin: var(--spacing-sm) auto;
+    margin: 0 auto 0.75rem;
     position: relative;
+    flex-shrink: 0;
 }
 
 /* Small diamond ornament on the hero divider */
@@ -696,16 +728,7 @@ body:not(:has(.hero, .page-hero, .error-page-container)) .site-header .mobile-me
 }
 
 .scroll-hint {
-    position: absolute;
-    bottom: 2.25rem;
-    left: 50%;
-    transform: translateX(-50%);
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.68rem;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    z-index: 2;
-    animation: scrollHintBob 2.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    display: none;
 }
 
 .scroll-hint::after {
@@ -785,7 +808,7 @@ body:not(:has(.hero, .page-hero, .error-page-container)) .site-header .mobile-me
 }
 
 .hero-content > .btn-outline {
-    margin-top: var(--spacing-sm);
+    margin-top: 0.35rem;
 }
 
 .btn-outline:hover {
@@ -1858,8 +1881,17 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
         margin-bottom: var(--spacing-xs) !important;
     }
 
+    .hero-content {
+        padding: 5.5rem 5% 2.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(1.45rem, 6.2vw, 1.95rem) !important;
+        margin-bottom: 0.3rem !important;
+    }
+
     .subtitle {
-        font-size: 1.15rem !important;
+        font-size: 1.12rem !important;
     }
 
     .split-layout,
@@ -1972,13 +2004,22 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
         font-size: clamp(1.75rem, 8.5vw, 2.2rem) !important;
     }
 
+    .hero-content {
+        padding: 5.15rem 5% 2.15rem;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(1.32rem, 5.8vw, 1.65rem) !important;
+        margin-bottom: 0.25rem !important;
+    }
+
     .hero-tagline {
-        font-size: 0.68rem;
-        letter-spacing: 0.22em;
+        font-size: 0.65rem;
+        letter-spacing: 0.18em;
     }
 
     .subtitle {
-        font-size: 1rem !important;
+        font-size: 0.98rem !important;
     }
 
     .section-title {
