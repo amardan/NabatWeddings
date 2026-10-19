@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css?v=1.8">
+    <link rel="stylesheet" href="/styles.css?v=1.9">
     <style>
         body {
             background-color: var(--color-charcoal, #2A2725);
@@ -97,6 +97,7 @@
     <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <main id="main-content" class="error-container">
         <h1>Page Moved</h1>
         <p class="error-message">Our ceremony of love continues on our main page</p>
@@ -109,19 +110,27 @@
         const path = window.location.pathname.toLowerCase().replace(/\/$/, "");
         let target = "/";
 
-        if (path.includes("gallery")) {
+        if (path.includes("gallery") || path.includes("photo") || path.includes("video")) {
             target = "/gallery/";
+        } else if (path.includes("collection") || path.includes("package") || path.includes("pric") || path.includes("rate") || path.includes("cost")) {
+            target = "/collections/";
+        } else if (path.includes("blog") || path.includes("journal") || path.includes("article") || path.includes("post")) {
+            target = "/blog/";
         } else if (path.includes("testimonial") || path.includes("stories") || path.includes("reviews") || path.includes("love")) {
             target = "/love-stories/";
-        } else if (path.includes("contact") || path.includes("book") || path.includes("inquiry")) {
+        } else if (path.includes("faq") || path.includes("question")) {
+            target = "/faq/";
+        } else if (path.includes("privacy") || path.includes("policy")) {
+            target = "/privacy/";
+        } else if (path.includes("contact") || path.includes("book") || path.includes("inquir")) {
             target = "/contact/";
-        } else if (path.includes("about") || path.includes("meaning") || path.includes("sweetness")) {
+        } else if (path.includes("about") || path.includes("meaning") || path.includes("sweetness") || path.includes("elmira")) {
             target = "/about/";
-        } else if (path.includes("process") || path.includes("step") || path.includes("service")) {
+        } else if (path.includes("process") || path.includes("step") || path.includes("journey") || path.includes("service")) {
             target = "/process/";
-        } else if (path.includes("locations") || path.includes("location") || path.includes("map")) {
+        } else if (path.includes("locations") || path.includes("location") || path.includes("map") || path.includes("area")) {
             target = "/locations/";
-        } else if (path.includes("experience")) {
+        } else if (path.includes("experience") || path.includes("style") || path.includes("sofreh")) {
             target = "/experience/";
         }
 

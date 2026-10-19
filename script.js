@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // Path routing map
+    // Path routing map for homepage sections
     const pathToSectionMap = {
         '/about': 'about',
         '/process': 'process',
@@ -35,23 +35,76 @@ document.addEventListener('DOMContentLoaded', () => {
         '/contact': 'contact'
     };
 
-    function getSectionIdFromPath(path) {
-        const cleanPath = path.toLowerCase().replace(/\/$/, '');
+    // Standalone hub pages have their own distinct HTML documents.
+    // On the homepage, scrolling/clicking to their preview sections uses hash URLs
+    // so that CTA links (like /collections/#local) and page refreshes work properly.
+    const standaloneSectionIds = new Set(['collections', 'locations-preview', 'blog']);
+
+    const hashToNavPath = {
+        '#about': '/about',
+        '#process': '/process',
+        '#experience': '/experience',
+        '#collections': '/collections',
+        '#locations-preview': '/locations',
+        '#gallery': '/gallery',
+        '#testimonials': '/love-stories',
+        '#blog': '/blog',
+        '#faq': '/faq',
+        '#contact': '/contact'
+    };
+
+    function getSectionIdFromPath(path, hash = '') {
+        if (hash && hashToNavPath[hash]) {
+            return hash.slice(1);
+        }
+        if (path === '/#locations-preview') {
+            return 'locations-preview';
+        }
+        if (path && path.startsWith('/#')) {
+            const h = path.slice(1);
+            if (hashToNavPath[h]) return h.slice(1);
+        }
+        const cleanPath = (path || '').split('#')[0].split('?')[0].toLowerCase().replace(/\/$/, '');
         if (cleanPath === '' || cleanPath === '/' || cleanPath === '/index.html') {
             return 'home';
         }
         return pathToSectionMap[cleanPath] || null;
     }
 
-    function updateActiveNavLink(path) {
-        const normalize = (p) => (p || '/').replace(/\/$/, '') || '/';
+    function getHistoryUrlForSection(sectionId, fallbackHref) {
+        if (sectionId === 'home') return '/';
+        if (standaloneSectionIds.has(sectionId)) {
+            return '/#' + sectionId;
+        }
+        return fallbackHref || '/';
+    }
+
+    function getCanonicalNavPath(path, hash = '') {
+        if (path === '/#locations-preview' || hash === '#locations-preview') {
+            return '/locations';
+        }
+        if (path && path.startsWith('/#')) {
+            const h = path.slice(1);
+            if (hashToNavPath[h]) return hashToNavPath[h];
+        }
+        if (hash && hashToNavPath[hash]) {
+            return hashToNavPath[hash];
+        }
+        const cleanPath = (path || '/').split('#')[0].split('?')[0].toLowerCase().replace(/\/$/, '') || '/';
+        if (cleanPath === '/index.html') return '/';
+        if (cleanPath === '/packages') return '/collections';
+        if (cleanPath === '/testimonials' || cleanPath === '/reviews') return '/love-stories';
+        if (cleanPath.startsWith('/blog/')) return '/blog';
+        if (cleanPath.startsWith('/locations/')) return '/locations';
+        return cleanPath;
+    }
+
+    function updateActiveNavLink(path, hash = '') {
+        const activeTarget = getCanonicalNavPath(path, hash);
         const navLinks = document.querySelectorAll('.desktop-nav a');
         navLinks.forEach(link => {
-            let href = link.getAttribute('href');
-            if (href === '/#locations-preview') {
-                href = '/locations';
-            }
-            if (normalize(href) === normalize(path)) {
+            const linkTarget = getCanonicalNavPath(link.getAttribute('href') || '');
+            if (linkTarget === activeTarget && activeTarget !== '/') {
                 link.classList.add('active');
             } else {
                 link.classList.remove('active');
@@ -59,36 +112,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Scroll to section based on current path on page load
+    // Scroll to section based on current path/hash on page load
+    const isHomePage = !!document.getElementById('home');
     const initialPath = window.location.pathname;
-    const initialSectionId = getSectionIdFromPath(initialPath);
-    if (initialSectionId && initialSectionId !== 'home') {
+    const initialHash = window.location.hash;
+    const initialSectionId = getSectionIdFromPath(initialPath, initialHash);
+    if (isHomePage && initialSectionId && initialSectionId !== 'home') {
         const targetElement = document.getElementById(initialSectionId);
         if (targetElement) {
             // Wait slightly for fonts and layout to settle before scrolling
             setTimeout(() => {
                 targetElement.scrollIntoView({ behavior: 'auto' });
-                updateActiveNavLink(initialPath);
+                updateActiveNavLink(initialPath, initialHash);
             }, 150);
         }
     } else {
-        updateActiveNavLink('/');
+        updateActiveNavLink(initialPath, initialHash);
     }
 
-    // Intercept navigation link clicks
+    // Intercept navigation link clicks on the homepage experience
     let isScrollingToTarget = false;
     document.querySelectorAll('.desktop-nav a, .btn-outline, .hero-content a').forEach(link => {
-        let href = link.getAttribute('href');
-        if (href === '/#locations-preview') {
-            href = '/locations';
-        }
-        if (href && href.startsWith('/')) {
-            const sectionId = getSectionIdFromPath(href);
+        const rawHref = link.getAttribute('href');
+        if (rawHref && rawHref.startsWith('/')) {
+            const sectionId = getSectionIdFromPath(rawHref);
             if (sectionId) {
                 link.addEventListener('click', (e) => {
-                    const targetExists = sectionId === 'home' ? !!document.getElementById('home') : !!document.getElementById(sectionId);
+                    const targetExists = sectionId === 'home' ? isHomePage : (isHomePage && !!document.getElementById(sectionId));
                     if (!targetExists) {
-                        return; // Let standard browser navigation happen
+                        return; // Let standard browser navigation happen on standalone pages
                     }
                     e.preventDefault();
                     
@@ -109,8 +161,9 @@ document.addEventListener('DOMContentLoaded', () => {
                             target.scrollIntoView({ behavior: 'smooth' });
                         }
                     }
-                    window.history.pushState(null, '', href);
-                    updateActiveNavLink(href);
+                    const historyUrl = getHistoryUrlForSection(sectionId, rawHref);
+                    window.history.pushState(null, '', historyUrl);
+                    updateActiveNavLink(rawHref);
                     
                     setTimeout(() => {
                         isScrollingToTarget = false;
@@ -123,8 +176,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle browser Back/Forward buttons
     window.addEventListener('popstate', () => {
         const path = window.location.pathname;
-        const sectionId = getSectionIdFromPath(path);
-        if (sectionId) {
+        const hash = window.location.hash;
+        const sectionId = getSectionIdFromPath(path, hash);
+        if (isHomePage && sectionId) {
             if (sectionId === 'home') {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             } else {
@@ -133,11 +187,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     target.scrollIntoView({ behavior: 'smooth' });
                 }
             }
-            updateActiveNavLink(path);
+            updateActiveNavLink(path, hash);
+        } else {
+            updateActiveNavLink(path, hash);
         }
     });
 
-    // Highlight active section on scroll using IntersectionObserver
+    // Highlight active section on scroll using IntersectionObserver (homepage only)
     const sectionObserverOptions = {
         root: null,
         rootMargin: '-40% 0px -50% 0px',
@@ -149,28 +205,31 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const sectionId = entry.target.getAttribute('id');
-                let path = '/';
+                let navPath = '/';
                 for (const [p, sId] of Object.entries(pathToSectionMap)) {
                     if (sId === sectionId) {
-                        path = p;
+                        navPath = p + '/';
                         break;
                     }
                 }
-                
-                if (window.location.pathname !== path) {
-                    window.history.replaceState(null, '', path);
+                const historyUrl = getHistoryUrlForSection(sectionId, navPath);
+                const currentUrl = window.location.pathname + window.location.hash;
+                if (currentUrl !== historyUrl) {
+                    window.history.replaceState(null, '', historyUrl);
                 }
-                updateActiveNavLink(path);
+                updateActiveNavLink(navPath);
             }
         });
     }, sectionObserverOptions);
 
-    Object.values(pathToSectionMap).forEach(id => {
-        const el = document.getElementById(id);
-        if (el) sectionObserver.observe(el);
-    });
-    const homeEl = document.getElementById('home');
-    if (homeEl) sectionObserver.observe(homeEl);
+    if (isHomePage) {
+        Object.values(pathToSectionMap).forEach(id => {
+            const el = document.getElementById(id);
+            if (el) sectionObserver.observe(el);
+        });
+        const homeEl = document.getElementById('home');
+        if (homeEl) sectionObserver.observe(homeEl);
+    }
 
     // Header Scroll Effect
     const header = document.querySelector('.site-header');
@@ -282,6 +341,22 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleBackToTop();
     }
 
+    // Respect prefers-reduced-motion for background hero video
+    const heroVideo = document.querySelector('.hero-video');
+    if (heroVideo && window.matchMedia) {
+        const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const handleMotionPreference = (mq) => {
+            if (mq.matches) {
+                heroVideo.pause();
+                heroVideo.removeAttribute('autoplay');
+            }
+        };
+        handleMotionPreference(motionQuery);
+        if (typeof motionQuery.addEventListener === 'function') {
+            motionQuery.addEventListener('change', handleMotionPreference);
+        }
+    }
+
     // Gallery Lightbox
     const galleryGrid = document.getElementById('galleryGrid');
     const lightbox = document.getElementById('lightbox');
@@ -292,7 +367,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const lightboxNext = document.getElementById('lightboxNext');
         const lightboxCounter = document.getElementById('lightboxCounter');
         const images = Array.from(galleryGrid.querySelectorAll('img'));
+        const focusableControls = [lightboxClose, lightboxPrev, lightboxNext].filter(Boolean);
         let currentIndex = 0;
+        let lastFocusedElement = null;
 
         const showImage = (index) => {
             currentIndex = (index + images.length) % images.length;
@@ -303,19 +380,36 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const openLightbox = (index) => {
+            lastFocusedElement = document.activeElement;
             showImage(index);
             lightbox.classList.add('is-open');
             document.body.style.overflow = 'hidden';
+            if (lightboxClose) {
+                setTimeout(() => lightboxClose.focus(), 50);
+            }
         };
 
         const closeLightbox = () => {
             lightbox.classList.remove('is-open');
             document.body.style.overflow = '';
             lightboxImg.src = '';
+            if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+                lastFocusedElement.focus();
+            } else if (images[currentIndex]) {
+                images[currentIndex].focus();
+            }
         };
 
         images.forEach((img, index) => {
+            img.setAttribute('tabindex', '0');
+            img.setAttribute('role', 'button');
             img.addEventListener('click', () => openLightbox(index));
+            img.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openLightbox(index);
+                }
+            });
         });
 
         lightboxClose.addEventListener('click', closeLightbox);
@@ -328,9 +422,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.addEventListener('keydown', (e) => {
             if (!lightbox.classList.contains('is-open')) return;
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
-            if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+            if (e.key === 'Escape') {
+                closeLightbox();
+            } else if (e.key === 'ArrowLeft') {
+                showImage(currentIndex - 1);
+            } else if (e.key === 'ArrowRight') {
+                showImage(currentIndex + 1);
+            } else if (e.key === 'Tab' && focusableControls.length > 0) {
+                const first = focusableControls[0];
+                const last = focusableControls[focusableControls.length - 1];
+                if (e.shiftKey && document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                } else if (!e.shiftKey && document.activeElement === last) {
+                    e.preventDefault();
+                    first.focus();
+                }
+            }
         });
     }
 
