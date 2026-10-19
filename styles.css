@@ -5,6 +5,14 @@
   Typography: Playfair Display (display), Cormorant Garamond (serif body), Montserrat (sans)
 */
 
+@font-face {
+    font-family: 'Dima Shekasteh';
+    src: url('/assets/fonts/DimaShekasteh.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     /* Neutral ramp */
     --color-ivory: #FBF8F3;
@@ -55,6 +63,8 @@
     --font-display: 'Playfair Display', Georgia, serif;
     --font-serif: 'Cormorant Garamond', Georgia, serif;
     --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-farsi: 'Dima Shekasteh', 'Noto Nastaliq Urdu', var(--font-serif);
+    --font-nastaliq: 'Dima Shekasteh', 'Noto Nastaliq Urdu', var(--font-serif);
 
     /* Spacing — 8px base */
     --spacing-xs: 1rem;
@@ -311,22 +321,25 @@ p {
     text-align: right;
 }
 
+.farsi-poetry,
 .poetry-column.persian-column .poetry-quote.farsi-poetry {
     border-left: none !important;
     border-right: 2px solid var(--color-saffron) !important;
     padding-left: 0 !important;
     padding-right: var(--spacing-sm) !important;
     text-align: right !important;
-    font-family: 'Noto Nastaliq Urdu', var(--font-serif) !important;
+    font-family: var(--font-farsi) !important;
     font-style: normal !important;
-    font-size: 1.4rem !important;
-    line-height: 2.5 !important;
+    font-size: 1.75rem !important;
+    line-height: 2.15 !important;
     direction: rtl !important;
 }
 
 .poetry-column.persian-column .poetry-quote.farsi-poetry span {
     text-align: right !important;
     direction: rtl !important;
+    font-size: 1.25rem !important;
+    letter-spacing: 0 !important;
 }
 
 .farsi-poetry .gold-word {
@@ -3478,7 +3491,7 @@ img, video, canvas, iframe, svg {
     }
 
     .poetry-column.persian-column .poetry-quote.farsi-poetry {
-        font-size: 1.2rem !important;
+        font-size: 1.5rem !important;
     }
 }
 
