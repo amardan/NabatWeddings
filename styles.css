@@ -418,8 +418,9 @@ p {
 .site-header {
     position: fixed;
     top: 1.15rem;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    right: 0;
+    margin-inline: auto;
     width: min(94vw, 1480px);
     padding: 0.6rem clamp(1.1rem, 2vw, 2rem);
     display: flex;
