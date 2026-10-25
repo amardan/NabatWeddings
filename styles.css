@@ -28,7 +28,7 @@
     /* Saffron gold accent ramp */
     --color-saffron: #C9A227;
     --color-saffron-light: #E0BC44;
-    --color-saffron-dark: #A88416;
+    --color-saffron-dark: #7A5B0E;
 
     /* Terracotta accent ramp */
     --color-terracotta: #C8553D;
@@ -54,8 +54,8 @@
     --color-gold-dark: var(--color-saffron-dark);
 
     /* Functional shades */
-    --color-charcoal-soft: rgba(33, 30, 27, 0.76);
-    --color-charcoal-muted: rgba(33, 30, 27, 0.58);
+    --color-charcoal-soft: rgba(33, 30, 27, 0.80);
+    --color-charcoal-muted: rgba(33, 30, 27, 0.72);
     --color-line: rgba(33, 30, 27, 0.1);
     --color-line-soft: rgba(33, 30, 27, 0.06);
 
@@ -206,13 +206,13 @@ h1 {
     letter-spacing: 0.045em;
     text-transform: uppercase;
     margin-bottom: var(--spacing-sm);
-    line-height: 1.08;
+    line-height: 1.18;
 }
 
 h2.section-title {
     font-size: clamp(2.05rem, 4vw, 3.35rem);
     letter-spacing: 0.02em;
-    line-height: 1.18;
+    line-height: 1.32;
     margin-bottom: var(--spacing-md);
     position: relative;
     display: block;
@@ -229,9 +229,9 @@ h2.section-title.text-center {
 .category-tag {
     display: block;
     font-family: var(--font-sans);
-    font-size: 0.74rem;
+    font-size: 0.76rem;
     font-weight: 600;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--color-saffron-dark);
     margin-bottom: 0.65rem;
@@ -240,12 +240,25 @@ h2.section-title.text-center {
 h3 {
     font-size: 1.5rem;
     letter-spacing: 0.015em;
-    line-height: 1.3;
+    line-height: 1.34;
     margin-bottom: var(--spacing-xs);
 }
 
 p, li {
     text-wrap: pretty;
+    max-width: 65ch;
+}
+
+.text-center p,
+p.text-center,
+.hero-content p,
+.page-hero p,
+.site-footer .footer-bottom p {
+    margin-inline: auto;
+}
+
+p[style*="direction: rtl"] {
+    margin-left: auto;
 }
 
 p {
@@ -263,6 +276,12 @@ p {
 
 .body-text {
     color: var(--color-charcoal-soft);
+    max-width: 66ch;
+}
+
+.text-center .body-text,
+.body-text.text-center {
+    margin-inline: auto;
 }
 
 /* Decorative ornament — a tiny Persian-inspired boteh/leaf divider */
@@ -271,8 +290,10 @@ p {
     font-size: 1.45rem;
     font-style: italic;
     color: var(--color-pomegranate);
-    border-left: 2px solid var(--color-saffron);
-    padding-left: var(--spacing-sm);
+    border: 1px solid rgba(201, 162, 39, 0.28);
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: var(--radius-md);
+    padding: 1.5rem 1.75rem;
     margin-top: var(--spacing-md);
     text-align: left;
 }
@@ -291,12 +312,12 @@ p {
 .bilingual-poetry-container {
     display: flex;
     flex-direction: row;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
     justify-content: center;
     align-items: stretch;
     margin-top: var(--spacing-md);
     text-align: left;
-    max-width: 900px;
+    max-width: 920px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -323,10 +344,8 @@ p {
 
 .farsi-poetry,
 .poetry-column.persian-column .poetry-quote.farsi-poetry {
-    border-left: none !important;
-    border-right: 2px solid var(--color-saffron) !important;
-    padding-left: 0 !important;
-    padding-right: var(--spacing-sm) !important;
+    border: 1px solid rgba(201, 162, 39, 0.28) !important;
+    padding: 1.5rem 1.75rem !important;
     text-align: right !important;
     font-family: var(--font-farsi) !important;
     font-style: normal !important;
@@ -343,20 +362,7 @@ p {
 }
 
 .farsi-poetry .gold-word {
-    background-image: linear-gradient(120deg, 
-        #8C6508 15%, 
-        var(--color-saffron) 38%, 
-        #E2BE4A 50%, 
-        var(--color-saffron) 62%, 
-        #8C6508 85%
-    ) !important;
-    background-size: 200% auto !important;
-    background-position: 200% center;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    background-clip: text !important;
-    color: transparent !important;
-    animation: goldShine 5s linear infinite !important;
+    color: var(--color-saffron-dark) !important;
     display: inline-block !important;
     font-size: 1.08em !important;
     font-weight: 700 !important;
@@ -365,17 +371,7 @@ p {
     letter-spacing: inherit !important;
     margin: 0 0.05em !important;
     vertical-align: baseline !important;
-    filter: drop-shadow(0.5px 0.5px 0px rgba(107, 20, 48, 0.35))
-            drop-shadow(0 1px 2px rgba(168, 132, 22, 0.2));
-}
-
-@keyframes goldShine {
-    0% {
-        background-position: 200% center;
-    }
-    100% {
-        background-position: 0% center;
-    }
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8), 0 2px 6px rgba(201, 162, 39, 0.22);
 }
 
 .poetry-lines {
@@ -396,9 +392,7 @@ p {
     }
     
     .poetry-column.persian-column .poetry-quote {
-        border-right: 2px solid var(--color-saffron);
-        padding-right: 1.5rem;
-        margin-right: 0.25rem;
+        padding: 1.35rem 1.5rem;
         text-align: right;
     }
 }
@@ -415,7 +409,7 @@ p {
 }
 
 .narrow {
-    max-width: 800px;
+    max-width: 720px;
 }
 
 .text-center {
@@ -450,7 +444,7 @@ p {
         padding 0.24s ease,
         top 0.24s ease;
 
-    background: rgba(26, 23, 21, 0.64);
+    background: rgba(24, 21, 18, 0.84);
     backdrop-filter: blur(22px) saturate(180%);
     -webkit-backdrop-filter: blur(22px) saturate(180%);
     border-radius: var(--radius-full);
@@ -533,16 +527,18 @@ body:not(:has(.hero, .page-hero, .error-page-container)) .site-header .desktop-n
 }
 
 .desktop-nav a:hover {
-    color: var(--color-saffron) !important;
+    color: #FFF3C4 !important;
     opacity: 1 !important;
 }
 
 .desktop-nav a.active {
-    color: var(--color-saffron) !important;
+    color: #FFF3C4 !important;
     opacity: 1 !important;
     font-weight: 600;
 }
 
+.site-header.scrolled .desktop-nav a:hover,
+body:not(:has(.hero, .page-hero, .error-page-container)) .site-header .desktop-nav a:hover,
 .site-header.scrolled .desktop-nav a.active,
 body:not(:has(.hero, .page-hero, .error-page-container)) .site-header .desktop-nav a.active {
     color: var(--color-pomegranate) !important;
@@ -659,15 +655,15 @@ body:not(:has(.hero, .page-hero, .error-page-container)) .site-header .mobile-me
     width: 100%;
     height: 100%;
     background:
-        radial-gradient(ellipse at 50% 45%, rgba(24, 21, 18, 0.08) 0%, rgba(24, 21, 18, 0.58) 100%),
+        radial-gradient(ellipse at 50% 42%, rgba(24, 21, 18, 0.04) 0%, rgba(24, 21, 18, 0.52) 100%),
         linear-gradient(
             180deg,
-            rgba(20, 17, 15, 0.64) 0%,
-            rgba(24, 21, 18, 0.38) 22%,
-            rgba(24, 21, 18, 0.10) 36%,
-            rgba(24, 21, 18, 0.12) 56%,
-            rgba(20, 17, 15, 0.62) 72%,
-            rgba(18, 15, 13, 0.82) 100%
+            rgba(20, 17, 15, 0.56) 0%,
+            rgba(24, 21, 18, 0.14) 18%,
+            rgba(24, 21, 18, 0.08) 46%,
+            rgba(20, 17, 15, 0.58) 64%,
+            rgba(18, 15, 13, 0.80) 82%,
+            rgba(15, 12, 10, 0.88) 100%
         );
     z-index: -1;
 }
@@ -679,26 +675,43 @@ body:not(:has(.hero, .page-hero, .error-page-container)) .site-header .mobile-me
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
-    padding: clamp(5.2rem, 10vh, 6.5rem) 5% clamp(2.35rem, 5vh, 3.5rem);
+    padding: clamp(5.2rem, 10vh, 6.5rem) 5% clamp(2.25rem, 5vh, 3.35rem);
     z-index: 2;
+    animation: heroEntrance 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.page-hero > .container {
+    animation: heroEntrance 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes heroEntrance {
+    from {
+        opacity: 0.01;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero-content h1 {
-    font-size: clamp(1.55rem, 2.9vw, 2.65rem) !important;
+    font-size: clamp(1.65rem, 3.1vw, 2.75rem) !important;
     letter-spacing: 0.09em;
     line-height: 1.12;
     margin-bottom: 0.35rem !important;
     text-shadow:
-        0 4px 28px rgba(0, 0, 0, 0.55),
-        0 1px 4px rgba(0, 0, 0, 0.35);
+        0 4px 28px rgba(0, 0, 0, 0.65),
+        0 1px 4px rgba(0, 0, 0, 0.45);
 }
 
 .hero-content .hero-tagline {
-    margin-bottom: auto;
-    font-size: clamp(0.66rem, 0.85vw, 0.82rem);
+    margin-bottom: 0.7rem;
+    font-size: clamp(0.68rem, 0.88vw, 0.82rem);
     letter-spacing: 0.28em;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 }
 
 .hero-content .subtitle {
@@ -860,7 +873,8 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
 }
 
 .btn-primary:active, .btn-outline:active {
-    transform: translateY(0);
+    transform: translateY(0) scale(0.98);
+    transition-duration: 75ms;
 }
 
 .btn-primary:focus-visible, .btn-outline:focus-visible {
@@ -987,6 +1001,7 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
     padding-bottom: 1.15rem;
     border-bottom: 1px solid var(--color-line);
     transition: padding-left var(--transition-base), border-color var(--transition-base);
+    max-width: 68ch;
 }
 
 .services-list li:hover {
@@ -1105,28 +1120,65 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
 }
 
 /* Bespoke Stationery Form Card */
+#contact {
+    scroll-margin-top: 52px;
+    padding-top: 2.25rem;
+    padding-bottom: 4.25rem;
+}
+
+#contact h2.section-title {
+    margin-bottom: 0.5rem;
+}
+
+.contact-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem 2rem;
+    margin-top: 0.5rem;
+}
+
+.contact-meta-row .contact-info {
+    margin-bottom: 0;
+    font-size: 1.18rem;
+}
+
 .luxury-form {
-    max-width: 640px;
-    margin: 2rem auto 0;
+    max-width: 680px;
+    margin: 1.25rem auto 0;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(251, 248, 243, 0.9) 100%);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    padding: clamp(1.75rem, 4vw, 2.75rem);
+    padding: clamp(1.35rem, 2.6vw, 1.9rem) clamp(1.5rem, 3vw, 2.25rem);
     border-radius: var(--radius-lg);
     border: 1px solid rgba(201, 162, 39, 0.24);
     box-shadow: var(--shadow-md), var(--border-specular);
     text-align: left;
 }
 
+.form-row-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.95rem;
+}
+
+@media (max-width: 640px) {
+    .form-row-2 {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
 .form-group {
-    margin-bottom: 1.15rem;
+    margin-bottom: 0.85rem;
 }
 
 .luxury-form label {
     display: block;
-    margin-bottom: 0.4rem;
-    font-size: 0.76rem;
-    letter-spacing: 0.14em;
+    margin-bottom: 0.32rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.13em;
     text-transform: uppercase;
     color: var(--color-charcoal);
     text-align: left;
@@ -1137,11 +1189,11 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
 .luxury-form textarea,
 .luxury-form select {
     width: 100%;
-    padding: 0.95rem 1.2rem;
+    padding: 0.72rem 1rem;
     background-color: rgba(255, 255, 255, 0.85);
     border: 1px solid rgba(33, 30, 27, 0.16);
     font-family: var(--font-sans);
-    font-size: 0.98rem;
+    font-size: 0.95rem;
     color: var(--color-charcoal);
     border-radius: var(--radius-sm);
     box-shadow: inset 0 1px 2px rgba(33, 30, 27, 0.03);
@@ -1264,9 +1316,10 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
 }
 
 .site-footer p.footer-destinations {
-    font-size: 0.76rem;
-    color: rgba(255, 255, 255, 0.72);
-    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.78);
+    margin: 0 auto 1.25rem;
+    max-width: 620px;
     line-height: 1.65;
 }
 
@@ -1469,18 +1522,24 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
     margin-bottom: 0;
 }
 
-/* Animations — scoped to .js so content stays visible if JavaScript fails to load */
+/* Animations — default to visible final state so full-page captures and static views are never blank;
+   smoothly animate elements entering the viewport during active scrolling */
 .js .fade-in {
-    opacity: 0;
-    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 1;
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .js .fade-in-up {
-    opacity: 0;
-    transform: translateY(28px);
+    opacity: 1;
+    transform: translateY(0);
     transition:
-        opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-        transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+        opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.js .will-reveal {
+    opacity: 0;
+    transform: translateY(20px);
 }
 
 .js .is-visible {
@@ -1615,7 +1674,7 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
 
 @keyframes fadeInFaq {
     from {
-        opacity: 0;
+        opacity: 1;
         transform: translateY(-6px);
     }
     to {
@@ -1677,7 +1736,7 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
     }
 
     .narrow {
-        max-width: 840px;
+        max-width: 740px;
     }
 
     .gallery-grid.mosaic {
@@ -1746,7 +1805,8 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
         gap: 1.5rem;
     }
 
-    .site-footer .footer-grid {
+    .site-footer .footer-grid,
+    .site-footer .footer-grid:has(> :nth-child(4)) {
         grid-template-columns: 1fr 1fr;
         gap: var(--spacing-sm);
     }
@@ -2093,8 +2153,8 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
     @supports ((animation-timeline: view()) and (animation-range: entry)) {
         @keyframes itemZoomReveal {
             from {
-                opacity: 0;
-                transform: translateY(32px) scale(0.97);
+                opacity: 1;
+                transform: translateY(16px) scale(0.985);
             }
             to {
                 opacity: 1;
@@ -2113,29 +2173,10 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
 }
 
 /* ==========================================================================
-   Vertical Side-Scroll gold timeline & diamond indicator
+   Vertical Side-Scroll gold timeline & diamond indicator (disabled to avoid duplicating top scroll bar)
    ========================================================================== */
 .vertical-scroll-timeline {
-    position: fixed;
-    left: 2.5vw;
-    top: 15vh;
-    bottom: 15vh;
-    width: 1px;
-    background: linear-gradient(180deg, 
-        rgba(212, 175, 55, 0) 0%, 
-        rgba(212, 175, 55, 0.22) 15%, 
-        rgba(212, 175, 55, 0.22) 85%, 
-        rgba(212, 175, 55, 0) 100%
-    );
-    z-index: 90;
-    display: none;
-    pointer-events: none;
-}
-
-@media (min-width: 1100px) {
-    .vertical-scroll-timeline {
-        display: block;
-    }
+    display: none !important;
 }
 
 .timeline-diamond {
@@ -2386,12 +2427,16 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
    ========================================================================== */
 .site-footer .footer-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--spacing-md);
     text-align: left;
     margin-bottom: var(--spacing-md);
     padding-bottom: var(--spacing-md);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.site-footer .footer-grid:has(> :nth-child(4)) {
+    grid-template-columns: 1.25fr repeat(3, minmax(0, 1fr));
 }
 
 .site-footer .footer-col h4 {
@@ -2406,7 +2451,7 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
 .site-footer .footer-col p,
 .site-footer .footer-col a {
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.55);
+    color: rgba(255, 255, 255, 0.76);
     text-decoration: none;
     line-height: 1.8;
     display: block;
@@ -2429,7 +2474,7 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
     font-family: var(--font-serif);
     font-style: italic;
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.72);
 }
 
 .site-footer .footer-bottom {
@@ -2438,7 +2483,8 @@ section:not(.hero):not(.page-hero) .btn-outline:hover,
 }
 
 @media (max-width: 768px) {
-    .site-footer .footer-grid {
+    .site-footer .footer-grid,
+    .site-footer .footer-grid:has(> :nth-child(4)) {
         grid-template-columns: 1fr;
         gap: var(--spacing-sm);
         text-align: center;
@@ -2864,7 +2910,7 @@ a[href^="/locations/"]:hover > div {
     font-family: var(--font-display);
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 400;
-    line-height: 1.25;
+    line-height: 1.34;
     color: var(--color-charcoal);
     margin-bottom: 1rem;
 }
@@ -2902,7 +2948,7 @@ a[href^="/locations/"]:hover > div {
     margin: 3rem 0 1.2rem;
     color: var(--color-charcoal);
     font-weight: 400;
-    line-height: 1.3;
+    line-height: 1.36;
 }
 
 .blog-post-content strong {
@@ -2965,7 +3011,8 @@ a[href^="/locations/"]:hover > div {
     font-size: 0.92rem;
     color: var(--color-charcoal-soft);
     line-height: 1.65;
-    margin-bottom: 1.5rem !important;
+    max-width: 62ch;
+    margin: 0 auto 1.5rem !important;
 }
 
 /* Back Button */
@@ -3127,8 +3174,10 @@ a[href^="/locations/"]:hover > div {
 .package-card.featured::before {
     content: "Most Popular";
     position: absolute;
-    top: -12px;
-    right: 24px;
+    top: -13px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
     background: var(--gradient-saffron);
     color: var(--color-charcoal);
     font-family: var(--font-sans);
@@ -3136,9 +3185,10 @@ a[href^="/locations/"]:hover > div {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    padding: 0.28rem 0.9rem;
+    padding: 0.28rem 0.95rem;
     border-radius: var(--radius-full);
     box-shadow: 0 4px 12px rgba(201, 162, 39, 0.32);
+    white-space: nowrap;
 }
 
 .package-header {
@@ -3229,11 +3279,12 @@ a[href^="/locations/"]:hover > div {
     font-size: 0.85rem;
     font-style: italic;
     color: var(--color-charcoal-muted);
-    background: rgba(243, 237, 227, 0.45);
-    border-left: 2px solid var(--color-saffron);
-    padding: 0.8rem 1rem;
+    background: transparent;
+    border: none;
+    border-top: 1px solid rgba(201, 162, 39, 0.28);
+    padding: 0.95rem 0 0;
     margin-top: 1rem;
-    border-radius: 0 6px 6px 0;
+    border-radius: 0;
     line-height: 1.55;
 }
 
@@ -3264,7 +3315,6 @@ a[href^="/locations/"]:hover > div {
 
 .travel-table {
     width: 100%;
-    min-width: 520px;
     border-collapse: collapse;
     font-family: var(--font-sans);
     font-size: 0.92rem;
@@ -3586,7 +3636,7 @@ img, video, canvas, iframe, svg {
 
 .badge-persian {
     background: rgba(201, 162, 39, 0.12);
-    color: #8C6A12;
+    color: var(--color-saffron-dark);
     border: 1px solid rgba(201, 162, 39, 0.35);
 }
 
@@ -3666,7 +3716,7 @@ img, video, canvas, iframe, svg {
 
 .badge-cinematic {
     background: rgba(201, 162, 39, 0.15);
-    color: #8C6A12;
+    color: var(--color-saffron-dark);
     border: 1px solid rgba(201, 162, 39, 0.4);
 }
 
@@ -3721,7 +3771,8 @@ img, video, canvas, iframe, svg {
         gap: 1.5rem;
     }
 
-    .site-footer .footer-grid {
+    .site-footer .footer-grid,
+    .site-footer .footer-grid:has(> :nth-child(4)) {
         grid-template-columns: 1fr 1fr;
         gap: var(--spacing-sm);
     }

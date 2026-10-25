@@ -1,5 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // Pre-fill contact inquiry fields from URL query parameters (?package=... & ?location=...)
+    function applyContactContextFromQuery(searchStr) {
+        if (!searchStr) return;
+        const params = new URLSearchParams(searchStr.includes('?') ? searchStr.split('?')[1].split('#')[0] : searchStr);
+        const pkg = params.get('package');
+        const loc = params.get('location');
+        const locationInput = document.getElementById('wedding_location');
+        const msgTextarea = document.getElementById('message');
+
+        if (loc && locationInput && !locationInput.value) {
+            locationInput.value = loc;
+        }
+        if (msgTextarea && !msgTextarea.value) {
+            if (pkg && loc) {
+                msgTextarea.value = `Hello Elmira, we are interested in ${pkg} for our wedding in ${loc}. `;
+            } else if (pkg) {
+                msgTextarea.value = `Hello Elmira, we are interested in ${pkg} collection for our upcoming wedding. `;
+            } else if (loc) {
+                msgTextarea.value = `Hello Elmira, we are planning our wedding in ${loc} and would love to check your availability. `;
+            }
+        }
+    }
+
+    applyContactContextFromQuery(window.location.search);
+
     // Show success message if redirected back after form submission
     if (window.location.search.includes('sent=true')) {
         const form = document.querySelector('.luxury-form');
@@ -152,6 +177,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (mobileBtn) mobileBtn.setAttribute('aria-expanded', 'false');
                     }
 
+                    if (rawHref.includes('?')) {
+                        applyContactContextFromQuery(rawHref);
+                    }
                     isScrollingToTarget = true;
                     if (sectionId === 'home') {
                         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -250,15 +278,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Intersection Observer for smooth reveal-on-scroll
     const observerOptions = {
         root: null,
-        rootMargin: '0px',
-        threshold: 0.15 // Trigger when 15% of the element is visible
+        rootMargin: '0px 0px -24px 0px',
+        threshold: 0.01 // Trigger as soon as the top of even a tall section enters the viewport
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                entry.target.classList.remove('will-reveal');
                 entry.target.classList.add('is-visible');
-                // Optional: Stop observing once it's visible if we only want it to animate once
                 observer.unobserve(entry.target);
             }
         });
@@ -266,9 +294,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Select all elements with animation classes
     const animatedElements = document.querySelectorAll('.fade-in, .fade-in-up');
-    
-    animatedElements.forEach(el => {
-        observer.observe(el);
+    let scrollRevealArmed = false;
+
+    function armScrollReveal() {
+        if (scrollRevealArmed) return;
+        scrollRevealArmed = true;
+        animatedElements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top > window.innerHeight * 0.98) {
+                el.classList.add('will-reveal');
+                observer.observe(el);
+            } else {
+                el.classList.add('is-visible');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', armScrollReveal, { passive: true, once: true });
+
+    // Pre-warm lazy-loaded images after initial paint so full-page views and fast scrolling never stall
+    requestAnimationFrame(() => {
+        document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+            img.loading = 'eager';
+        });
     });
 
     // Mobile Menu Toggle

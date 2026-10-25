@@ -708,7 +708,7 @@
             <!-- 1. Featured Widescreen Cinematic Highlight Film -->
             <div class="featured-video-card">
                 <div class="featured-video-container">
-                    <video controls preload="metadata" playsinline poster="/poster.jpg" aria-label="Persian Wedding Ceremony Highlights Film">
+                    <video controls preload="none" playsinline poster="/poster.jpg" aria-label="Persian Wedding Ceremony Highlights Film">
                         <source src="/assets/videos/file.mp4" type="video/mp4">
                         Your browser does not support HTML5 video.
                     </video>
@@ -743,7 +743,7 @@
                     <!-- Persian Ceremony Video Card -->
                     <div class="video-showcase-card">
                         <div class="video-container">
-                            <video controls preload="metadata" playsinline poster="/assets/images/video-poster-persian-ceremony.jpg" aria-label="Persian Sofreh Aghd & Sugar Ceremony Video">
+                            <video controls preload="none" playsinline poster="/assets/images/video-poster-persian-ceremony.jpg" aria-label="Persian Sofreh Aghd & Sugar Ceremony Video">
                                 <source src="/assets/videos/bilingual-persian-wedding-persian.mp4" type="video/mp4">
                                 Your browser does not support HTML5 video.
                             </video>
@@ -765,7 +765,7 @@
                     <!-- English Ceremony Video Card -->
                     <div class="video-showcase-card">
                         <div class="video-container">
-                            <video controls preload="metadata" playsinline poster="/assets/images/video-poster-english-address.jpg" aria-label="English Address & Vows Video">
+                            <video controls preload="none" playsinline poster="/assets/images/video-poster-english-address.jpg" aria-label="English Address & Vows Video">
                                 <source src="/assets/videos/bilingual-persian-wedding-english.mp4" type="video/mp4">
                                 Your browser does not support HTML5 video.
                             </video>
@@ -972,7 +972,7 @@
                     <summary>Can Elmira's marriage certificate be used to register our marriage at the Iranian Interests Section (Daftar)?</summary>
                     <div class="faq-content">
                         <p>Yes. The marriage ceremony certificate provided by Elmira Jafari can be used along with your required civil documents to officially register your marriage with the Interests Section of the Islamic Republic of Iran in Washington, D.C. ("Daftar").</p>
-                        <p style="font-size: 0.95rem; color: var(--color-charcoal, #2A2725); margin-top: 0.75rem; line-height: 1.8; direction: rtl; text-align: right; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Tahoma, sans-serif;"><strong>ثبت رسمی ازدواج در دفتر حفاظت منافع ایران (دفتر):</strong> گواهی عقد ارائه‌شده توسط المیرا جعفری می‌تواند به همراه سایر مدارک لازم، جهت ثبت رسمی ازدواج در دفتر حفاظت منافع ایران در واشنگتن (دفتر) مورد استفاده قرار گیرد.</p>
+                        <p style="font-size: 0.98rem; color: var(--color-charcoal, #2A2725); margin-top: 0.75rem; line-height: 1.85; direction: rtl; text-align: right; font-family: 'Vazirmatn', var(--font-serif); max-width: 65ch; margin-left: auto;"><strong>ثبت رسمی ازدواج در دفتر حفاظت منافع ایران (دفتر):</strong> گواهی عقد ارائه‌شده توسط المیرا جعفری می‌تواند به همراه سایر مدارک لازم، جهت ثبت رسمی ازدواج در دفتر حفاظت منافع ایران در واشنگتن (دفتر) مورد استفاده قرار گیرد.</p>
                     </div>
                 </details>
             </div>
@@ -984,11 +984,12 @@
     <!-- Contact Form -->
     <section class="section-padding text-center fade-in-up" id="contact">
         <div class="container narrow">
-            <h2 class="section-title" style="margin-bottom: 0.75rem;">Start Your Journey</h2>
-            <p class="body-text" style="margin-bottom: 0.25rem;">Connect with us to begin weaving your story.</p>
-            <p style="font-size: 0.95rem; font-style: italic; opacity: 0.7; margin-bottom: 0.75rem;">Your introductory connection call is completely complimentary.</p>
-            <p class="contact-info">Phone: <a href="tel:+17034239330">703-423-9330</a></p>
-            <p class="contact-info">Email: <a href="mailto:elmira.jafari.media@gmail.com">elmira.jafari.media@gmail.com</a></p>
+            <h2 class="section-title" style="margin-bottom: 0.45rem;">Start Your Journey</h2>
+            <p class="body-text" style="margin: 0 auto 0.2rem;">Connect with us to begin weaving your story — your introductory connection call is complimentary.</p>
+            <div class="contact-meta-row">
+                <p class="contact-info">Phone: <a href="tel:+17034239330">703-423-9330</a></p>
+                <p class="contact-info">Email: <a href="mailto:elmira.jafari.media@gmail.com">elmira.jafari.media@gmail.com</a></p>
+            </div>
             
             <!-- Using formsubmit.co for a fully working backend submission -->
             <form action="https://formsubmit.co/elmira.jafari.media@gmail.com" method="POST" class="luxury-form">
@@ -999,25 +1000,33 @@
                 <!-- Honeypot field to catch bots silently -->
                 <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
                 
-                <div class="form-group">
-                    <label for="name">Your Names</label>
-                    <input type="text" id="name" name="name" placeholder="Your Names" required>
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label for="name">Your Names <span aria-hidden="true" style="color: var(--color-pomegranate);">*</span></label>
+                        <input type="text" id="name" name="name" placeholder="e.g. Shirin &amp; Darius" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email Address <span aria-hidden="true" style="color: var(--color-pomegranate);">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    </div>
+                </div>
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label for="phone">Your Phone Number <span aria-hidden="true" style="color: var(--color-pomegranate);">*</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="(703) 555-0199" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="wedding_date">Wedding Date <span style="font-weight:400; opacity:0.65; font-size:0.85em; text-transform:none; letter-spacing:0;">(optional)</span></label>
+                        <input type="date" id="wedding_date" name="wedding_date" style="color-scheme: light;">
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="email">Your Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+                    <label for="wedding_location">Wedding Location / Venue <span style="font-weight:400; opacity:0.65; font-size:0.85em; text-transform:none; letter-spacing:0;">(optional)</span></label>
+                    <input type="text" id="wedding_location" name="wedding_location" placeholder="City, State, or Venue Name">
                 </div>
                 <div class="form-group">
-                    <label for="phone">Your Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
-                </div>
-                <div class="form-group">
-                    <label for="wedding_date">Wedding Date <span style="font-weight:300; opacity:0.55; font-size:0.8em; text-transform:none; letter-spacing:0;">(optional)</span></label>
-                    <input type="date" id="wedding_date" name="wedding_date" style="color-scheme: light;">
-                </div>
-                <div class="form-group">
-                    <label for="message">Your Message</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Tell us about your dream ceremony..." required></textarea>
+                    <label for="message">Your Message <span aria-hidden="true" style="color: var(--color-pomegranate);">*</span></label>
+                    <textarea id="message" name="message" rows="3" placeholder="Tell us about your ceremony vision, preferred collection, or any questions..." required></textarea>
                 </div>
                 <button type="submit" class="btn-primary full-width">Send Inquiry</button>
                 <div class="form-error-msg" id="form-error" role="alert"></div>
@@ -1046,7 +1055,6 @@
                     <a href="/process/">The Process</a>
                     <a href="/experience/">Ceremony Styles</a>
                     <a href="/collections/">Collections &amp; Pricing</a>
-                    <a href="/locations/">Locations</a>
                     <a href="/gallery/">Gallery</a>
                     <a href="/love-stories/">Love Stories</a>
                     <a href="/blog/">Blog</a>
@@ -1055,19 +1063,25 @@
                     <a href="/privacy/">Privacy Policy</a>
                 </div>
                 <div class="footer-col">
+                    <h4>Locations</h4>
+                    <a href="/locations/virginia/">Virginia</a>
+                    <a href="/locations/washington-dc/">Washington D.C.</a>
+                    <a href="/locations/maryland/">Maryland</a>
+                    <a href="/locations/new-york/">New York</a>
+                    <a href="/locations/california/">California</a>
+                    <a href="/locations/texas/">Texas</a>
+                    <a href="/locations/">All Locations &rarr;</a>
+                </div>
+                <div class="footer-col">
                     <h4>Connect</h4>
                     <a href="tel:+17034239330">+1 (703) 423-9330</a>
+                    <a href="mailto:elmira.jafari.media@gmail.com">elmira.jafari.media@gmail.com</a>
                     <a href="https://www.instagram.com/nabat_persian_officiant/" target="_blank" rel="noopener noreferrer" aria-label="@nabat_persian_officiant on Instagram" class="footer-instagram-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline-block;vertical-align:middle;margin-right:0.3rem;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
                         @nabat_persian_officiant
                     </a>
-                    <a href="https://www.google.com/preferences/source?q=www.nabatpersianweddings.com" target="_blank" rel="noopener noreferrer">Follow on Google</a>
                 </div>
             </div>
-            <p class="footer-destinations">
-                <strong>Destinations &amp; Local Areas Served:</strong> Washington D.C., Maryland (MD), Virginia (VA), New York (NYC), New Jersey (NJ), Pennsylvania (PA), Massachusetts (Boston), Illinois (Chicago), Texas (Houston, Dallas, Austin), Florida (Miami), California (Los Angeles, San Francisco, Orange County), Washington (Seattle), Canada (Toronto), and worldwide destination weddings. <br>
-                <em>Specializing as a Bilingual (Farsi &amp; English) Persian Wedding Officiant, traditional Sofreh Aghd, and modern Iranian ceremonies.</em>
-            </p>
             <div class="footer-bottom">
                 <p>&copy; 2026 Nabat Persian Weddings. All rights reserved.</p>
             </div>
@@ -1081,7 +1095,7 @@
     <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
         <button class="lightbox-close" id="lightboxClose" aria-label="Close image viewer">&times;</button>
         <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous image">&lsaquo;</button>
-        <img class="lightbox-img" id="lightboxImg" src="" alt="Persian wedding ceremony photograph expanded view">
+        <img class="lightbox-img" id="lightboxImg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Persian wedding ceremony photograph expanded view">
         <button class="lightbox-nav next" id="lightboxNext" aria-label="Next image">&rsaquo;</button>
         <span class="lightbox-counter" id="lightboxCounter"></span>
     </div>
