@@ -2,12 +2,14 @@
 .venv/
 node_modules/
 
-# Python Utility Scripts
+# Python Utility Scripts & Tests
 scripts/
+tests/
 *.py
 
 # Test & Tool Artifacts
 .playwright-mcp/
+.oil-ui/
 .DS_Store
 *.swp
 *.tmp

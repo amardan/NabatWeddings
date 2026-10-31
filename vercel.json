@@ -25,6 +25,10 @@
     { "source": "/testimonials/", "destination": "/love-stories/", "permanent": true },
     { "source": "/testimonials", "destination": "/love-stories/", "permanent": true },
     { "source": "/reviews/", "destination": "/love-stories/", "permanent": true },
-    { "source": "/reviews", "destination": "/love-stories/", "permanent": true }
+    { "source": "/reviews", "destination": "/love-stories/", "permanent": true },
+    { "source": "/locations/california/", "destination": "/locations/los-angeles/", "permanent": true },
+    { "source": "/locations/california", "destination": "/locations/los-angeles/", "permanent": true },
+    { "source": "/locations/florida/", "destination": "/locations/miami/", "permanent": true },
+    { "source": "/locations/florida", "destination": "/locations/miami/", "permanent": true }
   ]
 }

@@ -6,6 +6,7 @@ node_modules/
 # Deployment & Test Artifacts
 .vercel/
 .playwright-mcp/
+.oil-ui/
 
 # System Files
 .DS_Store
